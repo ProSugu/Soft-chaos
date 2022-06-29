@@ -1,0 +1,43 @@
+<div class="rotate-3d">
+    <div class="custom-card" [ngClass]="{'card-shadow': isActive}">
+        <div class="header-section">
+            <img class="main-card-image" [src]="locationInfo?.imageUrl">
+            <div class="rating-section" matRipple>
+                <img src="assets/images/card-images/rating.png"> <span class="rating">{{ locationInfo?.rating }}</span>
+                <span class="total-review">{{ locationInfo?.totalReview }} Reviews</span>
+            </div>
+        </div>
+        <div class="card-body-section">
+            <div class="sub-location-section d-flex align-items-center mb-1">
+                <img src="assets/images/card-images/location.png">
+                <span>{{ locationInfo?.placeLocation }}</span>
+            </div>
+            <div class="main-location-section">
+                <p>{{ locationInfo?.placeName }}</p>
+            </div>
+            <div class="price-section">
+                {{ locationInfo?.chargeAmount }}
+            </div>
+            <div class="bottom-panel" [ngClass]="{'bottom-panel-open': isActive}">
+                <div class="people-limit-section">
+                    <p>Limit {{ locationInfo?.limit }} People</p>
+                </div>
+                <div class="bar-graph-section">
+                    <div class="chart-section">
+                        <mat-progress-bar class="card-progress-bar" name="gaurav" mode="determinate"
+                            [value]="(locationInfo.totalBooked/locationInfo.limit)*100"></mat-progress-bar>
+                    </div>
+                    <div class="chart-label">
+                        <p *ngIf="locationInfo?.totalBooked != locationInfo.limit">{{
+                            locationInfo?.totalBooked }} booked</p>
+                        <p *ngIf="locationInfo?.totalBooked == locationInfo.limit">Full Booked</p>
+                    </div>
+                </div>
+                <div class="explore-btn-section">
+                    <button [ngClass]="{'disable': locationInfo?.totalBooked == locationInfo.limit}" matRipple>Explore
+                        Tour <img class="btn-arrow-img" src="assets/images/card-images/right-arrow.png"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

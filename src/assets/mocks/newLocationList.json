@@ -1,0 +1,118 @@
+{
+    "locations": [
+        {
+            "id": "1",
+            "locationResult": [
+                {
+                    "id": "1",
+                    "imageUrl": "assets/images/card/safari/1st.png",
+                    "rating": "4.8",
+                    "totalReview": "10",
+                    "placeLocation": "South Africa",
+                    "placeName": "Savana Africa",
+                    "chargeAmount": "$50.00",
+                    "limit": "16",
+                    "totalBooked": "16"
+                },
+                {
+                    "id": "1",
+                    "imageUrl": "assets/images/card/safari/2nd.png",
+                    "rating": "4.8",
+                    "totalReview": "10",
+                    "placeLocation": "USA, United States",
+                    "placeName": "Yellow stone national park",
+                    "chargeAmount": "$50.00",
+                    "limit": "12",
+                    "totalBooked": "5"
+                },
+                {
+                    "id": "1",
+                    "imageUrl": "assets/images/card/safari/3rd.png",
+                    "rating": "4.8",
+                    "totalReview": "10",
+                    "placeLocation": "Niagara, Canada",
+                    "placeName": "Niagara Falls",
+                    "chargeAmount": "$50.00",
+                    "limit": "4",
+                    "totalBooked": "2"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "locationResult": [
+                {
+                    "id": "2",
+                    "imageUrl": "assets/images/card/back_to_past/1st.png",
+                    "rating": "4.8",
+                    "totalReview": "10",
+                    "placeLocation": "AI Haram, Egypt",
+                    "placeName": "Giza Pyramid",
+                    "chargeAmount": "$50.00",
+                    "limit": "16",
+                    "totalBooked": "13"
+                },
+                {
+                    "id": "2",
+                    "imageUrl": "assets/images/card/back_to_past/2nd.png",
+                    "rating": "4.8",
+                    "totalReview": "10",
+                    "placeLocation": "Agra, India",
+                    "placeName": "Taj Mahal",
+                    "chargeAmount": "$50.00",
+                    "limit": "12",
+                    "totalBooked": "5"
+                },
+                {
+                    "id": "2",
+                    "imageUrl": "assets/images/card/back_to_past/3rd.png",
+                    "rating": "4.8",
+                    "totalReview": "10",
+                    "placeLocation": "Rome, Italy",
+                    "placeName": "Colosseum",
+                    "chargeAmount": "$50.00",
+                    "limit": "4",
+                    "totalBooked": "2"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "locationResult": [
+                {
+                    "id": "3",
+                    "imageUrl": "assets/images/card/cityview/1st.png",
+                    "rating": "4.8",
+                    "totalReview": "10",
+                    "placeLocation": "Paris, France",
+                    "placeName": "Paris",
+                    "chargeAmount": "$50.00",
+                    "limit": "16",
+                    "totalBooked": "16"
+                },
+                {
+                    "id": "3",
+                    "imageUrl": "assets/images/card/cityview/2nd.png",
+                    "rating": "4.8",
+                    "totalReview": "10",
+                    "placeLocation": "New York, United States",
+                    "placeName": "New York",
+                    "chargeAmount": "$50.00",
+                    "limit": "12",
+                    "totalBooked": "5"
+                },
+                {
+                    "id": "3",
+                    "imageUrl": "assets/images/card/cityview/3rd.png",
+                    "rating": "4.8",
+                    "totalReview": "10",
+                    "placeLocation": "Dubai, UAE",
+                    "placeName": "Dubai",
+                    "chargeAmount": "$50.00",
+                    "limit": "4",
+                    "totalBooked": "2"
+                }
+            ]
+        }
+    ]
+}

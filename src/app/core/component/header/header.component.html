@@ -1,0 +1,67 @@
+<div class="navigation-wrap start-header start-style" [ngClass]="{'bg-light': isScrolled}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" [routerLink]="['/dashboard']" target="_blank"><img
+                            src="assets/logo/main-logo.png" alt=""></a>
+
+                    <button class="navbar-toggler" type="button" id="collapse-btn" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto py-4 py-md-0">
+                            <ng-container *ngFor="let routeObj of headerList; let i = index;">
+                                <li class="nav-item">
+                                    <ng-container *ngIf="!routeObj?.subPath?.length">
+                                        <a class="nav-link" [routerLink]="[routeObj.path]" (click)="onPathClick()">
+                                            {{ routeObj?.routeName }}
+                                            <img *ngIf="routeObj?.userProfileTab" class="user-account-img"
+                                                src="assets/images/user1.svg" alt="user" />
+                                        </a>
+                                    </ng-container>
+                                    <ng-container *ngIf="routeObj?.subPath?.length">
+                                        <a href="javascript.void(0)" class="nav-link dropdown-toggle"
+                                            data-toggle="dropdown" role="button" aria-haspopup="true"
+                                            aria-expanded="false" (click)="onSubChildPathClick()"> {{
+                                            routeObj?.routeName }}
+                                            <img *ngIf="routeObj?.userProfileTab" class="user-account-img"
+                                                src="assets/images/user1.svg" alt="user" />
+                                            <img *ngIf="!routeObj?.userProfileTab" src="assets/images/dropdown-icon.png"
+                                                class="ml-1" alt=""></a>
+                                        <div class="dropdown-menu">
+                                            <a *ngFor="let subRouteObj of routeObj.subPath" class="dropdown-item"
+                                                [routerLink]="[subRouteObj?.path]" (click)="onPathClick()">
+                                                {{ subRouteObj?.routeName }}
+
+                                            </a>
+                                        </div>
+                                    </ng-container>
+
+                                </li>
+                            </ng-container>
+                            <!-- <li class="nav-item pl-4 pl-md-0 ml-0 2">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Services 
+                                    <img
+                                        src="assets/images/dropdown-icon.png" class="ml-1" alt=""></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                </div>
+                            </li> -->
+                            <!-- <li class="nav-item user-account-item pl-4 pl-md-0 ml-0 ml-md-5">
+                                
+                            </li> -->
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

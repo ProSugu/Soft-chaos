@@ -1,0 +1,19 @@
+{
+    "section": [
+        {
+            "id": "1",
+            "heading": "Safari",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus neque augue, bibendum auctor lectus blandit sit amet. Nullam neque risus, feugiat a ligula nec, rutrum imperdiet felis."
+        },
+        {
+            "id": "2",
+            "heading": "Back to the Past",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus neque augue, bibendum auctor lectus blandit sit amet. Nullam neque risus, feugiat a ligula nec, rutrum imperdiet felis."
+        },
+        {
+            "id": "3",
+            "heading": "City View",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus neque augue, bibendum auctor lectus blandit sit amet. Nullam neque risus, feugiat a ligula nec, rutrum imperdiet felis."
+        }
+    ]
+}
