@@ -503,7 +503,7 @@ section.banner {
     margin-top: 5px;
 }
 .banner-img ul li h5 {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -511,16 +511,21 @@ section.banner {
     letter-spacing: -0.02em;
     color: #FF7084;
     margin: 0;
+    text-align: left;
+    padding-left: 10px;
 }
 .banner-img ul li p {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 22px;
     letter-spacing: -0.02em;
     color: #757F8F;
+    text-align: left;
+    padding-left: 10px;
 }
+
 .banner-img ul li img {
     width: 44px;
     position: absolute;
@@ -616,6 +621,74 @@ section.gallary .col-md-12.text-center.main-heading img {
     position: absolute;
     top: 50px;
     margin-left: 60px;
+}
+.banner .form-inline .collapse.show{
+    position: absolute !important;
+    background-color: #fff;
+    box-shadow: 0px 39px 66px rgb(10 30 59 / 16%);
+    top: 28px;
+    padding: 20px;
+    border-radius: 12px;
+}
+.collapsing{
+    position: absolute !important;
+    background-color: #fff;
+    box-shadow: 0px 39px 66px rgb(10 30 59 / 16%);
+    top: 28px;
+    padding: 20px;
+    border-radius: 12px;
+}
+.bg-slider button.slick-prev.slick-arrow.slick-disabled:before {
+    content: "←";
+    left: -714px;
+    position: absolute;
+    background: #fab4600d;
+    border-radius: 8px;
+    width: 55px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+}
+.bg-slider button.slick-prev.slick-arrow:before {
+    content: "←";
+    left: -714px;
+    position: absolute;
+    background: #fab460;
+    border-radius: 8px;
+    width: 55px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+}
+.banner .form-inline .collapse.show ul li {
+    list-style: none;
+    text-align: left;
+}
+.banner .form-inline .collapsing ul li {
+    list-style: none;
+    text-align: left;
+}
+.banner .form-inline .collapse.show ul li a{
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    border: none;
+    line-height: 24px;
+    color: #757F8F;
+    padding: 0;
+    text-decoration:none;
+}
+.banner .form-inline .collapsing ul li a{
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    border: none;
+    line-height: 24px;
+    color: #757F8F;
+    padding: 0;
+    text-decoration:none;
 }
 /*--------------contact page css---------*/
 section.contact-us {
@@ -1492,7 +1565,8 @@ section.banner {
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 100px 50px 0;
+    padding: 100px 50px 80px;
+    background-color: #f8f9fa;
 }
 .col-md-12.text-center.logo-heading p {
     font-family: "Poppins";
@@ -1525,7 +1599,7 @@ section.services{
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 100px 50px;
+    padding: 50px 50px;
 }
 .slider-block {
     width: 290px;
