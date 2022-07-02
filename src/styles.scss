@@ -1310,10 +1310,10 @@ section.testimonials .col-md-5 a i {
 }
 .slide-box {
     background: #FFFFFF;
-    box-shadow: 0px 10px 60px rgba(10, 30, 59, 0.1);
-    border-radius: 30px;
+    border-radius: 20px;
     padding: 20px;
-    height:300px;
+    height: 300px;
+    border: 1px solid #cccccc80;
 }
 .slide-box p {
     font-size: 14px !important;
@@ -1460,13 +1460,13 @@ section.about-gallry h2 {
     margin-top:30px;
 }
 section.about-gallry h2:after {
-    content: '';
-    background: #31496d;
+    content: "";
     width: 80px;
     height: 3px;
     position: absolute;
     left: 0;
     top: 50px;
+    background: #7B17C1;
 }
 section.about-gallry p {
     font-family: 'Poppins';
@@ -1536,7 +1536,7 @@ section.service-boxes .main-heading img {
     margin: 10px 0;
 }
 .block span {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -1545,6 +1545,21 @@ section.service-boxes .main-heading img {
     color: #31496D;
     display: block;
     margin: 0 0 10px;
+    padding-left: 20px;
+    position: relative;
+}
+.block span {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.03em;
+    color: #31496D;
+    display: block;
+    margin: 0 0 10px;
+    padding-left: 20px;
+    position: relative;
 }
 .block p{
     font-family: 'Poppins';
