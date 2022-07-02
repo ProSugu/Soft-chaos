@@ -293,7 +293,7 @@ section.tour-card .col-md-7 img {
     background-size:cover;
     background-position:center;
     text-align:center;
-	padding:50px;
+	padding:50px 0;
 	overflow:hidden;
 }
 .bg-text h2 {
@@ -321,7 +321,10 @@ section.tour-card .col-md-7 img {
     line-height: 34px;
     color: #66768F;
 }
-.bg-text{text-align:left;}
+.bg-text {
+    text-align: left;
+    padding-left:30%;
+}
 .bg-slider ul li {
     align-items: flex-start;
     padding: 50px 30px 80px;
@@ -366,7 +369,7 @@ section.tour-card .col-md-7 img {
 }
 .bg-slider {
     position: relative;
-    left: 23%;
+    left: 0;
 }
 footer {
     background-color: #31496D;
@@ -651,14 +654,23 @@ section.gallary .col-md-12.text-center.main-heading img {
 }
 .bg-slider button.slick-prev.slick-arrow:before {
     content: "←";
-    left: -714px;
+    left: 14px;
+    opacity: 9999;
     position: absolute;
     background: #fab460;
     border-radius: 8px;
-    width: 55px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 30px;
+    width: 48px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+}
+button.slick-prev.slick-arrow {
+    width: 135px;
+    height: 200px;
+    z-index: 99;
+}
+.banner-text {
+    text-align: left;
 }
 .banner .form-inline .collapse.show ul li {
     list-style: none;
@@ -1585,8 +1597,8 @@ section.banner .form-inline .form-group {
 }
 .banner-text img {
     position: absolute;
-    top: 78px;
-    left: 60px;
+    top: 65px;
+    left: 9px;
     transform: rotate(-3deg);
 }
 .col-md-12.text-center.main-heading img.bg-vector {
@@ -1607,6 +1619,12 @@ section.services{
     background: rgba(255, 255, 255, 0.85);
     padding: 20px;
     text-align: left;
+    margin-left:40px;
+}
+.col-md-7.main-flex.d-flex {
+    position: relative;
+    left: 8%;
+    z-index: 9;
 }
 .slider-block img {
     width: 60%;
@@ -1635,7 +1653,7 @@ section.services{
     font-family: 'Poppins' !important;
 }
 .bg-slider .slick-next {
-    right: 80px !important;
+    right: 48px !important;
     opacity: 1;
     position: absolute;
 }
@@ -1645,10 +1663,10 @@ section.services{
     position: absolute;
     background: #fab460;
     border-radius: 8px;
-    width: 55px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 30px;
+    width: 48px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
 }
 /*-------------------media css-------------*/
 @media (max-width: 991px) {
@@ -1742,6 +1760,14 @@ section.services{
 	section.banner {
 		padding: 85px 0 0;
 	}
+    .bg-text {
+        padding-left: 0;
+    }
+    .col-md-7.main-flex.d-flex {
+        left: 0;
+        }
+        .bg-slider button.slick-prev.slick-arrow:before{left:-10px;top:280px;}
+        .bg-slider button.slick-next.slick-arrow:before{right:-10px;top:200px;}
     section.banner .form-inline .form-group {
         border-right: 1px solid #757f8f47;
         text-align: left;
@@ -1755,6 +1781,7 @@ section.services{
     .slider-block {
         width: auto;
         margin-right: 10px;
+        margin-left:0;
     }
     .bg-slider .slick-next {
         right: 0px !important;

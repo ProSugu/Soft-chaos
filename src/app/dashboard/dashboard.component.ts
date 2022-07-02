@@ -65,7 +65,7 @@ export class DashboardComponent implements OnInit,AfterViewChecked {
   };
 
   slideConfig = {
-    'slidesToShow': 2,
+    'slidesToShow': 1,
     'slidesToScroll': 1,
     'dots': false,
     'arrows': true,
