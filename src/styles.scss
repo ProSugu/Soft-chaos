@@ -625,21 +625,94 @@ section.gallary .col-md-12.text-center.main-heading img {
     top: 50px;
     margin-left: 60px;
 }
-.banner .form-inline .collapse.show{
+.banner .form-inline .collapse.show {
     position: absolute !important;
-    background-color: #fff;
-    box-shadow: 0px 39px 66px rgb(10 30 59 / 16%);
-    top: 28px;
+    top: 96px;
+    width: 274px;
+    height: 160px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 30px rgba(10, 30, 59, 0.16);
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 12px;
+    left: -19px;
+}
+.bs-datepicker {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    z-index: 99999;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 312px;
+    height: 276px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    top: 37px;
+    left: 12px;
+}
+.theme-green .bs-datepicker-head {
+    background-color: #fff;
+    border-radius: 20px;
+}
+.bs-datepicker-head button.next, .bs-datepicker-head button.previous {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: #000;
+}
+.bs-datepicker-head button.current {
+    border-radius: 15px;
+    max-width: 155px;
+    padding: 0 13px;
+    color: #000;
+}
+.bs-datepicker-head button.current {
+    border-radius: 15px;
+    max-width: 155px;
+    padding: 0 13px;
+    color: #000;
+}
+.bs-datepicker-container {
+    padding: 0;
+}
+.bs-datepicker-body {
+    padding: 10px;
+    min-height: 232px;
+    min-width: 278px;
+    border: none;
+    width: 312px;
+    height: 276px;
+    border-radius: 16px;
+    top: 25px;
+}
+.bs-datepicker-body table td.is-highlighted:not(.disabled):not(.selected) span, .bs-datepicker-body table td span.is-highlighted:not(.disabled):not(.selected) {
+    background-color: #7b17c1;
+    transition: 0s;
+    color: #fff;
+    border-radius: 5px;
+}
+.theme-green .bs-datepicker-body table td.week span {
+    color: #7b17c1;
+}
+.theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*=select-]:after, .theme-green .bs-datepicker-body table td[class*=select-] span:after {
+    background-color: #7b17c1;
+    border-radius: 5px;
+}
+.bs-datepicker-head button:hover {
+    background-color: rgb(123 23 193);
+    color: #fff !important;
 }
 .collapsing{
     position: absolute !important;
-    background-color: #fff;
-    box-shadow: 0px 39px 66px rgb(10 30 59 / 16%);
-    top: 28px;
+    top: 96px;
+    width: 274px;
+    height: 160px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 30px rgba(10, 30, 59, 0.16);
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 12px;
+    left: -19px;
 }
 .bg-slider button.slick-prev.slick-arrow.slick-disabled:before {
     content: "←";
@@ -675,10 +748,23 @@ button.slick-prev.slick-arrow {
 .banner .form-inline .collapse.show ul li {
     list-style: none;
     text-align: left;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    background: #FFFFFF;
+}
+.banner .form-inline .collapse.show ul li:hover {
+    background: #F9FBFE;
+    border-radius: 8px;
+    padding: 10px;
 }
 .banner .form-inline .collapsing ul li {
     list-style: none;
     text-align: left;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    background: #FFFFFF;
 }
 .banner .form-inline .collapse.show ul li a{
     font-family: "Poppins";
