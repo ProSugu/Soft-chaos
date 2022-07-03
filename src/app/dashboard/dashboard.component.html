@@ -8,7 +8,7 @@
                     <p>To manage chaos is to accept the challenges that we witness every day. It is inevitable but we do have the choice to put the chaos back into the trunk and experience the beauty of life from a virtual lens. You can experience a vacation
                         from your home through the use of drone technology.
                     </p>
-                    <a href="#">Learn More About US<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    <a href="javascript:void(0)">Learn More About US<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -91,42 +91,53 @@
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label type="button" class="m-btn" data-toggle="collapse" data-target="#demo">Type <i class="fa fa-angle-down" aria-hidden="true"></i>  </label>
-                                <div id="demo" class="collapse">
+                                <label type="button" class="m-btn">Type <i class="fa fa-angle-down" aria-hidden="true"></i>  </label>
+                                <!-- <div id="demo" class="collapse">
                                     <ul>
-                                        <li><a href="#">Safari</a></li>
-                                        <li><a href="#">City View</a></li>
-                                        <li><a href="#">Back to the post</a></li>
+                                        <li><a href="javascript:void(0)">Safari</a></li>
+                                        <li><a href="javascript:void(0)">City View</a></li>
+                                        <li><a href="javascript:void(0)">Back to the post</a></li>
                                     </ul>
-                                </div>
-                                <input name="email" type="text" id="" value="" class="form-control" placeholder="Where do you want to visit?">
+                                </div> -->
+                                <!-- <input name="email" type="text" id="" value="" class="form-control" placeholder="Where do you want to visit?"> -->
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <!-- <mat-label>Number</mat-label> -->
+                                    <input type="text" placeholder="Where do you want to visit?" aria-label="Number" matInput [matAutocomplete]="auto">
+                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                        <mat-option [value]="'Safari'"> Safari </mat-option>
+                                        <mat-option [value]="'City View'"> City View </mat-option>
+                                        <mat-option [value]="'Back to the post'"> Back to the post </mat-option>
+                                    </mat-autocomplete>
+                                </mat-form-field>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label type="button" class="m-btn" data-toggle="collapse" data-target="#demo1">Date <i class="fa fa-angle-down" aria-hidden="true"></i>  </label>
-                                <div id="demo1" class="collapse">
+                                <label type="button" class="m-btn">Date <i class="fa fa-angle-down" aria-hidden="true"></i>  </label>
+                                <!-- <div id="demo1" class="collapse">
                                     <ul>
-                                        <li><a href="#">Safari</a></li>
-                                        <li><a href="#">City View</a></li>
-                                        <li><a href="#">Back to the post</a></li>
+                                        <li><a href="javascript:void(0)">Safari</a></li>
+                                        <li><a href="javascript:void(0)">City View</a></li>
+                                        <li><a href="javascript:void(0)">Back to the post</a></li>
                                     </ul>
-                                </div>
+                                </div> -->
                                 <input name="date" type="text" id="" value="" class="form-control" placeholder="When it will start?" bsDatepicker>
                                 <!--[bsConfig]="bsConfig"-->
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label type="button" class="m-btn" data-toggle="collapse" data-target="#demo2">Location <i class="fa fa-angle-down" aria-hidden="true"></i>  </label>
-                                <div id="demo2" class="collapse">
-                                    <ul>
-                                        <li><a href="#">Safari</a></li>
-                                        <li><a href="#">City View</a></li>
-                                        <li><a href="#">Back to the post</a></li>
-                                    </ul>
-                                </div>
-                                <input name="email" type="text" id="" value="" class="form-control" placeholder="Enter your destinations">
+                                <label type="button" class="m-btn">Location <i class="fa fa-angle-down" aria-hidden="true"></i>  </label>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <!-- <mat-label>Number</mat-label> -->
+                                    <input type="text" placeholder="Enter your destinations" aria-label="" matInput [matAutocomplete]="auto">
+                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                        <mat-option [value]="'Safari'"> Safari </mat-option>
+                                        <mat-option [value]="'City View'"> City View </mat-option>
+                                        <mat-option [value]="'Back to the post'"> Back to the post </mat-option>
+                                    </mat-autocomplete>
+                                </mat-form-field>
+                                <!-- <input name="email" type="text" id="" value="" class="form-control" placeholder="Enter your destinations"> -->
                             </div>
                         </div>
                         <div class="col-sm-3">

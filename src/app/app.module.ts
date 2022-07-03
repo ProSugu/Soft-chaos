@@ -20,6 +20,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ServiceComponent } from './service/service.component';
 import { BookingComponent } from './booking/booking.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 const environmentConfig: any = environment.logger;
 
@@ -35,7 +38,10 @@ const environmentConfig: any = environment.logger;
       level: NgxLoggerLevel[environmentConfig.level],
     } as any),
     BrowserAnimationsModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
   ],
