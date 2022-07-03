@@ -11,8 +11,6 @@
 
 body {
 	font-family: $font;
-	overflow-x: hidden;
-	overflow-y: auto;
 	transition: all 200ms linear;
 }
 
@@ -569,6 +567,17 @@ li.item-2.item h5 {
     position: absolute;
     top: -90px;
 }
+.mat-autocomplete-panel.mat-autocomplete-visible {
+    visibility: visible;
+    z-index: 9999;
+    background: #FFFFFF;
+    box-shadow: 0px 39px 66px rgba(10, 30, 59, 0.16) !important;
+    border-radius: 15px !important;
+    position: absolute;
+    top: 80px !important;
+    left: -33px !important;
+    width: 280px !important;
+}
 section.banner .form-inline label {
     font-family: 'Poppins';
     font-style: normal;
@@ -611,7 +620,7 @@ section.banner .form-inline button {
 }
 .cdk-overlay-container {
     position: absolute !important;
-    z-index: 9999999;
+    z-index: 9999;
 }
 section.banner .slick-dots {
     position: absolute;
