@@ -3,6 +3,7 @@ import { ApiService } from '../core/service/api.service';
 import { Title } from "@angular/platform-browser";
 import { EMPTY_BANNER_TEXT_MODAL } from 'src/assets/constants/main-containt';
 import { ChangeDetectionStrategy } from '@angular/compiler';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-dashboard',
@@ -63,6 +64,9 @@ export class DashboardComponent implements OnInit,AfterViewChecked {
       }
     ]
   };
+  // bsConfig?: Partial<BsDatepickerConfig> = {
+  //   containerClass:'theme-red'
+  // };
 
   slideConfig = {
     'slidesToShow': 1,
@@ -94,7 +98,7 @@ export class DashboardComponent implements OnInit,AfterViewChecked {
         breakpoint: 767,
         settings: {
           slidesToShow: 1,
-          
+
         }
       },
       {

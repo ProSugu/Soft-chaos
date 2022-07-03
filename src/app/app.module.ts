@@ -19,6 +19,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ServiceComponent } from './service/service.component';
 import { BookingComponent } from './booking/booking.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 const environmentConfig: any = environment.logger;
 
@@ -34,6 +35,7 @@ const environmentConfig: any = environment.logger;
       level: NgxLoggerLevel[environmentConfig.level],
     } as any),
     BrowserAnimationsModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [
   ],

@@ -63,7 +63,8 @@
                                         <li><a href="#">Back to the post</a></li>
                                     </ul>
                                 </div>
-                                <input name="email" type="text" id="" value="" class="form-control" placeholder="When it will start?">
+                                <input name="date" type="text" id="" value="" class="form-control" placeholder="When it will start?" bsDatepicker>
+                                <!--[bsConfig]="bsConfig"-->
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -149,7 +150,7 @@
 <section class="bg-section">
     <div class="container-fluid">
         <div class="row">
-            
+
             <div class="col-md-12">
                 <div class="bg-slider">
                     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
