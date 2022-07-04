@@ -2226,7 +2226,11 @@ section.services{
     section.banner .form-inline input{width:100%;}
     .col-md-7.main-flex.d-flex {
         left: 0;
-        }
+        display: block !important;
+        width: 100%;
+        overflow: hidden;
+        height: 471px;
+    }
         .bg-slider button.slick-prev.slick-arrow:before{left:-5px;top:180px; width: 35px;
             height: 35px;
             line-height: 35px;
@@ -2250,9 +2254,15 @@ section.services{
         padding: 50px 20px;
     }
     .slider-block {
-        width: auto;
-        margin-right: 10px;
-        margin-left:0;
+        width: 84%;
+        margin: 0 auto 0 18px;
+    }
+    .bg-text.mt-5.pt-5 {
+        margin-top: 0 !important;
+    }
+    .bg-text h2 {
+        font-size: 44px;
+        margin-top: 0 !important;
     }
     .bg-slider .slick-next {
         right: 0px !important;
