@@ -98,7 +98,7 @@ export class DashboardComponent implements OnInit,AfterViewChecked {
       {
         breakpoint: 920,
         settings: {
-          slidesToShow: 1.2,
+          slidesToShow: 1,
         }
       },
       {
@@ -117,7 +117,7 @@ export class DashboardComponent implements OnInit,AfterViewChecked {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1.2,
+          slidesToShow: 1,
         }
       }
     ],
