@@ -80,7 +80,8 @@ export class DashboardComponent implements OnInit,AfterViewChecked {
     'slidesToScroll': 1,
     'dots': true,
     'arrows': false,
-    'infinite': false
+    'infinite': true,
+    vertical:true
   };
   rightSlideConfig = {
     slidesToShow: 2.5,
