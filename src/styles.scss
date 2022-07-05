@@ -2072,12 +2072,11 @@ section.services{
         max-width: 100%;
     }
     section.banner .slick-dots {
-        right: inherit;
-        top: 23%;
-        position: relative;
-        display: flex;
-        left: 50%;
+        top: 50%;
+        position: absolute;
+        right: -15px;
     }
+    .slick-dots li.slick-active button{font-size:30px;}
     section.banner .form-inline input {
         width: 50%;
         white-space: nowrap;
@@ -2110,15 +2109,17 @@ section.services{
         margin: 10px 0;
 	}
 	.banner .form-inline {
-		position: relative;
-		top: 0;
         padding:20px;
 	}
-    .col-md-12.text-center.logo-heading p{top: 15px;}
+    .col-md-12.text-center.logo-heading p {
+        top: 0;
+        margin-top: 0;
+    }
     section.banner .slick-dots {
         right: -48px;
-        top: 23%;
+        bottom: -45px !important;
     }
+    .slick-dots li button{font-size:30px;}
 	.banner-logo ul {
         margin: 30px 0 0;
     }
@@ -2217,19 +2218,22 @@ section.services{
     }
     section.banner .slick-dots {
         right: 0;
-        top: 55px;
-        position: relative;
-        display: flex;
-        width: 100%;
-        left: 45%;
+        bottom: -45px !important;
     }
+    .slick-dots li button {
+        font-size: 18px;
+    }
+    .banner-img {
+        padding: 20px 30px 20px 0px;
+    }
+    .slick-dots li.slick-active button{ font-size: 18px;}
     section.banner .form-inline input{width:100%;}
     .col-md-7.main-flex.d-flex {
         left: 0;
         display: block !important;
         width: 100%;
         overflow: hidden;
-        height: 471px;
+        height: auto;
     }
         .bg-slider button.slick-prev.slick-arrow:before{left:-5px;top:180px; width: 35px;
             height: 35px;
@@ -2248,14 +2252,14 @@ section.services{
         text-align: left;
     }
     .banner-logo ul {
-        margin: 52px 0 0;
+        margin:0;
     }
     section.services {
         padding: 50px 20px;
     }
     .slider-block {
         width: 84%;
-        margin: 0 auto 0 18px;
+        margin: 20px auto 0 18px;
     }
     .bg-text.mt-5.pt-5 {
         margin-top: 0 !important;
@@ -2301,9 +2305,12 @@ section.services{
 		left: 10px;
 	}
 	.banner .form-inline {
-		position: relative;
-		top: 0;
-	}
+        position: relative;
+        top: -70px;
+    }
+    .row.banner-logo {
+        margin-top: -40px;
+    }
 	.banner-logo ul {
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
