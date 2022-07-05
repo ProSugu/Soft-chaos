@@ -2085,7 +2085,7 @@ section.services{
         padding-bottom: 0;
     }
     .mat-autocomplete-panel.mat-autocomplete-visible {
-        top: 25px !important;
+        top: 66px !important;
         left: -12px !important;
         width: 200px !important;
     }
@@ -2208,6 +2208,11 @@ section.services{
 	}
     bs-datepicker-container, bs-daterangepicker-container {
         z-index: 999999 !important;
+    }
+    .mat-autocomplete-panel.mat-autocomplete-visible {
+        top: 33px !important;
+        left: -12px !important;
+        width: 200px !important;
     }
     .cdk-overlay-pane {
         bottom: -394.156px !important;
