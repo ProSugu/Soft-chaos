@@ -81,7 +81,8 @@ export class DashboardComponent implements OnInit,AfterViewChecked {
     'dots': true,
     'arrows': false,
     'infinite': true,
-    vertical:true
+    vertical:true,
+    speed: 1000
   };
   rightSlideConfig = {
     slidesToShow: 2.5,
