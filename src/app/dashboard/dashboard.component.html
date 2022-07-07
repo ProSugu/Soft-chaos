@@ -101,7 +101,7 @@
                                 </div> -->
                                 <!-- <input name="email" type="text" id="" value="" class="form-control" placeholder="Where do you want to visit?"> -->
                                 <mat-form-field class="example-full-width" appearance="fill">
-                                    <!-- <mat-label>Number</mat-label> -->
+                                    <!-- <mat-label>Type <i class="fa fa-angle-down" aria-hidden="true"></i>  </mat-label> -->
                                     <input type="text" placeholder="Where do you want to visit?" aria-label="Number" matInput [matAutocomplete]="auto">
                                     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
                                         <mat-option [value]="'Safari'"> Safari </mat-option>
@@ -122,6 +122,7 @@
                                     </ul>
                                 </div> -->
                                 <mat-form-field class="example-full-width" appearance="fill">
+                                    <!-- <mat-label>Date <i class="fa fa-angle-down" aria-hidden="true"></i>  </mat-label> -->
                                     <input name="date" type="text" id="" value="" class="form-control" placeholder="When it will start?" bsDatepicker matInput>
                                 </mat-form-field>
                                 <!--[bsConfig]="bsConfig"-->
@@ -131,7 +132,7 @@
                             <div class="form-group">
                                 <label type="button" class="m-btn">Location <i class="fa fa-angle-down" aria-hidden="true"></i>  </label>
                                 <mat-form-field class="example-full-width" appearance="fill">
-                                    <!-- <mat-label>Number</mat-label> -->
+                                    <!-- <mat-label>Location <i class="fa fa-angle-down" aria-hidden="true"></i>  </mat-label> -->
                                     <input type="text" placeholder="Enter your destinations" aria-label="" matInput [matAutocomplete]="auto">
                                     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
                                         <mat-option [value]="'Safari'"> Safari </mat-option>
@@ -216,11 +217,9 @@
 <section class="bg-section">
     <div class="container-fluid">
         <div class="row">
-
             <div class="col-md-12">
                 <div class="bg-slider">
                     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-
                         <div ngxSlickItem class="slide">
                             <div class="row">
                                 <div class="col-md-5">
