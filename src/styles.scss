@@ -1839,13 +1839,13 @@ section.about-gallry h2:after {
     background: #7B17C1;
 }
 section.about-gallry p {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 30px;
+    line-height: 27px;
     color: #757F8F;
-    margin-bottom:30px;
+    margin-bottom: 10px;
 }
 section.about-gallry img.gallery-1 {
     width: 264px;
@@ -1925,17 +1925,17 @@ section.service-boxes .main-heading img {
     position: relative;
 }
 .block span {
-    font-family: "Poppins";
+    display: block;
+    margin: 0 0 10px;
+    padding-left: 20px;
+    position: relative;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
     letter-spacing: 0.03em;
     color: #31496D;
-    display: block;
-    margin: 0 0 10px;
-    padding-left: 20px;
-    position: relative;
 }
 .block p{
     font-family: 'Poppins';
@@ -1951,11 +1951,15 @@ section.testimonials.main-testimonials {
 section.testimonials.main-testimonials .main-heading h1 {
     margin-bottom: 60px;
     font-size: 44px;
+    line-height: 55px;
 }
 section.testimonials.main-testimonials .main-heading img {
     position: absolute;
-    top: 115px;
+    top: 70px;
     right: 14%;
+}
+section.testimonials.main-testimonials p {
+    margin-bottom: 10px;
 }
 section.testimonials.main-testimonials .slide-box img {
     width: 120px;
@@ -2063,7 +2067,26 @@ section.services{
     line-height: 40px;
     font-size: 18px;
 }
+.block span:after {
+    content: "";
+    width: 16px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 9px;
+    background: #7B17C1;
+}
 /*-------------------media css-------------*/
+@media (max-width: 1200px) {
+    .mat-autocomplete-panel.mat-autocomplete-visible {
+        top: 55px !important;
+    }
+}
+@media (max-width: 1024px) {
+    .mat-autocomplete-panel.mat-autocomplete-visible {
+        top: 55px !important;
+    }
+}
 @media (max-width: 991px) {
 	.banner-img ul li.item-2.item {
         top: 148px;
@@ -2079,6 +2102,9 @@ section.services{
         position: absolute;
         right: -15px;
     }
+    .mat-autocomplete-panel.mat-autocomplete-visible {
+        top: 75px !important;
+    }
     .slick-dots li.slick-active button{font-size:30px;}
     section.banner .form-inline input {
         width: 50%;
@@ -2091,7 +2117,7 @@ section.services{
         left: -12px !important;
         width: 200px !important;
     }
-    .bs-datepicker{top:80px;}
+    .bs-datepicker{top:55px;}
     section.gallary .image-gallery img {
         height: 350px;
     }
@@ -2115,7 +2141,7 @@ section.services{
 	}
     .col-md-12.text-center.logo-heading p {
         top: 0;
-        margin-top: 0;
+        margin-top:-22px;
     }
     section.banner .slick-dots {
         right: -48px;
