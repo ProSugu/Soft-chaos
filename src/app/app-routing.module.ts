@@ -12,11 +12,11 @@ import { TourComponent } from './tour/tour.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardComponent
   },
   {

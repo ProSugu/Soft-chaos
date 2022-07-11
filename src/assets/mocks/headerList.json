@@ -1,9 +1,9 @@
 {
     "header": [{
             "routeName": "Home",
-            "path": "/dashboard"
+            "path": ""
         },
-       
+
         {
             "routeName": "Fly Now",
             "path": "",
@@ -15,10 +15,10 @@
                     "routeName": "Book per Schedule",
                     "path": "/Book-per-schedule"
                 }
-                
+
             ]
         },
-        
+
         {
             "routeName": "Join Us",
             "path": "/join-us"
