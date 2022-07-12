@@ -609,9 +609,9 @@ li.item-2.item h5 {
             box-shadow: 0px 39px 66px rgba(10, 30, 59, 0.16) !important;
     border-radius: 15px !important;
     position: absolute;
-    top: 100px !important;
     left: -33px !important;
     width: 280px !important;
+    top:40px;
 }
 section.banner .form-inline label {
     font-family: 'Poppins';
@@ -836,7 +836,7 @@ section.gallary .col-md-12.text-center.main-heading img {
     height: 276px;
     background: #FFFFFF;
     border-radius: 16px;
-    top: 48px;
+    top: 30px;
     left: 12px;
 }
 .theme-green .bs-datepicker-head {
@@ -2079,25 +2079,514 @@ section.services{
     top: 9px;
     background: #7B17C1;
 }
+.image-gallery .modal .modal-dialog {
+    width: 100%;
+    max-width: 800px;
+    z-index: 9999;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.image-gallery .modal{z-index:999999;}
+.image-gallery .modal .modal-dialog .modal-body {
+    padding: 0;
+}
+section.gallary .image-gallery  .modal-body img {
+    object-fit: cover;
+    height: 500px !important;
+    margin: 0;
+}
+.image-gallery .modal .modal-dialog .modal-body button.close {
+    position: absolute;
+    right: -16px;
+    width: 40px;
+    height: 40px;
+    background: #31496D;
+    opacity: 1;
+    color: #fff;
+    border-radius: 50%;
+    top: -15px;
+}
+.image-gallery .modal {
+    background: #0000008c;
+}
+
+/*---------------booking page------------*/
+
+.booking-flow-baar .progressbar {
+    counter-reset: step;
+  }
+  .booking-flow-baar .progressbar li {
+    list-style: none;
+    display: inline-block;
+    width: 25%;
+    max-width: 25%;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #757F8F;
+}
+  .booking-flow-baar .progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    background-color: #fff;
+    z-index: 2;
+    position: relative;
+}
+  .booking-flow-baar .progressbar li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #ddd;
+    top: 15px;
+    left: -50%;
+    z-index: 1;
+}
+  .booking-flow-baar .progressbar li:first-child:after {
+    content: none;
+  }
+  .booking-flow-baar .progressbar li.active {
+    color: #7B17C1;
+}
+  .booking-flow-baar .progressbar li.active:before {
+    border-color: #7B17C1;
+  } 
+  .booking-flow-baar .progressbar li.active + li:after {
+    background-color: #7B17C1;
+  }
+  section.booking-flow-baar {
+    padding: 100px 0 50px;
+}
+body {
+    background: #f7f8f9;
+}
+section.booking-flow-baar hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+.booking-form .t-left h5 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #31496D;
+}
+.booking-form .t-right select {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #31496D;
+    border-radius: 5px;
+    border-color: #31496d52;
+    padding: 5px;
+}
+.booking-form .t-right {
+    text-align: right;
+}
+.booking-form ul.weekly {
+    display: flex;
+    margin-top: 20px;
+}
+.booking-form ul.weekly li {
+    list-style: none;
+}
+.booking-form ul.weekly li {
+    list-style: none;
+    border: 1px solid #31496d52;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 20px;
+    width: 20%;
+    text-align: center;
+    height: 70px;
+}
+.booking-form ul.weekly li a {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #757F8F;
+    text-decoration:none;
+}
+.booking-form ul.weekly li a span {
+    display: block;
+}
+.booking-form ul.weekly li.active {
+    background: #7B17C1;
+}
+.booking-form ul.weekly li.active a {
+    color: #fff;
+    line-height: 45px;
+}
+a.right_arrow {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    display: block !important;
+    text-align: center;
+    box-shadow: 0px 39px 66px rgb(10 30 59 / 16%);
+    border-radius: 100%;
+    line-height: 30px;
+    font-size: 20px;
+    color: #000;
+    position: absolute;
+    right: 15px;
+    top: 80px;
+}
+.booking-form ul.time {
+    display: flex;
+    flex-wrap: wrap;
+}
+h5.form_heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #31496D;
+}
+.booking-form ul.time li {
+    list-style: none;
+    width: 25%;
+}
+.booking-form ul.time li a {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #757F8F;
+    border: 1px solid #757F8F;
+    padding: 8px 20px;
+    display: block;
+    border-radius: 5px;
+    margin: 8px;
+    text-decoration:none;
+}
+.booking-form ul.next-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+.booking-form ul.next-btn li{list-style:none;}
+.booking-form ul.next-btn li a {
+    background: #7B17C1;
+    border-radius: 10px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 30px;
+}
+section.booking-flow-baar .card {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px rgba(10, 30, 59, 0.05);
+    border-radius: 20px;
+    padding: 20px;
+}
+section.booking-flow-baar .card h5 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    color: #31496D;
+}
+section.booking-flow-baar .card img {
+    border-radius: 10px;
+}
+section.booking-flow-baar .card h4 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 42px;
+    color: #31496D;
+    margin: 15px 0 0;
+}
+section.booking-flow-baar .card p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #757F8F;
+}
+section.booking-flow-baar .card ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+section.booking-flow-baar .card ul li {
+    width: 50%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #757F8F;
+    list-style: none;
+}
+section.booking-flow-baar .card ul li {
+    width: 100%;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #757F8F;
+    list-style: none;
+    border-top: 1px solid #00000036;
+    padding: 10px 0;
+}
+section.booking-flow-baar .card ul li span {
+    float: right;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: right;
+    color: #31496D;
+}
+section.booking-flow-baar .card ul li strong {
+    float: right;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: right;
+    color: #31496D;
+}
+li.apply-coupne a{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #7B17C1 !important;
+    border: 1px dotted #ccc;
+    padding: 10px 20px !important;
+    border-radius: 10px;
+    text-decoration:none;
+    display: block;
+}
+.booking-form ul.time li.active a {
+    background: #7b17c1;
+    color: #fff;
+}
+.booking-form h5 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #31496D;
+}
+.booking-form form label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #31496D;
+    display: block;
+}
+.booking-form form input {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    height: 42px;
+    background: transparent;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+.form-row.loaction-input input.form-control {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+    color: #7B17C1;
+    border-color: #7B17C1;
+}
+.form-row.loaction-input input.form-control::placeholder{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+    color: #7B17C1;
+    border-color: #7B17C1;
+}
+.booking-form form select {
+    height: 42px;
+    background: transparent;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #757F8F;
+    border-color: #757f8f70;
+    width: 100%;
+    padding-left: 10px;
+}
+.booking-form ul.next-btn li.back-btn a {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #757F8F;
+    background: transparent;
+    border: 1px solid #757f8f66;
+    margin-right: 20px;
+}
+.booking-form p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #757F8F;
+}
+.booking-form form .form-row.card-section a {
+    text-align: center;
+    display: block;
+    border: 1px solid;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #757F8F;
+    border-radius: 5px;
+    height: 80px;
+    text-decoration:none;
+    margin-bottom:20px;
+}
+.booking-form form .form-row.card-section a i {
+    display: block;
+    margin-top: 20px;
+    font-size:20px;
+}
+.form-row.card-number i {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    color: #0E4595;
+}
+.form-row.card-number input::placeholder{
+    color: #31496D;
+    font-weight:bold;
+}
+.booking-form form small {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    color: #757F8F;
+    margin-bottom: 30px;
+    display: block;
+}
+section.pay-confirm-box .confirm-box {
+    width: 600px;
+    height: 464px;
+    left: 420px;
+    top: 362px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px rgba(10, 30, 59, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
+section.pay-confirm-box{margin-bottom:40px;}
+section.pay-confirm-box .confirm-box  h3 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+    text-align: center;
+    color: #31496D;
+    margin: 30px;
+}
+section.pay-confirm-box .confirm-box p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: #757F8F;
+}
+section.pay-confirm-box .confirm-box a {
+    background: #7B17C1;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 15px 40px;
+    margin-top: 30px;
+    display: inline-block;
+    text-decoration: none;
+}
+
 /*-------------------media css-------------*/
 @media (max-width: 1800px) {
     .mat-autocomplete-panel.mat-autocomplete-visible {
-        top: 55px !important;
+        top: 0 !important;
     }
 }
 @media (max-width: 1600px) {
     .mat-autocomplete-panel.mat-autocomplete-visible {
-        top: 100px !important;
+        top: 80px !important;
     }
 }
 @media (max-width: 1200px) {
     .mat-autocomplete-panel.mat-autocomplete-visible {
-        top: 55px !important;
+        top: 80px !important;
     }
 }
 @media (max-width: 1024px) {
     .mat-autocomplete-panel.mat-autocomplete-visible {
-        top: 55px !important;
+        top: 0 !important;
     }
 }
 @media (max-width: 991px) {
