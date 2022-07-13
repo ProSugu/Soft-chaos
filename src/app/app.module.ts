@@ -23,11 +23,12 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { OurServicesComponent } from './our-services/our-services.component';
 
 const environmentConfig: any = environment.logger;
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, DashboardComponent, PageNotFoundComponent, TourComponent, JoinUsComponent, AboutUsComponent, ContactUsComponent, ServiceComponent, BookingComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, DashboardComponent, PageNotFoundComponent, TourComponent, JoinUsComponent, AboutUsComponent, ContactUsComponent, ServiceComponent, BookingComponent, OurServicesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

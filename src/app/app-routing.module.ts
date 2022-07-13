@@ -44,6 +44,10 @@ const routes: Routes = [
     component: ServiceComponent
   },
   {
+    path: 'our-services',
+    component: ServiceComponent
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
