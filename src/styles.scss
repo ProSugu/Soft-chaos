@@ -2014,6 +2014,7 @@ section.services{
     background-position: center;
     text-align: center;
     padding: 50px 50px;
+    background-color:#fff;
 }
 .slider-block {
     width: 290px;
@@ -2567,7 +2568,15 @@ section.pay-confirm-box .confirm-box a {
     display: inline-block;
     text-decoration: none;
 }
-
+.col-md-5.slider-arrow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.col-md-5.slider-arrow a img {
+    width: 40px;
+    margin:10px;
+}
 /*-------------------media css-------------*/
 @media (max-width: 1800px) {
     .mat-autocomplete-panel.mat-autocomplete-visible {
