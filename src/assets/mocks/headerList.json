@@ -21,7 +21,17 @@
 
         {
             "routeName": "Join Us",
-            "path": "/join-us"
+            "path": "",
+            "subPath": [{
+                    "routeName": "Promote your destination",
+                    "path": "/destination"
+                },
+                {
+                    "routeName": "Promote your service",
+                    "path": "/service"
+                }
+
+            ]
         },
         {
             "routeName": "About Us",

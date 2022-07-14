@@ -5,6 +5,7 @@ import { BookingComponent } from './booking/booking.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PageNotFoundComponent } from './core/component/page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { JoinUsServiceComponent } from './join-us-service/join-us-service.component';
 import { JoinUsComponent } from './join-us/join-us.component';
 import { ServiceComponent } from './service/service.component';
 import { TourComponent } from './tour/tour.component';
@@ -28,8 +29,12 @@ const routes: Routes = [
     component: BookingComponent
   },
   {
-    path: 'join-us',
+    path: 'destination',
     component: JoinUsComponent
+  },
+  {
+    path: 'service',
+    component: JoinUsServiceComponent
   },
   {
     path: 'about-us',

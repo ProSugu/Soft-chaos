@@ -24,11 +24,12 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { OurServicesComponent } from './our-services/our-services.component';
+import { JoinUsServiceComponent } from './join-us-service/join-us-service.component';
 
 const environmentConfig: any = environment.logger;
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, DashboardComponent, PageNotFoundComponent, TourComponent, JoinUsComponent, AboutUsComponent, ContactUsComponent, ServiceComponent, BookingComponent, OurServicesComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, DashboardComponent, PageNotFoundComponent, TourComponent, JoinUsComponent, AboutUsComponent, ContactUsComponent, ServiceComponent, BookingComponent, OurServicesComponent, JoinUsServiceComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
