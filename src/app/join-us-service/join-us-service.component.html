@@ -68,11 +68,17 @@
                     <div class="row">
                         <div class="col">
                             <label>Upload documents</label>
-                            <div class="upload-dox">
+                            <ngx-dropzone (change)="onSelect($event)">
+                                <ngx-dropzone-label>Drop here!</ngx-dropzone-label>
+                                <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                </ngx-dropzone-preview>
+                            </ngx-dropzone>
+                            <!-- <div class="upload-dox">
                                 <input type="file" id="myFile" name="filename">
                                 <img src="assets/images/upload.png">
                                 <p>Drag and Drop your file in the area or <span>Browse Filles</span></p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="row">

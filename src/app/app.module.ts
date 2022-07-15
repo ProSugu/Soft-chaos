@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { JoinUsServiceComponent } from './join-us-service/join-us-service.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 const environmentConfig: any = environment.logger;
 
@@ -43,7 +44,8 @@ const environmentConfig: any = environment.logger;
     BsDatepickerModule.forRoot(),
     MatAutocompleteModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    NgxDropzoneModule
   ],
   providers: [
   ],
