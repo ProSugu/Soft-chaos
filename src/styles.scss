@@ -520,6 +520,9 @@ section.banner {
     display: -ms-flexbox;
     display: flex;
 }
+section.banner .banner-img ul {
+    position: relative;
+}
 .banner-img ul li {
     background: #FFFFFF;
     -webkit-box-shadow: 0px 39px 66px rgba(10, 30, 59, 0.16);
@@ -1419,13 +1422,14 @@ section.join-us-form form .col button {
     border: none;
     float: right;
     padding: 10px 30px;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
     text-align: center;
     color: #FFFFFF;
+    margin-top: 40px;
 }
 /*--------------about page css-------------*/
 section.about-us {
@@ -1589,7 +1593,7 @@ section.banner.tour .banner-img img {
 }
 section.banner.tour .banner-img ul li.item-3.item {
     position: absolute;
-    bottom: 100px;
+    bottom: 50px;
     right: 0;
     left: inherit;
 }
@@ -1606,14 +1610,47 @@ section.banner.tour .banner-img ul li img {
 }
 section.banner.tour .banner-img ul li.item-1.item {
     position: absolute;
-    bottom: 200px;
+    bottom: 100px;
     left: 0;
     top: inherit;
+}
+section.service-boxes .block {
+    width: 94%;
+}
+section.service-boxes .slick-prev:before {
+    content: "←";
+    position: absolute;
+    left: -46px;
+    color: #31496d;
+    opacity: 1;
+    font-size: 36px;
+}
+section.service-boxes .slick-next:before{
+    position: absolute;
+    left: 0;
+    color: #31496d;
+    opacity: 1;
+    font-size: 36px;
+}
+ngx-dropzone-preview.drop-doc {
+    width: 100%;
+    max-width: 440px !important;
+    min-width: 420px !important;
+}
+section.service-boxes .slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+    opacity: 1;
+    position: absolute;
+    left: -46px;
+    color: #31496d;
+    font-size: 36px;
+}
+section.service-boxes .slick-prev:before, .slick-next:before {
+    font-family: 'slick' !important;
 }
 section.banner.tour .banner-img ul li.item-2.item {
     position: absolute;
     right: 0;
-    top: 100px;
+    top: 50px;
 }
 section.gallary {
     padding: 60px;
@@ -2053,7 +2090,7 @@ section.services{
     border-radius: 40px;
 }
 .bg-slider .slick-prev:before, .slick-next:before {
-    font-family: 'Poppins' !important;
+    font-family: 'Poppins';
 }
 .bg-slider .slick-next {
     right: 48px !important;

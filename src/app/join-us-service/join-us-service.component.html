@@ -70,7 +70,7 @@
                             <label>Upload documents</label>
                             <ngx-dropzone (change)="onSelect($event)">
                                 <ngx-dropzone-label>Drop here!</ngx-dropzone-label>
-                                <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)" class="drop-doc">
                                     <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                                 </ngx-dropzone-preview>
                             </ngx-dropzone>
