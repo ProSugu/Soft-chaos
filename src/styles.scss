@@ -1437,12 +1437,17 @@ section.testimonials button img {
     position: absolute;
     top: -277px;
     right: 36px;
-    width: 44px;
+    width: 20px;
     background: none;
 }
 section.testimonials .slick-prev {
     left: inherit;
-    right: 34px;
+    right: 10px;
+    top: 241px;
+}
+section.tour-card .slick-prev {
+    left: inherit;
+    right: 10px;
     top: 241px;
 }
 /*--------------about page css-------------*/
@@ -1885,7 +1890,18 @@ section.tour-card .slick-next {
     top: -58px;
 }
 section.tour-card button img {
-    width:44px;
+    width: 20px;
+}
+section.tour-card .slick-next.active img {
+    width: 44px;
+}
+section.testimonials .slick-next.active img {
+    width: 44px;
+}
+section.testimonials .slick-prev {
+    left: inherit;
+    right: 28px;
+    top: 245px;
 }
 section.tour-card .slick-prev {
     left: inherit;
@@ -1896,6 +1912,9 @@ section.tour-card button.slick-prev.slick-arrow {
     width: auto;
     height: auto;
     z-index: 99;
+}
+.col-md-4.quick-links ul {
+    display: none;
 }
 /*---------------about css------------*/
 section.about-gallry {
@@ -2704,7 +2723,7 @@ section.pay-confirm-box .confirm-box a {
 }
 @media (max-width: 1600px) {
     .mat-autocomplete-panel.mat-autocomplete-visible {
-        top: 80px !important;
+        top: 40px !important;
     }
 }
 @media (max-width: 1200px) {
@@ -2721,6 +2740,18 @@ section.pay-confirm-box .confirm-box a {
 	.banner-img ul li.item-2.item {
         top: 148px;
         left: 108px;
+    }
+    .slide-box ul {
+        position: relative;
+    }
+    section.service-boxes .slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+        left: -27px;
+    }
+    section.testimonials.main-testimonials .col-md-4 {
+        width: 50%;
+        max-width: 50%;
+        flex: 50%;
+        margin-bottom: 20px;
     }
     section.banner .col-md-6 {
         width: 100%;
@@ -2864,6 +2895,37 @@ section.pay-confirm-box .confirm-box a {
 	section.banner {
 		padding: 85px 0 0;
 	}
+    section.testimonials.main-testimonials .col-md-4 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+        margin-bottom: 20px;
+    }
+    section.service-boxes .slick-next:before {
+        left: -55px;
+        top: -300px;
+    }
+    section.service-boxes .slick-prev:before {
+        left: 300px;
+        top: -213px;
+    }
+    section.service-boxes .slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+        left: 300px;
+        top: -211px;
+    }
+    section.service-boxes .block {
+        width: 100%;
+    }
+    section.testimonials.main-testimonials .main-heading img {
+        position: absolute;
+        top: 46px;
+        right: 14%;
+    }
+    section.testimonials.main-testimonials p {
+        margin-bottom: 10px;
+        text-align: center;
+        left: 0;
+    }
     section.testimonials {
         overflow: hidden;
     }
@@ -3126,6 +3188,10 @@ section.pay-confirm-box .confirm-box a {
     .slide-box {
         height: auto;
         margin-bottom: 20px;
+        width: 100%;
+    }
+    section.service-boxes { 
+        overflow: hidden;
     }
     .banner-img ul li {
         min-width: 164px;

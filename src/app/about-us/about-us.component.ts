@@ -11,7 +11,34 @@ export class AboutUsComponent implements OnInit {
     'slidesToScroll': 1,
     'dots': false,
     'arrows': true,
-    'infinite': false
+    'infinite': false,
+    responsive: [
+      {
+        breakpoint: 920,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+
+        }
+      },
+      {
+        breakpoint: 556,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ],
   };
   constructor() { }
 
