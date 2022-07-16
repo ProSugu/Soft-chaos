@@ -1431,6 +1431,20 @@ section.join-us-form form .col button {
     color: #FFFFFF;
     margin-top: 40px;
 }
+section.testimonials .slick-next:before{display:none;}
+section.testimonials .slick-prev:before{display:none;}
+section.testimonials button img {
+    position: absolute;
+    top: -277px;
+    right: 36px;
+    width: 44px;
+    background: none;
+}
+section.testimonials .slick-prev {
+    left: inherit;
+    right: 34px;
+    top: 241px;
+}
 /*--------------about page css-------------*/
 section.about-us {
     padding: 120px 0 0;
@@ -1625,12 +1639,13 @@ section.service-boxes .slick-prev:before {
     opacity: 1;
     font-size: 36px;
 }
-section.service-boxes .slick-next:before{
+section.service-boxes .slick-next:before {
     position: absolute;
     left: 0;
     color: #31496d;
     opacity: 1;
     font-size: 36px;
+    font-family: 'slick';
 }
 ngx-dropzone-preview.drop-doc {
     width: 100%;
@@ -1644,16 +1659,20 @@ section.service-boxes .slick-prev.slick-disabled:before, .slick-next.slick-disab
     color: #31496d;
     font-size: 36px;
 }
-section.service-boxes .slick-prev:before, .slick-next:before {
-    font-family: 'slick' !important;
-}
+// section.service-boxes .slick-prev:before, .slick-next:before {
+//     font-family: 'slick' !important;
+// }
 section.banner.tour .banner-img ul li.item-2.item {
     position: absolute;
     right: 0;
     top: 50px;
 }
 section.gallary {
-    padding: 60px;
+    padding: 60px 0;
+    background: #fff;
+}
+section.banner.tour {
+    padding-bottom: 20px !important;
 }
 section.gallary .image-gallery img {
     width: 100%;
@@ -1718,6 +1737,7 @@ section.testimonials .col-md-5 a i {
     border-radius: 20px;
     padding: 20px;
     height: 300px;
+    width:95%;
     border: 1px solid #cccccc80;
 }
 .slide-box p {
@@ -1727,9 +1747,10 @@ section.testimonials .col-md-5 a i {
     position: static !important;
 }
 .slide-box ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
 }
 .slide-box ul li {
     list-style: none;
@@ -1853,6 +1874,28 @@ section.tour-card .card a {
     padding: 10px 30px;
     display: inline-block;
     margin-top: 20px;
+    text-decoration:none;
+}
+
+
+.tour-card .slick-next:before{display:none;}
+.tour-card .slick-prev:before{display:none;}
+section.tour-card .slick-next {
+    right: 30px;
+    top: -58px;
+}
+section.tour-card button img {
+    width:44px;
+}
+section.tour-card .slick-prev {
+    left: inherit;
+    right: 62px;
+    top: -58px;
+}
+section.tour-card button.slick-prev.slick-arrow {
+    width: auto;
+    height: auto;
+    z-index: 99;
 }
 /*---------------about css------------*/
 section.about-gallry {
@@ -2092,10 +2135,11 @@ section.services{
 .bg-slider .slick-prev:before, .slick-next:before {
     font-family: 'Poppins';
 }
-.bg-slider .slick-next {
-    right: 48px !important;
+.bg-section .bg-slider .slick-next {
+    right: 0;
     opacity: 1;
     position: absolute;
+    color: #fff !important;
 }
 .bg-slider .slick-next:before {
     content: "→";
@@ -2107,6 +2151,8 @@ section.services{
     height: 40px;
     line-height: 40px;
     font-size: 18px;
+    right:5px;
+    color:#fff;
 }
 .block span:after {
     content: "";
@@ -2614,6 +2660,42 @@ section.pay-confirm-box .confirm-box a {
     width: 40px;
     margin:10px;
 }
+.navigation-wrap.start-header.start-style .dropdown-menu.show {
+    box-shadow: 0px 39px 66px rgb(10 30 59 / 16%);
+    border-radius: 15px;
+    background: #fff;
+    padding:0 20px !important;
+}
+.navigation-wrap.start-header.start-style .dropdown-menu.show a {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 34px !important;
+    text-align: left;
+    color: #757F8F;
+    padding:0;
+}
+.navigation-wrap.start-header.start-style .dropdown-menu.show a {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 15px !important;
+    line-height: 34px !important;
+    text-align: left;
+    color: #000;
+    border-bottom: 1px solid #757f8f75;
+    border-radius: 0;
+    padding: 20px 0px 10px;
+}
+.navigation-wrap.start-header.start-style .dropdown-menu.show a:last-child{
+    border:none;
+    padding: 10px 0px 20px;
+}
+.navigation-wrap .dropdown-item:hover, .dropdown-item:focus {
+    color: #8360b9 !important;
+    background-color: transparent !important;
+}
 /*-------------------media css-------------*/
 @media (max-width: 1800px) {
     .mat-autocomplete-panel.mat-autocomplete-visible {
@@ -2782,6 +2864,34 @@ section.pay-confirm-box .confirm-box a {
 	section.banner {
 		padding: 85px 0 0;
 	}
+    section.testimonials {
+        overflow: hidden;
+    }
+    .slide-box ul {
+        display: flex;
+        margin-bottom: 0;
+        position: relative;
+        bottom: -10px;
+    }
+    section.testimonials .slick-prev {
+        left: inherit;
+        right: 80px;
+        top: 344px;
+    }
+    section.testimonials button.slick-next.pull-right.slick-arrow {
+        top: 254px;
+        right: 13px;
+    }
+    section.tour-card .col-md-7 {
+        margin-bottom: 5pc;
+    }
+    section.tour-card{
+        padding-top:0;
+    }
+    section.tour-card .card .col-md-6.mt-5.pt-5 {
+        margin-top: 0 !important;
+        padding: 20px !important;
+    }
     bs-datepicker-container, bs-daterangepicker-container {
         z-index: 999999 !important;
     }
