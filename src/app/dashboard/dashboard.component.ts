@@ -4,6 +4,7 @@ import { Title } from "@angular/platform-browser";
 import { EMPTY_BANNER_TEXT_MODAL } from 'src/assets/constants/main-containt';
 import { ChangeDetectionStrategy } from '@angular/compiler';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -133,6 +134,7 @@ export class DashboardComponent implements OnInit,AfterViewChecked {
   constructor(private apiService: ApiService,
     private renderer: Renderer2,
     private titleService: Title,
+    private router:Router,
     private cdref: ChangeDetectorRef) {
     this.loadBannerText();
   }
@@ -214,6 +216,10 @@ export class DashboardComponent implements OnInit,AfterViewChecked {
     setTimeout(() => {
       this.pageSlideAnimationActive = false;
     }, 500)
+  }
+
+  public checkData(): void {
+    this.router.navigate(['/','booking'])
   }
 }
 
