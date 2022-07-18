@@ -1437,18 +1437,18 @@ section.testimonials button img {
     position: absolute;
     top: -277px;
     right: 36px;
-    width: 20px;
+    width: 25px;
     background: none;
 }
 section.testimonials .slick-prev {
     left: inherit;
     right: 10px;
-    top: 241px;
+    top: 236px;
 }
 section.tour-card .slick-prev {
     left: inherit;
-    right: 10px;
-    top: 241px;
+    right: 74px;
+    top: -57px;
 }
 /*--------------about page css-------------*/
 section.about-us {
@@ -1890,7 +1890,16 @@ section.tour-card .slick-next {
     top: -58px;
 }
 section.tour-card button img {
-    width: 20px;
+    width: 25px;
+}
+section.tour-card button img:hover{
+    width: 48px;
+    -webkit-transition: opacity 0.8s ease-in-out;
+    -moz-transition: opacity 0.8s ease-in-out;
+    -ms-transition: opacity 0.8s ease-in-out;
+    -o-transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+    margin: -5px -10px;
 }
 section.tour-card .slick-next.active img {
     width: 44px;
@@ -1898,16 +1907,28 @@ section.tour-card .slick-next.active img {
 section.testimonials .slick-next.active img {
     width: 44px;
 }
+section.testimonials .slick-arrow img:hover {
+    width: 48px;
+    -webkit-transition: opacity 0.8s ease-in-out;
+    -moz-transition: opacity 0.8s ease-in-out;
+    -ms-transition: opacity 0.8s ease-in-out;
+    -o-transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+    margin: -5px -10px;
+}
+section.testimonials .slick-arrow img {
+    -webkit-transition: opacity 0.8s ease-in-out;
+    -moz-transition: opacity 0.8s ease-in-out;
+    -ms-transition: opacity 0.8s ease-in-out;
+    -o-transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+}
 section.testimonials .slick-prev {
     left: inherit;
-    right: 28px;
-    top: 245px;
+    right: 18px;
+    top: 241px;
 }
-section.tour-card .slick-prev {
-    left: inherit;
-    right: 62px;
-    top: -58px;
-}
+
 section.tour-card button.slick-prev.slick-arrow {
     width: auto;
     height: auto;
