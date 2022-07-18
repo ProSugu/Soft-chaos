@@ -1,13 +1,13 @@
-<section class="booking-flow-baar">
+<section class="booking-flow-baar" *ngIf="step < 4">
     <div class="container">
         <ul class="progressbar">
-          <li class="active">Order Details</li>
-          <li>About you</li>
-          <li>Payment</li>
-          <li>Confirm</li>
+            <li class="active">Order Details</li>
+            <li [ngClass]="step >= 2 ? 'active' : ''">About you</li>
+            <li [ngClass]="step >= 3 ? 'active' : ''">Payment</li>
+            <li [ngClass]="step >= 4 ? 'active' : ''">Confirm</li>
         </ul>
-<hr>
-        <div class="row">
+        <hr>
+        <div class="row" *ngIf="step === 1">
             <div class="col-md-8">
                 <div class="booking-form">
                     <div class="row">
@@ -43,7 +43,7 @@
                         <li><a href="javascript:void(0);">11 - 12 AM</a></li>
                     </ul>
                     <ul class="next-btn">
-                        <li><a href="javascript:void(0);">Next</a></li>
+                        <li><a href="javascript:void(0);" (click)="next()">Next</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,88 +62,80 @@
                 </div>
             </div>
         </div>
-
-      </div>
-</section>
-
-<!------step 2----->
-<section class="booking-flow-baar">
-    <div class="container">
-
-        <div class="row">
+        <div class="row" *ngIf="step === 2">
             <div class="col-md-8">
                 <div class="booking-form">
                     <h5>Contact Information</h5>
                     <form>
                         <div class="form-row">
-                          <div class="col">
-                              <label>First Name</label>
-                            <input type="text" class="form-control" placeholder="Enatr your first name">
-                          </div>
-                          <div class="col">
-                              <label>Last Name</label>
-                            <input type="text" class="form-control" placeholder="Enatr your last name">
-                          </div>
+                            <div class="col">
+                                <label>First Name</label>
+                                <input type="text" class="form-control" placeholder="Enatr your first name">
+                            </div>
+                            <div class="col">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control" placeholder="Enatr your last name">
+                            </div>
                         </div>
-                        
+
                         <div class="form-row">
                             <div class="col">
                                 <label>Contact Number</label>
-                              <input type="text" class="form-control" placeholder="989-8256-234">
+                                <input type="text" class="form-control" placeholder="989-8256-234">
                             </div>
                             <div class="col">
                                 <label>Email</label>
-                              <input type="text" class="form-control" placeholder="Enatr your email">
+                                <input type="text" class="form-control" placeholder="Enatr your email">
                             </div>
-                          </div>
-                          <h5>Your Location</h5>
-                          <div class="form-row loaction-input">
+                        </div>
+                        <h5>Your Location</h5>
+                        <div class="form-row loaction-input">
                             <div class="col">
                                 <label>Address</label>
                                 <input type="text" class="form-control" placeholder="124 City Road, London, EC1V 2NX">
                             </div>
-                          </div>
-                          <div class="form-row">
+                        </div>
+                        <div class="form-row">
                             <div class="col">
                                 <label>Country</label>
                                 <select>
-                                    <option>Enter your country</option>
-                                    <option>Enter your country</option>
-                                    <option>Enter your country</option>
-                                    <option>Enter your country</option>
-                                </select>
+                                  <option>Enter your country</option>
+                                  <option>Enter your country</option>
+                                  <option>Enter your country</option>
+                                  <option>Enter your country</option>
+                              </select>
                             </div>
                             <div class="col">
                                 <label>CIty</label>
                                 <select>
-                                    <option>Enter your city</option>
-                                    <option>Enter your city</option>
-                                    <option>Enter your city</option>
-                                    <option>Enter your city</option>
-                                </select>
+                                  <option>Enter your city</option>
+                                  <option>Enter your city</option>
+                                  <option>Enter your city</option>
+                                  <option>Enter your city</option>
+                              </select>
                             </div>
-                          </div>
-                          <div class="form-row">
+                        </div>
+                        <div class="form-row">
                             <div class="col">
                                 <label>Region</label>
                                 <select>
-                                    <option>Enter your region</option>
-                                    <option>Enter your region</option>
-                                    <option>Enter your region</option>
-                                    <option>Enter your region</option>
-                                </select>
+                                  <option>Enter your region</option>
+                                  <option>Enter your region</option>
+                                  <option>Enter your region</option>
+                                  <option>Enter your region</option>
+                              </select>
                             </div>
                         </div>
                         <div class="form-row mt-3">
                             <div class="col">
                                 <ul class="next-btn">
-                                    <li class="back-btn"><a href="javascript:void(0);">Back</a></li>
-                                    <li><a href="javascript:void(0);">Next</a></li>
+                                    <li class="back-btn"><a href="javascript:void(0);" (click)="prev()">Back</a></li>
+                                    <li><a href="javascript:void(0);" (click)="next()">Next</a></li>
                                 </ul>
                             </div>
                         </div>
-                        
-                      </form>
+
+                    </form>
                 </div>
             </div>
             <div class="col-md-4">
@@ -161,33 +153,25 @@
                 </div>
             </div>
         </div>
-
-      </div>
-</section>
-
-<!---------step-3---------->
-<section class="booking-flow-baar">
-    <div class="container">
-
-        <div class="row">
+        <div class="row" *ngIf="step === 3">
             <div class="col-md-8">
                 <div class="booking-form">
                     <h5>Payment Details</h5>
                     <p>Enter your personal details to complete your viewing.</p>
                     <form>
                         <div class="form-row card-section">
-                          <div class="col">
-                              <a href="javascript:void(0);"  class="active">
-                                <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                <span>Cards</span>
-                              </a>
-                          </div>
-                          <div class="col">
-                            <a href="javascript:void(0);">
-                                <i class="fa fa-paypal" aria-hidden="true"></i>
-                                <span>PayPal</span>
-                              </a>
-                        </div>
+                            <div class="col">
+                                <a href="javascript:void(0);" class="active">
+                                    <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                    <span>Cards</span>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="javascript:void(0);">
+                                    <i class="fa fa-paypal" aria-hidden="true"></i>
+                                    <span>PayPal</span>
+                                </a>
+                            </div>
                         </div>
                         <div class="form-row card-number">
                             <div class="col">
@@ -195,35 +179,35 @@
                                 <input type="text" class="form-control" placeholder="9898  8256  4586  4558">
                                 <i class="fa fa-cc-visa" aria-hidden="true"></i>
                             </div>
-                          </div>
-                          <div class="form-row">
+                        </div>
+                        <div class="form-row">
                             <div class="col">
                                 <label>Card holder Name</label>
                                 <input type="text" class="form-control" placeholder="Enatr your name">
                             </div>
-                          </div>
+                        </div>
                         <div class="form-row">
                             <div class="col">
                                 <label>Expiry</label>
-                              <input type="text" class="form-control" placeholder="Enatr card expiry date">
+                                <input type="text" class="form-control" placeholder="Enatr card expiry date">
                             </div>
                             <div class="col">
                                 <label>CVC/CVV</label>
-                              <input type="text" class="form-control" placeholder="Enatr card CVC/CVV">
+                                <input type="text" class="form-control" placeholder="Enatr card CVC/CVV">
                             </div>
-                          </div>
-                          <small>By confirming payment you are approving our Terms & Conditions and acknowledging our Privacy Policy.
-                            Your Payment information and test information will remain Confidential.</small>
+                        </div>
+                        <small>By confirming payment you are approving our Terms & Conditions and acknowledging our Privacy Policy.
+                        Your Payment information and test information will remain Confidential.</small>
                         <div class="form-row mt-3">
                             <div class="col">
                                 <ul class="next-btn">
-                                    <li class="back-btn"><a href="javascript:void(0);">Back</a></li>
-                                    <li><a href="javascript:void(0);">Confirm Payment</a></li>
+                                    <li class="back-btn"><a href="javascript:void(0);" (click)="prev()">Back</a></li>
+                                    <li><a href="javascript:void(0);" (click)="next()">Confirm Payment</a></li>
                                 </ul>
                             </div>
                         </div>
-                        
-                      </form>
+
+                    </form>
                 </div>
             </div>
             <div class="col-md-4">
@@ -242,11 +226,10 @@
             </div>
         </div>
 
-      </div>
+    </div>
 </section>
 
-<!--------step-4-------->
-<section class="pay-confirm-box">
+<section class="pay-confirm-box booking-flow-baar" *ngIf="step === 4">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
