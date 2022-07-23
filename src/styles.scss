@@ -1449,7 +1449,93 @@ section.contact-detail a {
     color: #31496D;
     text-decoration: none;
 }
-
+.swal2-container.swal2-top-end.swal2-shown{z-index:99999999999999999999;}
+.calender-top-section .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    background-color: rgb(156 29 247);
+    color: #fff;
+}
+button.mat-focus-indicator.mat-calendar-next-button.mat-icon-button.mat-button-base:hover{
+    background: #9c1df7;
+    color: #fff;
+}
+button.mat-focus-indicator.mat-calendar-previous-button.mat-icon-button.mat-button-base:hover{
+    background: #9c1df7;
+    color: #fff;
+}
+button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base:hover{
+    background: #9c1df7;
+    color: #fff;
+}
+button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base:hover svg {
+    color: #fff;
+    fill: currentColor;
+}
+.col-md-6.hori-carousel.position-relative button.slick-prev.slick-arrow {
+    width: 135px;
+    height: 37px;
+    z-index: 99;
+    left: 90px;
+    bottom: -60px;
+}
+.col-md-6.hori-carousel.position-relative .slick-arrow.slick-next {
+    right: 184px;
+    left: inherit;
+    bottom: -53px;
+}
+.hori-carousel .slick-dots li button {
+    bottom: -10px;
+    width: 24px;
+    height: 24px;
+}
+.carousel-wrapper{
+    max-height: none !important;
+}
+.main-body-section .wave-top {
+    display: none;
+}
+.main-body-section .container.dashboard-container {
+    padding: 150px 0 0;
+}
+.main-body-section .container.dashboard-container .hori-carousel .slick-dots {
+    display: flex;
+    justify-content: center;
+    transform: inherit;
+    width: 100%;
+    bottom: -52px;
+}
+.main-body-section .container.dashboard-container .hori-carousel .slick-dots li {
+    flex: inherit;
+    height: auto;
+    margin: 0;
+    background: none;
+}
+.main-body-section .container.dashboard-container .hori-carousel .slick-dots li.slick-active button {
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    background: #8d1bdd;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+.main-body-section .container.dashboard-container .slick-dots li.slick-active button {
+    border: 0;
+    background: transparent;
+    display: block;
+    height: 20px;
+    width: 20px;
+    outline: none;
+    padding: 5px;
+    position: absolute;
+    top: -40px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 0;
+    text-align: center;
+    color: #7B17C1;
+    left: -25px !important;
+}
 
 /*-----------join us page css-----------*/
 
