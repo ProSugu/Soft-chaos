@@ -14,73 +14,30 @@
             </div>
             <div class="col-md-6">
                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigSec">
+                    <ng-container *ngIf="requestingServerForBannerText">
+                        <div ngxSlickItem class=" block">
+                            <app-skeleton-loader [anotherStructure]="'dashboardBanner'"></app-skeleton-loader>
+                        </div>
+                        <div ngxSlickItem class=" block">
+                            <app-skeleton-loader [anotherStructure]="'dashboardBanner'"></app-skeleton-loader>
+                        </div>
+                        <div ngxSlickItem class=" block">
+                            <app-skeleton-loader [anotherStructure]="'dashboardBanner'"></app-skeleton-loader>
+                        </div>
+                    </ng-container>
+                    <div ngxSlickItem class="slide" *ngFor="let banner of dashboardData?.banner;let i = index">
+                        <div class="banner-img">
+                            <img [src]="banner?.image">
+                            <ul>
+                                <li class="item" *ngFor="let subItems of banner?.subItems;let j = index" [ngClass]="'item-'+(j+1)">
+                                    <img [src]="subItems?.image">
+                                    <h5>{{subItems?.count}}</h5>
+                                    <p>{{subItems?.desc}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-                    <div ngxSlickItem class="slide">
-                        <div class="banner-img">
-                            <img src="assets/images/banner-img.png">
-                            <ul>
-                                <li class="item-1 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>20M+</h5>
-                                    <p>User Online</p>
-                                </li>
-                                <li class="item-2 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>5M+</h5>
-                                    <p>Visit Tajmahal</p>
-                                </li>
-                                <li class="item-3 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>50M+</h5>
-                                    <p>Destination</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div ngxSlickItem class="slide">
-                        <div class="banner-img">
-                            <img src="assets/images/banner-img-2.png">
-                            <ul>
-                                <li class="item-1 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>20M+</h5>
-                                    <p>User Online</p>
-                                </li>
-                                <li class="item-2 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>5M+</h5>
-                                    <p>Visit Tajmahal</p>
-                                </li>
-                                <li class="item-3 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>50M+</h5>
-                                    <p>Destination</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div ngxSlickItem class="slide">
-                        <div class="banner-img">
-                            <img src="assets/images/banner-img-3.png">
-                            <ul>
-                                <li class="item-1 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>20M+</h5>
-                                    <p>User Online</p>
-                                </li>
-                                <li class="item-2 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>5M+</h5>
-                                    <p>Visit Tajmahal</p>
-                                </li>
-                                <li class="item-3 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>50M+</h5>
-                                    <p>Destination</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </ngx-slick-carousel>
             </div>
         </div>
@@ -203,7 +160,7 @@
             <div class="col-md-4 box text-center mt-4">
                 <img src="assets/images/img5.png">
                 <h3>Educative</h3>
-                <p>Solution enables travelers to learn more about the destination by subscribing to guided tours where they get access to quality information about the place. 
+                <p>Solution enables travelers to learn more about the destination by subscribing to guided tours where they get access to quality information about the place.
                 </p>
             </div>
             <div class="col-md-4 box text-center mt-4">
@@ -221,76 +178,32 @@
             <div class="col-md-12">
                 <div class="bg-slider">
                     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-                        <div ngxSlickItem class="slide">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="bg-text mt-5 pt-5">
-                                        <h2>Understand</h2>
-                                        <img src="assets/images/Vector (1).png">
-                                        <p> Establish and maintain the right approach to accelerate the delivery process. </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-7  main-flex d-flex">
-                                    <div class="slider-block">
-                                        <img src="assets/images/slide-1.png">
-                                        <h4>Empathize</h4>
-                                        <p>Conduct research, interviews, and shadowing customers for better understanding without judging.
-                                        </p>
-                                    </div>
-                                    <div class="slider-block">
-                                        <img src="assets/images/slide-1.png">
-                                        <h4>Define</h4>
-                                        <p>Identify and pinpoint the list of problems in hand along with objectives, personas, and challenges.
-                                        </p>
-                                    </div>
-                                </div>
+                        <ng-container *ngIf="requestingServerForBannerText">
+                            <div ngxSlickItem class=" block">
+                                <app-skeleton-loader [anotherStructure]="'dashboardObjectives'"></app-skeleton-loader>
                             </div>
-                        </div>
-                        <div ngxSlickItem class="slide">
+                            <div ngxSlickItem class=" block">
+                                <app-skeleton-loader [anotherStructure]="'dashboardObjectives'"></app-skeleton-loader>
+                            </div>
+                            <div ngxSlickItem class=" block">
+                                <app-skeleton-loader [anotherStructure]="'dashboardObjectives'"></app-skeleton-loader>
+                            </div>
+                        </ng-container>
+                        <div ngxSlickItem class="slide" *ngFor="let objective of dashboardData?.objective;let i = index">
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="bg-text mt-5 pt-5">
-                                        <h2>Explore </h2>
+                                        <h2>{{objective?.title}} </h2>
                                         <img src="assets/images/Vector (1).png">
-                                        <p>Here begins the design thinking process as we focus on the strongest ideas and build upon them.
+                                        <p>{{objective?.desc}}
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-md-7 main-flex d-flex">
-                                    <div class="slider-block">
-                                        <img src="assets/images/slide-1.png">
-                                        <h4>Ideate</h4>
-                                        <p>Generate a list of ideas. Share ideas, discuss, segment, and prioritize ideas. </p>
-                                    </div>
-                                    <div class="slider-block">
-                                        <img src="assets/images/slide-1.png">
-                                        <h4>Prototype</h4>
-                                        <p>Build representations for a range of ideas. Create a simple storyboard and don’t be afraid to iterate or to fail fast.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div ngxSlickItem class="slide">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="bg-text mt-5 pt-5">
-                                        <h2>Materialize </h2>
-                                        <img src="assets/images/Vector (1).png">
-                                        <p>A win-win working approach helps to materialize ideas into a great tangible success.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-7 main-flex d-flex">
-                                    <div class="slider-block">
-                                        <img src="assets/images/slide-1.png">
-                                        <h4>Test</h4>
-                                        <p>Understand impediments, seek user feedback and use it to improvise your user’s experience.</p>
-                                    </div>
-                                    <div class="slider-block">
-                                        <img src="assets/images/slide-1.png">
-                                        <h4>Implement</h4>
-                                        <p>Put your vision into action, recognize the synergy and achieve project success.
-                                        </p>
+                                    <div class="slider-block" *ngFor="let sub of objective?.subObj;let j = index">
+                                        <img [src]="sub?.image">
+                                        <h4>{{sub?.title}}</h4>
+                                        <p>{{sub?.desc}}</p>
                                     </div>
                                 </div>
                             </div>

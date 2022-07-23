@@ -5,13 +5,10 @@ import { Component, Input, OnInit, Optional } from '@angular/core';
   templateUrl: './skeleton-loader.component.html',
   styleUrls: ['./skeleton-loader.component.scss']
 })
-export class SkeletonLoaderComponent implements OnInit {
+export class SkeletonLoaderComponent {
 
   @Input() elementType = 'locationCard';
   @Input() anotherStructure?:any;
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
