@@ -7,6 +7,12 @@ export const environment = {
   logger: {
     level: 'TRACE',
   },
+  recaptcha: {
+    siteKey: '6Lfq-LEgAAAAAJ5sjnF4nAFMIXwDDPaFpMOOopKp',
+  },
+  googleMap:{
+    siteKey:'https://maps.googleapis.com/maps/api/js?key=AIzaSyB_MSJW9olNYJTx2aV__gypRbbknDGLoiU&v=weekly'
+  }
 };
 
 /*

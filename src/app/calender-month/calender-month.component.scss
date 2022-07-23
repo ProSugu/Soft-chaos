@@ -1,0 +1,43 @@
+@import '../../variables';
+
+.calender-table {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    li {
+        list-style: none;
+        width: calc((100% - 160px) / 31);
+        padding: 16px 0;
+        height: 126px;
+        vertical-align: middle;
+        border-bottom: 1px solid #EFEFEF;
+        &:not(:last-child) {
+            border-right: 1px solid #EFEFEF;
+        }
+        &:first-child {
+            width: 80px;
+            text-align: center;
+            vertical-align: top;
+            color: #757F8F;
+            font-size: $text-xs;
+        }
+        &:last-child {
+            width: 80px;
+        }
+        p {
+            margin: 0;
+        }
+        &.days-31 {
+            width: calc((100% - 160px) / 31);
+        }
+        &.days-30 {
+            width: calc((100% - 160px) / 30);
+        }
+        &.days-28 {
+            width: calc((100% - 160px) / 28);
+        }
+        &.days-29 {
+            width: calc((100% - 160px) / 29);
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<div>
+    <ul class="calender-table" *ngFor="let timeSlot of TIME_SLOTS;let timeSlotIndex = index">
+        <li>{{ timeSlot }}</li>
+        <ng-container *ngFor="let dateEvent of dateRangeList;let dayIndex = index;">
+            <ng-container
+                *ngVar="getSlotDetail(timeSlotIndex+1, getDayWiseEvent(dateEvent.formatDate)) as slotDetails;">
+                <li
+                    class="{{ slotDetails?.eventStartTime?.duration?.HH}}-{{slotDetails?.eventStartTime?.duration?.MM}} days-{{totalMonthDays}}">
+                    <ng-container
+                        *ngVar="calenderService.getDayDifferenceBetweenDates(dateEvent.formatDate, todayDate) as isDaysDiffExist;">
+                        <ng-container
+                            *ngVar="calenderService.isFirstDateGreaterThanSecond(todayDate, dateEvent.formatDate) as todayDateIsGreater">
+                            <ng-container *ngVar="calenderService.isFirstTimeGreaterThanSecond(dateEvent.formatDate, 'dd/mm/yyyy', slotDetails?.eventStartTime?.hour+':'+slotDetails?.eventStartTime?.minute, todayDate, 'dd/mm/yyyy', calenderService.getCurrentTime()) as isFutureEvent">
+                                <app-event-card-month *ngIf="slotDetails" (click)="viewEvent(slotDetails, ((isDaysDiffExist && todayDateIsGreater) || !isFutureEvent))"
+                                    [initials]="getInitital(slotDetails?.eventLocationDetail?.placeName)"
+                                    [ngStyle]="{'pointer-events': !isFutureEvent ? 'none': 'inherit'}"
+                                    [background]="((isDaysDiffExist && todayDateIsGreater) || !isFutureEvent) ? '#EFEFF1': bookEventColourDetails[slotDetails?.eventLocationDetail?.locationId]">
+                                </app-event-card-month>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </li>
+            </ng-container>
+        </ng-container>
+        <li></li>
+    </ul>
+</div>

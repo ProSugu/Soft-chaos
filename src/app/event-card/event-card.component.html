@@ -1,0 +1,18 @@
+<div class="card card-event default-shadow" [ngClass]="{
+    'card--gray':style=='gray', 
+    'card--colored':style=='colored',
+    'card--day':type=='day'
+    }" [ngStyle]="{'background-color':background}">
+    <div class="card-thumbnail">
+        <img src="assets/images/event.png" alt="">
+    </div>
+    <div class="card-content">
+        <p>{{ slotDetails?.eventLocationDetail?.placeName}}</p>
+        <ng-container *ngVar="(slotDetails?.eventStartTime?.duration?.MM != '00' && slotDetails?.eventStartTime?.duration?.MM != '0') as isMinuteAvailable;">
+            <ng-container *ngVar="(slotDetails?.eventStartTime?.duration?.HH != '00' && slotDetails?.eventStartTime?.duration?.HH != '0') as isHourAvailable">
+                <small>{{isHourAvailable ? slotDetails?.eventStartTime?.duration.HH: ''}} {{isHourAvailable ? 'hrs': ''}} {{isHourAvailable && isMinuteAvailable ? '-': ''}} {{ isMinuteAvailable ? slotDetails?.eventStartTime?.duration?.MM: ''}} {{ isMinuteAvailable ? 'min': ''}}</small>
+            </ng-container>
+        </ng-container>
+        <img class="card-dots-img" src="assets/images/dots.svg" alt="..">
+    </div>
+</div>

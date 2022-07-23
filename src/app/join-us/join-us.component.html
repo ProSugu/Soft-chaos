@@ -20,40 +20,53 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form>
+                <form [formGroup]="joinUsForm" (submit)="submit()">
                     <h4>Contact details:</h4>
                     <div class="row">
                         <div class="col">
                             <label>Name of contact person</label>
-                            <input type="text" class="form-control" placeholder="Name of contact person">
+                            <input type="text" [ngClass]="{'input-error': (joinUsForm.controls['name']['invalid'] && joinUsForm.controls['name'].touched )}" formControlName="name" class="form-control" placeholder="Name of contact person">
+                            <div *ngIf="joinUsForm.controls['name'].touched && joinUsForm.controls['name'].invalid" class="error2">
+                                <span *ngIf="joinUsForm.controls['name'].hasError('required')">Name is required.</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>Title and role</label>
-                            <input type="text" class="form-control" placeholder="Title and role">
+                            <input type="text" [ngClass]="{'input-error': (joinUsForm.controls['titleAndRole']['invalid'] && joinUsForm.controls['titleAndRole'].touched )}" formControlName="titleAndRole" class="form-control" placeholder="Title and role">
+                            <div *ngIf="joinUsForm.controls['titleAndRole'].touched && joinUsForm.controls['titleAndRole'].invalid" class="error2">
+                                <span *ngIf="joinUsForm.controls['titleAndRole'].hasError('required')">Title and role is required.</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>Email</label>
-                            <input type="text" class="form-control" placeholder="Email">
+                            <input type="text" [ngClass]="{'input-error': (joinUsForm.controls['email']['invalid'] && joinUsForm.controls['email'].touched )}" formControlName="email" class="form-control" placeholder="Email">
+                            <div *ngIf="joinUsForm.controls['email'].touched && joinUsForm.controls['email'].invalid" class="error2">
+                                <span *ngIf="joinUsForm.controls['email'].hasError('required')">Email is required.</span>
+                                <span *ngIf="joinUsForm.controls['email'].hasError('email')">Invalid Email.</span>
+                            </div>
                         </div>
                     </div>
                     <h4>Organization details:</h4>
                     <div class="row">
                         <div class="col">
                             <label>Organization industry</label>
-                            <input type="text" class="form-control" placeholder="Organization industry">
+                            <input type="text" [ngClass]="{'input-error': (joinUsForm.controls['orgInd']['invalid'] && joinUsForm.controls['orgInd'].touched )}" formControlName="orgInd" class="form-control" placeholder="Organization industry">
+                            <div *ngIf="joinUsForm.controls['orgInd'].touched && joinUsForm.controls['orgInd'].invalid" class="error2">
+                                <span *ngIf="joinUsForm.controls['orgInd'].hasError('required')">Organization industry is required.</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>Role you are seeking</label>
                             <div class="wrapper">
-                                <input type="radio" name="select" id="option-1" checked>
-                                <input type="radio" name="select" id="option-2">
-                                <input type="radio" name="select" id="option-3">
+                                <input type="radio" id="option-1" formControlName="seekingRole" value="student">
+                                <input type="radio" id="option-2" formControlName="seekingRole" value="teacher">
+                                <input type="radio" id="option-3" formControlName="seekingRole" value="instructor">
                                 <label for="option-1" class="option option-1">
                                 <div class="dot"></div>
                                  <span>Student</span>
@@ -64,7 +77,7 @@
                               </label>
                                 <label for="option-3" class="option option-3">
                                 <div class="dot"></div>
-                                 <span>Teacher</span>
+                                 <span>Instructor</span>
                               </label>
                             </div>
                         </div>

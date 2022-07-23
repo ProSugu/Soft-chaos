@@ -1,0 +1,21 @@
+<div class="date-range-slider" [ngClass]="{'date-range-slider--month':appliedFilter.id == durationFilter.monthly.id}">
+    <ul *ngIf="(appliedFilter.id == durationFilter.daily.id) || (appliedFilter.id == durationFilter.weekly.id) || (appliedFilter.id == durationFilter.monthly.id)">
+        <li>
+            <div class="date-range-slider__arrow date-range-slider__arrow--left"
+            [ngClass]="{'opacity-point-3': ((appliedFilter.id == durationFilter.daily.id) && !daysDiffFromToday) || appliedFilter.id == durationFilter.monthly.id}" (click)="getPreviousDays()">
+                <img src="assets/images/long-arrow-left.svg" alt="long-arrow-left">
+            </div>
+        </li>
+        <li *ngFor="let item of dateRangeList;" class="days-{{dateRangeList && dateRangeList.length}}">
+            <div class="date-col" [ngClass]="{'activeDate default-shadow': (item.formatDate == todayDate), 'light-activeDate': ((item.formatDate == midDateOfWeek) && !(item.formatDate == todayDate))}">
+                <small>{{ item.formatDate | findDay }}</small>
+                <p>{{item.dd }}</p>
+            </div>
+        </li>
+        <li>
+            <div class="date-range-slider__arrow date-range-slider__arrow--right" (click)="getForwardDays()">
+                <img src="assets/images/long-arrow-right.svg" alt="long-arrow-right">
+            </div>
+        </li>
+    </ul>
+</div>

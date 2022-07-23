@@ -1,65 +1,105 @@
-<section class="contact-us">
-    <div class="container">
+<div class="contact-us-container">
+    <div class="map-container">
         <div class="row">
-            <div class="col-md-7">
-                <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14027.559886042758!2d77.06795844999999!3d28.482860049999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1656162281304!5m2!1sen!2sin" width="" height="" style="border:0;"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="col-lg-6 map-section">
+                <div class="map-load" *ngIf="mapLoad">
+                    <div class="lds-spinner">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
+                <div #map class="gmap"></div>
             </div>
-            <div class="col-md-5">
-                <div class="contact-form">
-                    <h3>Get in touch</h3>
-                    <p>Interested in a demo?</p>
-                    <form>
-                        <div class="row">
-                            <div class="col">
-                                <label>Your Name</label>
-                                <input type="text" class="form-control" placeholder="Enter your name">
-                            </div>
-                            <div class="col">
-                                <label>Contact Email</label>
-                                <input type="text" class="form-control" placeholder="Enter your email">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label>Subject</label>
-                                <input type="text" class="form-control" placeholder="Enter your subject">
+            <div class="col-lg-6 contact-form">
+                <h1 class="form-title text-left">Get in touch</h1>
+                <h4 class="form-subtitle">Interested in a demo?</h4>
+                <form [formGroup]="contactForm">
+                    <div class="row">
+                        <div class="col-lg-6 d-flex flex-column form-group">
+                            <label for="formGroupName">Your Name</label>
+                            <input [ngClass]="{'input-error': (contactForm.controls['name']['invalid'] && contactForm.controls['name'].touched )}" formControlName="name" class="form-control" id="formGroupName" placeholder="Enter your name" type="text" />
+                            <div *ngIf="
+                          contactForm.controls['name'].touched &&
+                          contactForm.controls['name'].invalid
+                                    " class="error2">
+                                <span *ngIf="contactForm.controls['name'].hasError('required')">Name is required.</span>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <label>Your Massage</label>
-                                <textarea class="form-control" id="">Enter your massage</textarea>
+                        <div class="col-lg-6 d-flex flex-column form-group">
+                            <label for="formGroupName">Contact Email</label>
+                            <input [ngClass]="{'input-error': (contactForm.controls['email']['invalid'] && contactForm.controls['email'].touched )}" formControlName="email" class="form-control" id="formGroupEmail" placeholder="Enter your email" type="email" />
+                            <div *ngIf="
+                          contactForm.controls['email'].touched &&
+                          contactForm.controls['email'].invalid
+                                    " class="error2">
+                                <span *ngIf="contactForm.controls['email'].hasError('required')">Email is required.</span>
+                                <span *ngIf="contactForm.controls['email'].hasError('email')">Invalid Email.</span>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <button type="submit">Submit</button>
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Subject</label>
+                        <input [ngClass]="{'input-error': (contactForm.controls['subject']['invalid'] && contactForm.controls['subject'].touched )}" formControlName="subject" class="form-control" id="formGroupExampleInput2" placeholder="Enter your subject" type="text" />
+                        <div *ngIf="
+                      contactForm.controls['subject'].touched &&
+                      contactForm.controls['subject'].invalid
+                                " class="error2">
+                            <span *ngIf="contactForm.controls['subject'].hasError('required')">Subject is required.</span>
                         </div>
-                    </form>
+                    </div>
+                    <div class="form-group">
+                        <label for="formControlTextarea">Your Massage</label>
+                        <textarea [ngClass]="{'input-error': (contactForm.controls['message']['invalid'] && contactForm.controls['message'].touched )}" formControlName="message" class="form-control" id="formControlTextarea" placeholder="Enter your massage" rows="3"></textarea>
+                        <div *ngIf="
+                      contactForm.controls['message'].touched &&
+                      contactForm.controls['message'].invalid
+                                " class="error2">
+                            <span *ngIf="contactForm.controls['message'].hasError('required')">Message is required.</span>
+                        </div>
+
+                    </div>
+                    <div class="captcha">
+                        <!-- <recaptcha (scriptLoad)="onScriptLoad()" (scriptError)="onScriptError()"></recaptcha> -->
+                        <!-- <recaptcha [size]="'normal'" siteKey="YOUR_SITE_KEY" [hide]="false" (captchaResponse)="onCaptchaResponse($event)">
+                      </recaptcha> -->
+                    </div>
+                    <div class="form-group d-flex justify-content-end submit-form-button">
+                        <button class="btn btn-submit align-self-center " [disabled]="this.contactForm.invalid" (click)="submit()">
+            Submit
+          </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="contact-info">
+            <div class="row contacts-row">
+                <div class="col-lg-4 d-flex flex-column">
+                    <h5>Phone:</h5>
+                    <h3>+7 (967) 049-81-99</h3>
+                </div>
+                <div class="col-lg-4 d-flex flex-column">
+                    <h5>Address:</h5>
+                    <h3>425 Pina Street 1000, Manila, Philippines</h3>
+                </div>
+                <div class="col-lg-4 d-flex flex-column mr-0">
+                    <h5>E-mail:</h5>
+                    <h3>softchaos@gmail.com</h3>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<section class="contact-detail">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <p>Phone:</p>
-                <a href="tel:+7 (967) 049-81-99">+7 (967) 049-81-99</a>
-            </div>
-            <div class="col-md-4">
-                <p>Address::</p>
-                <a href="javascript:void(0)">425 Pina Street 1000, Manila,<br> Philippines</a>
-            </div>
-            <div class="col-md-4">
-                <p>E-mail:</p>
-                <a href="mailto:softchaos@gmail.com">softchaos@gmail.com</a>
-            </div>
-        </div>
-    </div>
-</section>
+</div>
+<!-- <recaptcha [size]="'invisible'" (captchaResponse)="onCaptchaResponse($event)">
+</recaptcha> -->

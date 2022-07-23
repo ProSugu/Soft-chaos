@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-location-card',
@@ -9,9 +9,15 @@ export class LocationCardComponent implements OnInit {
 
   @Input() isActive: boolean = false;
   @Input() locationInfo: any;
+  @Input() openedFromCalender: any;
+  @Output() onExploreTour = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  exploreTour(disabledEvent: boolean) {
+    !disabledEvent && this.openedFromCalender && this.onExploreTour.emit();
   }
 }

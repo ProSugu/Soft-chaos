@@ -1,0 +1,21 @@
+@import '../../mixins';
+@import '../../variables';
+
+.card {
+    &--circle {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $text-sm;
+        text-transform: uppercase;
+        color: $light;
+        border-radius: 50%;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+    &--graycolor {
+        color: gray;
+    }
+}

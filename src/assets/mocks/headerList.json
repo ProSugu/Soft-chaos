@@ -9,11 +9,11 @@
             "path": "",
             "subPath": [{
                     "routeName": "Book per Tour",
-                    "path": "/Book-per-tour"
+                    "path": "/book-per-tour"
                 },
                 {
                     "routeName": "Book per Schedule",
-                    "path": "/Book-per-schedule"
+                    "path": "/book-per-schedule"
                 }
 
             ]

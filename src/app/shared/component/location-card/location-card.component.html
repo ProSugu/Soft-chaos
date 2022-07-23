@@ -25,16 +25,16 @@
                 <div class="bar-graph-section">
                     <div class="chart-section">
                         <mat-progress-bar class="card-progress-bar" name="gaurav" mode="determinate"
-                            [value]="(locationInfo.totalBooked/locationInfo.limit)*100"></mat-progress-bar>
+                            [value]="(locationInfo?.totalBooked/locationInfo?.limit)*100"></mat-progress-bar>
                     </div>
                     <div class="chart-label">
-                        <p *ngIf="locationInfo?.totalBooked != locationInfo.limit">{{
+                        <p *ngIf="locationInfo?.totalBooked != locationInfo?.limit">{{
                             locationInfo?.totalBooked }} booked</p>
-                        <p *ngIf="locationInfo?.totalBooked == locationInfo.limit">Full Booked</p>
+                        <p *ngIf="locationInfo?.totalBooked == locationInfo?.limit">Full Booked</p>
                     </div>
                 </div>
                 <div class="explore-btn-section">
-                    <button [ngClass]="{'disable': locationInfo?.totalBooked == locationInfo.limit}" matRipple>Explore
+                    <button [ngClass]="{'disable': (locationInfo?.totalBooked == locationInfo?.limit) || locationInfo?.isEventMissed}" matRipple (click)="exploreTour((locationInfo?.totalBooked == locationInfo?.limit) || locationInfo?.isEventMissed)">Explore
                         Tour <img class="btn-arrow-img" src="assets/images/card-images/right-arrow.png"></button>
                 </div>
             </div>

@@ -1,0 +1,41 @@
+@import '../../variables';
+
+.calender-table {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    li {
+        padding: 16px 10px;
+        height: 126px;
+        width: calc(100% - 200px);
+        vertical-align: middle;
+        border-bottom: 1px solid #EFEFEF;
+        text-align: center;
+        list-style: none;
+        @media (max-width:576px) {
+            width: calc(100% - 100px);
+        }
+        &:not(:last-child) {
+            border-right: 1px solid #EFEFEF;
+        }
+        &:first-child {
+            width: 100px;
+            text-align: center;
+            vertical-align: top;
+            color: #757F8F;
+            font-size: $text-xs;
+            @media (max-width:576px) {
+                width: 50px;
+            }
+        }
+        &:last-child {
+            width: 100px;
+            @media (max-width:576px) {
+                width: 50px;
+            }
+        }
+        p {
+            margin: 0;
+        }
+    }
+}

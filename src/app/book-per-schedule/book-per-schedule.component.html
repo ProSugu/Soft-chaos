@@ -1,0 +1,116 @@
+<div class="inner-contaier">
+    <div class="calender-top-section" #stickyHeader>
+        <div class="filter-section position-relative d-flex align-items-center justify-content-center">
+            <div class="date-range d-flex align-items-center">
+                <div class="date-range__arrow date-range__arrow--left cp"
+                    [ngClass]="{'opacity-point-3': (appliedFilter.id == durationFilter.daily.id) && !daysDiffFromToday}"
+                    (click)="getPreviousDays()">
+                    <img src="assets/images/arrow-left.svg" alt="arrow-left">
+                </div>
+                <p *ngIf="appliedFilter.id == durationFilter.daily.id" class="mb-0 date-range__date">{{
+                    bookPerScheduleService.activeFilterDate ? (bookPerScheduleService.activeFilterDate | findMonth ) :
+                    'Loading...'}} {{ bookPerScheduleService.activeFilterDate | findDate}}</p>
+                <p *ngIf="appliedFilter.id == durationFilter.weekly.id" class="mb-0 date-range__date">{{
+                    bookPerScheduleService.activeWeeklyFilterRange.startDate | findMonth }} {{
+                    bookPerScheduleService.activeWeeklyFilterRange.startDate | findDate}} - {{
+                    bookPerScheduleService.activeWeeklyFilterRange.endDate | findMonth }} {{
+                    bookPerScheduleService.activeWeeklyFilterRange.endDate | findDate }}</p>
+                <p *ngIf="appliedFilter.id == durationFilter.monthly.id" class="mb-0 date-range__date">{{
+                    bookPerScheduleService.activeMonthlyFilterRange.startDate | findMonth }} {{
+                    bookPerScheduleService.activeMonthlyFilterRange.startDate | findDate}} - {{
+                    bookPerScheduleService.activeMonthlyFilterRange.endDate | findMonth }} {{
+                    bookPerScheduleService.activeMonthlyFilterRange.endDate | findDate }}</p>
+                <div class="date-range__arrow date-range__arrow--right cp" (click)="getForwardDays()">
+                    <img src="assets/images/arrow-right.svg" alt="arrow-right">
+                </div>
+            </div>
+
+            <div class="filters d-flex align-items-center">
+                <div class="filters__items">
+                    <div class="dropdown filter-dropdown">
+                        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Select {{ appliedFilter.label }} <img src="assets/images/arrow-down-white.svg"
+                                alt="arrow-down">
+                        </button>
+                        <!-- below event propagation used to avaid filter-popup close on click -->
+                        <div class="dropdown-menu dropdown-menu--calender dropdown-menu--common"
+                            aria-labelledby="dropdownMenuButton" (click)="$event.stopPropagation();">
+                            <div class="filters__items-sub">
+                                <!-- below event propagation used to stay daily/weekly/monthly dropdown over the main popup -->
+                                <button (click)="$event.stopPropagation();" class="sub-button"
+                                    [matMenuTriggerFor]="menu1">{{ appliedFilter.label }}<img
+                                        src="assets/images/arrow-down-primary.svg" alt="arrow-down"></button>
+                                <mat-menu #menu1="matMenu">
+                                    <button *ngFor="let filter of totalFilterList;" mat-menu-item
+                                        (click)="onSelectDurationFilter($event, menu1, filter)">{{ filter.label
+                                        }}</button>
+                                </mat-menu>
+                            </div>
+                            <mat-calendar *ngIf="durationFilter.daily.id == appliedFilter.id" formControlName="date" [selected]="date.value" #dateRangePicker
+                                (selectedChange)="getDateFilterRange($event)"
+                                [minDate]="todayDateJsObj"></mat-calendar>
+                            <app-date-range-picker *ngIf="[durationFilter.weekly.id].includes(appliedFilter.id)" [appliedFilter]="appliedFilter" (dateRangeSelected)="calenderRangeSelected($event, durationFilter.weekly.id)" [selectedDateRange]="selectedDateRange"></app-date-range-picker>
+                            <app-date-range-picker *ngIf="[durationFilter.monthly.id].includes(appliedFilter.id)" [appliedFilter]="appliedFilter" (dateRangeSelected)="calenderRangeSelected($event, durationFilter.monthly.id)" [selectedDateRange]="selectedDateRange"></app-date-range-picker>
+                        </div>
+                    </div>
+                </div>
+                <div class="filters__items">
+                    <div class="dropdown filter-dropdown">
+                        <button class="btn btn-outline-primary btn-filter" type="button" id="dropdownMenuButton1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filter <img src="assets/images/arrow-down-primary.svg" alt="arrow-down">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu--common dropdown-menu--filter"
+                            aria-labelledby="dropdownMenuButton1" (click)="$event.stopPropagation()">
+                            <h4>Filter</h4>
+                            <section class="example-section">
+                                <mat-checkbox [value]="location.id" (change)="onLocationFilterChange($event, location)"
+                                    class="example-margin" *ngFor="let location of locationFilterList;"
+                                    [checked]="selectedLocationFilterList.includes(location)">{{
+                                    location.heading }}</mat-checkbox>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-date-range-slider #dateRangeSlider [(dateRangeList)]="dateRangeList" [appliedFilter]="appliedFilter"
+            [activeBookingEventDetails]="activeBookingEventDetails" [todayDate]="todayDate" [(daysDiffFromToday)]="daysDiffFromToday"
+            (onSelectedRangeOnCalender)="updateSelectedRangeOnCalender()"></app-date-range-slider>
+    </div>
+    <!-- For Day -->
+    <app-calender-day *ngIf="(appliedFilter.id == durationFilter.daily.id)"
+        [selectedLocationFilterList]="selectedLocationFilterList"
+        (viewLocation)="clickedLocationInfo = $event; isLocationPopupActive = true"
+        [activeBookingEventDetails]="activeBookingEventDetails" [bookEventColourDetails]="bookEventColourDetails"
+        [dateRangeList]="dateRangeList"
+        [todayDate]="todayDate">
+    </app-calender-day>
+
+    <!-- For Week -->
+    <app-calender-week *ngIf="(appliedFilter.id == durationFilter.weekly.id)"
+        [selectedLocationFilterList]="selectedLocationFilterList"
+        (viewLocation)="clickedLocationInfo = $event; isLocationPopupActive = true"
+        [activeBookingEventDetails]="activeBookingEventDetails" [bookEventColourDetails]="bookEventColourDetails"
+        [dateRangeList]="dateRangeList"
+        [todayDate]="todayDate"></app-calender-week>
+
+    <!-- For Month -->
+    <app-calender-month *ngIf="(appliedFilter.id == durationFilter.monthly.id)"
+        [selectedLocationFilterList]="selectedLocationFilterList"
+        (viewLocation)="clickedLocationInfo = $event; isLocationPopupActive = true"
+        [activeBookingEventDetails]="activeBookingEventDetails" [bookEventColourDetails]="bookEventColourDetails"
+        [dateRangeList]="dateRangeList" [todayDate]="todayDate"></app-calender-month>
+
+</div>
+
+<div class="popup-container" [ngClass]="{'popup-container--show': isLocationPopupActive}">
+    <div class="popup-card">
+        <app-location-card [isActive]="true" [locationInfo]="clickedLocationInfo" [openedFromCalender]="true" (onExploreTour)="onExploreTour()"></app-location-card>
+    </div>
+</div>
+<div class="popup-overlay" [ngClass]="{'popup-overlay--show':isLocationPopupActive}"
+    (click)="isLocationPopupActive = !isLocationPopupActive">
+    <div class="close-icon"><span aria-hidden="true">&times;</span></div>
+</div>

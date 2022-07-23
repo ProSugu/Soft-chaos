@@ -1,0 +1,20 @@
+<ul class="calender-table" *ngFor="let timeSlot of TIME_SLOTS;let timeSlotIndex = index">
+    <li>
+        {{ timeSlot }}
+    </li>
+    <ng-container *ngVar="getSlotDetail(timeSlotIndex+1, getDayWiseEvent(selectedDate)) as slotDetails">
+        <li class="{{ slotDetails?.eventStartTime?.duration?.HH}}-{{slotDetails?.eventStartTime?.duration?.MM}}">
+            <ng-container
+                *ngVar="calenderService.isFirstTimeGreaterThanSecond(selectedDate, 'dd/mm/yyyy', slotDetails?.eventStartTime?.hour+':'+slotDetails?.eventStartTime?.minute, todayDate, 'dd/mm/yyyy', calenderService.getCurrentTime()) as isFutureEvent;">
+                <app-event-card *ngIf="slotDetails" [slotDetails]="slotDetails" [type]="'day'"
+                    (click)="viewEvent(slotDetails, timeSlotIndex, !isFutureEvent)"
+                    [ngStyle]="{'pointer-events': !isFutureEvent ? 'none': 'inherit'}"
+                    [style]="!isFutureEvent ? 'gray': bookEventColourDetails[slotDetails?.eventLocationDetail?.locationId] ? 'colored': 'gray'"
+                    [background]="!isFutureEvent ? '#EFEFF1': bookEventColourDetails[slotDetails?.eventLocationDetail?.locationId]">
+                </app-event-card>
+            </ng-container>
+        </li>
+        <li>
+        </li>
+    </ng-container>
+</ul>

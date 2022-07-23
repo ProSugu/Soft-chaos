@@ -1,0 +1,127 @@
+@import '../../variables';
+@import '../../mixins';
+
+.date-range-slider {
+    user-select: none;
+    margin: 0 -10px;
+    ul {
+        // display: table;
+        // table-layout: fixed;
+        // border-collapse: collapse;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+        li {
+            // display: table-cell;
+            padding: 16px 10px;
+            text-align:center;
+            vertical-align: middle;
+            list-style: none;
+            width: calc((100% - 200px) / 7);
+            @media (max-width:576px) {
+                width: calc((100% - 100px) / 7);
+            }
+            &:first-child {
+                width: 100px;
+                text-align: center;
+                vertical-align: middle;
+                color: #757F8F;
+                display: flex;
+                justify-content: center;
+                font-size: $text-xs;
+                @media (max-width:576px) {
+                    width: 50px;
+                }
+            }
+            &:last-child {
+                width: 100px;
+                display: flex;
+                justify-content: center;
+                @media (max-width:576px) {
+                    width: 50px;
+                }
+            }
+            .date-col {
+                display: inline-block;
+                padding: 8px;
+                border-radius: 50px;
+                @include transition();
+                small {
+                    margin-bottom: 17px;
+                    color: #ABBAC7;
+                    display: block;
+                }
+                p {
+                    margin: 0;
+                    font-size: $text-lg;
+                    color: #31496D;
+                    font-weight: 500;
+                }
+                &.activeDate {
+                    background: #9c1df7;
+                    @include transition();
+                    cursor: pointer;
+                    p,small {
+                        color:$light ;
+                    }
+                }
+                &.light-activeDate {
+                    background: #b903ffa6;
+                    @include transition();
+                    cursor: pointer;
+                    p,small {
+                        color:$light ;
+                    }
+                    min-width: 40px;
+                }
+            }
+        }
+    }
+    &__arrow {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $light;
+        border-radius: 50%;
+        cursor: pointer;
+        @include transition();
+        box-shadow: 0 3px 4px rgb(49 73 109 / 12%);
+        @media (max-width:576px) {
+            width: 35px;
+            height: 35px;
+        }
+        // &:hover {
+        // }
+    }
+    &--month {
+        ul {
+            display: flex;
+            li {
+                width: calc((100% - 160px) / 31);
+                padding: 16px 4px;
+                &:first-child, &:last-child {
+                    width: 80px;
+                }
+                &:first-child {                
+                    font-size: $text-base;
+                }
+                &.days-31 {
+                    width: calc((100% - 160px) / 31);
+                }
+                &.days-30 {
+                    width: calc((100% - 160px) / 30);
+                }
+                &.days-28 {
+                    width: calc((100% - 160px) / 28);
+                }
+                &.days-29 {
+                    width: calc((100% - 160px) / 29);
+                }
+            }
+        }
+    }
+}

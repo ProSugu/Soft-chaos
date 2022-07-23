@@ -19,4 +19,8 @@ export class ApiService {
   getBannerTextList() {
     return this.http.get('assets/mocks/bannerTextList.json');
   }
+
+  getBookPerData() {
+    return this.http.get('assets/mocks/bookingEvents.json');
+  }
 }

@@ -3,17 +3,20 @@
         {
             "id": "1",
             "heading": "Safari",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus neque augue, bibendum auctor lectus blandit sit amet. Nullam neque risus, feugiat a ligula nec, rutrum imperdiet felis."
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus neque augue, bibendum auctor lectus blandit sit amet. Nullam neque risus, feugiat a ligula nec, rutrum imperdiet felis.",
+            "bookEventColor": "#FFAB52" 
         },
         {
             "id": "2",
             "heading": "Back to the Past",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus neque augue, bibendum auctor lectus blandit sit amet. Nullam neque risus, feugiat a ligula nec, rutrum imperdiet felis."
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus neque augue, bibendum auctor lectus blandit sit amet. Nullam neque risus, feugiat a ligula nec, rutrum imperdiet felis.",
+            "bookEventColor": "#5062FF"
         },
         {
             "id": "3",
             "heading": "City View",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus neque augue, bibendum auctor lectus blandit sit amet. Nullam neque risus, feugiat a ligula nec, rutrum imperdiet felis."
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus neque augue, bibendum auctor lectus blandit sit amet. Nullam neque risus, feugiat a ligula nec, rutrum imperdiet felis.",
+            "bookEventColor": "#FF5252"
         }
     ]
 }

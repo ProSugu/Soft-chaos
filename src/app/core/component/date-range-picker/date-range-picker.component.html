@@ -1,0 +1,5 @@
+<mat-calendar 
+        [minDate]="(appliedFilter.id == durationFilter.monthly.id) ? firstDayOfCurrentMonth: ''"
+        (selectedChange)="onSelectedChange($event)"
+        [selected]="selectedDateRange">
+</mat-calendar>
