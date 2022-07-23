@@ -56,6 +56,7 @@
         </div>
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
             <ng-container *ngIf="requestingServerForBannerText">
+                <!-- *ngIf="requestingServerForBannerText" -->
                 <div ngxSlickItem class=" block">
                     <app-skeleton-loader [anotherStructure]="'aboutUsService'"></app-skeleton-loader>
                 </div>
@@ -92,6 +93,7 @@
         <!-- <div class="row"> -->
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
             <ng-container *ngIf="requestingServerForBannerText">
+                <!-- *ngIf="requestingServerForBannerText" -->
                 <div ngxSlickItem class="slide vertical-slide slide-box">
                     <app-skeleton-loader [anotherStructure]="'aboutUsTestimonials'"></app-skeleton-loader>
                 </div>

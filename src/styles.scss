@@ -1878,7 +1878,46 @@ section.testimonials .slick-next:before {
 section.testimonials .slick-prev:before {
     display: none;
 }
-
+section.testimonials.main-testimonials button.slick-prev.slick-arrow:before {
+    content: ">";
+    position: absolute;
+    left: 100%;
+    color: #fff;
+    opacity: 1;
+    font-size: 22px;
+    font-family: "slick";
+    display: block;
+    background-color: #31496d;
+    width: 40px;
+    height: 40px;
+    line-height: 34px;
+    border-radius: 100%;
+    margin-left: 20px;
+    padding-left: 3px;
+    bottom: 88%;
+    z-index: 9999;
+}
+section.testimonials.main-testimonials button.slick-next.slick-arrow:before {
+    content: "<";
+    position: absolute;
+    left: inherit;
+    color: #fff;
+    opacity: 1;
+    font-size: 22px;
+    font-family: "slick";
+    display: block;
+    background-color: #31496d;
+    width: 40px;
+    height: 40px;
+    line-height: 34px;
+    border-radius: 100%;
+    margin-right: 20px;
+    padding-right: 3px;
+    bottom:0;
+    z-index: 999;
+    right: 1130px;
+    float: left;
+}
 section.testimonials button img {
     position: absolute;
     top: -277px;
@@ -2563,9 +2602,10 @@ section.service-boxes .main-heading img {
     position: absolute;
     top: 41px;
 }
-
 .block img {
     width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
 
 .block h5 {
@@ -2578,7 +2618,10 @@ section.service-boxes .main-heading img {
     color: #31496D;
     margin: 10px 0;
 }
-
+ul.aboutUsTest {
+    bottom: 0;
+    top: 20px;
+}
 .block span {
     font-family: "Poppins";
     font-style: normal;
