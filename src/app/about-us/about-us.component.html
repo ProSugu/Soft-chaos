@@ -8,12 +8,9 @@
             </div>
             <div class="col-md-12">
                 <ul>
-                    <li class="about-1"><img src="assets/images/about1.png"></li>
-                    <li class="about-2"><img src="assets/images/about2.png"></li>
-                    <li class="about-3"><img src="assets/images/about4.png"></li>
-                    <li class="about-4"><img src="assets/images/about3.png"></li>
-                    <li class="about-5"><img src="assets/images/about5.png"></li>
-                    <li class="about-6"><img src="assets/images/about6.png"></li>
+                    <li *ngFor="let gallery of data?.gallery;let i = index" [ngClass]="'about-'+(i+1)">
+                        <img [src]="gallery">
+                    </li>
                 </ul>
             </div>
         </div>
@@ -58,78 +55,23 @@
             </div>
         </div>
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-            <!-- <div class="row">
-                <div class="col-md-4">
-                    <div class="block">
-                        <img src="assets/images/Rectangle 1405.png">
-                        <h5>Joseph Davis</h5>
-                        <span>Founder, USA</span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                            has been the industry's standard dummy text ever since.</p>
-                    </div>
+            <ng-container *ngIf="requestingServerForBannerText">
+                <div ngxSlickItem class=" block">
+                    <app-skeleton-loader [anotherStructure]="'aboutUsService'"></app-skeleton-loader>
                 </div>
-                <div class="col-md-4">
-                    <div class="block">
-                        <img src="assets/images/Rectangle 1405 (1).png">
-                        <h5>Joseph Davis</h5>
-                        <span>Founder, USA</span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                            has been the industry's standard dummy text ever since.</p>
-                    </div>
+                <div ngxSlickItem class=" block">
+                    <app-skeleton-loader [anotherStructure]="'aboutUsService'"></app-skeleton-loader>
                 </div>
-                <div class="col-md-4">
-                    <div class="block">
-                        <img src="assets/images/Rectangle 1405 (2).png">
-                        <h5>Joseph Davis</h5>
-                        <span>Founder, USA</span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                            has been the industry's standard dummy text ever since.</p>
-                    </div>
+                <div ngxSlickItem class=" block">
+                    <app-skeleton-loader [anotherStructure]="'aboutUsService'"></app-skeleton-loader>
                 </div>
-            </div> -->
-            <div ngxSlickItem class="slide">
+            </ng-container>
+            <div ngxSlickItem class="slide" *ngFor="let service of data?.services;let i = index">
                 <div class="block">
-                    <img src="assets/images/Rectangle 1405.png">
-                    <h5>Joseph Davis</h5>
-                    <span>Founder, USA</span>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text ever since.</p>
-                </div>
-            </div>
-            <div ngxSlickItem class="slide">
-                <div class="block">
-                    <img src="assets/images/Rectangle 1405.png">
-                    <h5>Joseph Davis</h5>
-                    <span>Founder, USA</span>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text ever since.</p>
-                </div>
-            </div>
-            <div ngxSlickItem class="slide">
-                <div class="block">
-                    <img src="assets/images/Rectangle 1405.png">
-                    <h5>Joseph Davis</h5>
-                    <span>Founder, USA</span>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text ever since.</p>
-                </div>
-            </div>
-            <div ngxSlickItem class="slide">
-                <div class="block">
-                    <img src="assets/images/Rectangle 1405.png">
-                    <h5>Joseph Davis</h5>
-                    <span>Founder, USA</span>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text ever since.</p>
-                </div>
-            </div>
-            <div ngxSlickItem class="slide">
-                <div class="block">
-                    <img src="assets/images/Rectangle 1405.png">
-                    <h5>Joseph Davis</h5>
-                    <span>Founder, USA</span>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text ever since.</p>
+                    <img [src]="service?.image">
+                    <h5>{{service?.name}}</h5>
+                    <span>{{service?.role}}</span>
+                    <p>{{service?.desc}}</p>
                 </div>
             </div>
         </ngx-slick-carousel>
@@ -147,46 +89,33 @@
                 <img src="assets/images/Vector (1).png">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
+        <!-- <div class="row"> -->
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <ng-container *ngIf="requestingServerForBannerText">
+                <div ngxSlickItem class="slide vertical-slide slide-box">
+                    <app-skeleton-loader [anotherStructure]="'aboutUsTestimonials'"></app-skeleton-loader>
+                </div>
+                <div ngxSlickItem class="slide vertical-slide slide-box">
+                    <app-skeleton-loader [anotherStructure]="'aboutUsTestimonials'"></app-skeleton-loader>
+                </div>
+                <div ngxSlickItem class="slide vertical-slide slide-box">
+                    <app-skeleton-loader [anotherStructure]="'aboutUsTestimonials'"></app-skeleton-loader>
+                </div>
+            </ng-container>
+            <div ngxSlickItem class="slide" *ngFor="let testimonial of data?.testimonials;let i = index">
                 <div class="slide-box">
-                    <img src="assets/images/Logo-1.png">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <img [src]="testimonial?.logo">
+                    <p>{{testimonial?.desc}}</p>
                     <ul>
-                        <li><img src="assets/images/Ellipse 90.png"></li>
+                        <li><img [src]="testimonial?.image"></li>
                         <li>
-                            <h5>Samantha William</h5>
-                            <p>Lorem ipsum is simply</p>
+                            <h5>{{testimonial?.name}}</h5>
+                            <p>{{testimonial?.role}}</p>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="slide-box">
-                    <img src="assets/images/Logo-2.png">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <ul>
-                        <li><img src="assets/images/Ellipse 91.png"></li>
-                        <li>
-                            <h5>Samantha William</h5>
-                            <p>Lorem ipsum is simply</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="slide-box">
-                    <img src="assets/images/Logo-3.png">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <ul>
-                        <li><img src="assets/images/Ellipse 98.png"></li>
-                        <li>
-                            <h5>Samantha William</h5>
-                            <p>Lorem ipsum is simply</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        </ngx-slick-carousel>
+        <!-- </div> -->
     </div>
 </section>

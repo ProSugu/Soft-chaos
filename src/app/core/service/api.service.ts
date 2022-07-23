@@ -23,4 +23,8 @@ export class ApiService {
   getBookPerData() {
     return this.http.get('assets/mocks/bookingEvents.json');
   }
+
+  getAboutUsData() {
+    return this.http.get('assets/mocks/aboutUs.json');
+  }
 }

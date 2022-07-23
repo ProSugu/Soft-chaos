@@ -1,0 +1,76 @@
+{
+    "services": [{
+            "id": "1",
+            "name": "Joseph Davis",
+            "role": "Founder, USA",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.",
+            "image": "assets/images/Rectangle 1405.png"
+        },
+        {
+            "id": "2",
+            "name": "Joseph Davis",
+            "role": "Founder, USA",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.",
+            "image": "assets/images/Rectangle 1405.png"
+        },
+        {
+            "id": "3",
+            "name": "Joseph Davis",
+            "role": "Founder, USA",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.",
+            "image": "assets/images/Rectangle 1405.png"
+        }, {
+            "id": "4",
+            "name": "Joseph Davis",
+            "role": "Founder, USA",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.",
+            "image": "assets/images/Rectangle 1405.png"
+        },
+        {
+            "id": "5",
+            "name": "Joseph Davis",
+            "role": "Founder, USA",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.",
+            "image": "assets/images/Rectangle 1405.png"
+        }
+    ],
+    "gallery": [
+        "assets/images/about1.png",
+        "assets/images/about2.png",
+        "assets/images/about4.png",
+        "assets/images/about3.png",
+        "assets/images/about5.png",
+        "assets/images/about6.png"
+    ],
+    "testimonials": [{
+            "id": "1",
+            "logo": "assets/images/Logo-1.png",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "name": "Samantha William",
+            "role": "Lorem ipsum is simply",
+            "image": "assets/images/Ellipse 90.png"
+        },
+        {
+            "id": "2",
+            "logo": "assets/images/Logo-2.png",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "name": "Samantha William",
+            "role": "Lorem ipsum is simply",
+            "image": "assets/images/Ellipse 91.png"
+        }, {
+            "id": "3",
+            "logo": "assets/images/Logo-3.png",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "name": "Samantha William",
+            "role": "Lorem ipsum is simply",
+            "image": "assets/images/Ellipse 98.png"
+        }, {
+            "id": "4",
+            "logo": "assets/images/Logo-3.png",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "name": "Samantha William",
+            "role": "Lorem ipsum is simply",
+            "image": "assets/images/Ellipse 98.png"
+        }
+    ]
+}

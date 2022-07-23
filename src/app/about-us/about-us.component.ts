@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../core/service/api.service';
 
 @Component({
   selector: 'app-about-us',
@@ -40,9 +41,25 @@ export class AboutUsComponent implements OnInit {
       }
     ],
   };
-  constructor() { }
+  requestingServerForBannerText!: boolean;
+  public data: any;
+
+  constructor(
+    private apiService: ApiService,
+  ) { }
 
   ngOnInit(): void {
+    this.loaddata();
   }
 
+  loaddata() {
+    this.requestingServerForBannerText = true;
+    setTimeout(() => {
+      this.apiService.getAboutUsData().subscribe((response: any) => {
+        this.data = response;
+        console.log(this.data);
+        this.requestingServerForBannerText = false;
+      })
+    }, 3000)
+  }
 }
