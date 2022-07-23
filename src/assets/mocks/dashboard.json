@@ -1,0 +1,126 @@
+{
+    "banner": [{
+            "id": "1",
+            "image": "assets/images/banner-img.png",
+            "subItems": [{
+                    "id": "1",
+                    "count": "20M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "User Online"
+                },
+                {
+                    "id": "2",
+                    "count": "5M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Visit Tajmahal"
+                },
+                {
+                    "id": "3",
+                    "count": "50M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Destination"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "image": "assets/images/banner-img-2.png",
+            "subItems": [{
+                    "id": "1",
+                    "count": "20M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "User Online"
+                },
+                {
+                    "id": "2",
+                    "count": "5M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Visit Tajmahal"
+                },
+                {
+                    "id": "3",
+                    "count": "50M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Destination"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "image": "assets/images/banner-img-3.png",
+            "subItems": [{
+                    "id": "1",
+                    "count": "20M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "User Online"
+                },
+                {
+                    "id": "2",
+                    "count": "5M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Visit Tajmahal"
+                },
+                {
+                    "id": "3",
+                    "count": "50M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Destination"
+                }
+            ]
+        }
+    ],
+    "objective": [{
+            "id": "1",
+            "title": "Understand",
+            "desc": "Establish and maintain the right approach to accelerate the delivery process.",
+            "subObj": [{
+                    "id": "1",
+                    "title": "Empathize",
+                    "desc": "Conduct research, interviews, and shadowing customers for better understanding without judging.",
+                    "image": "assets/images/slide-1.png"
+                },
+                {
+                    "id": "2",
+                    "title": "Define",
+                    "desc": "Identify and pinpoint the list of problems in hand along with objectives, personas, and challenges.",
+                    "image": "assets/images/slide-1.png"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Explore",
+            "desc": "Here begins the design thinking process as we focus on the strongest ideas and build upon them.",
+            "subObj": [{
+                    "id": "3",
+                    "title": "Ideate",
+                    "desc": "Generate a list of ideas. Share ideas, discuss, segment, and prioritize ideas.",
+                    "image": "assets/images/slide-1.png"
+                },
+                {
+                    "id": "4",
+                    "title": "Prototype",
+                    "desc": "Build representations for a range of ideas. Create a simple storyboard and don’t be afraid to iterate or to fail fast.",
+                    "image": "assets/images/slide-1.png"
+                }
+            ]
+        }, {
+            "id": "3",
+            "title": "Materialize",
+            "desc": "A win-win working approach helps to materialize ideas into a great tangible success.",
+            "subObj": [{
+                    "id": "5",
+                    "title": "Test",
+                    "desc": "Understand impediments, seek user feedback and use it to improvise your user’s experience.",
+                    "image": "assets/images/slide-1.png"
+                },
+                {
+                    "id": "6",
+                    "title": "Implement",
+                    "desc": "Put your vision into action, recognize the synergy and achieve project success.",
+                    "image": "assets/images/slide-1.png"
+                }
+            ]
+        }
+    ]
+}
