@@ -3429,6 +3429,90 @@ section.pay-confirm-box .confirm-box a {
 }
 
 
+.card-section .wrapper {
+    display: flex;
+    background: transparent;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.card-section .wrapper .option {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border-radius: 5px;
+    text-align:center;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: all 0.3s ease;
+    line-height: 65px;
+    border: 2px solid #E5E9ED;
+    border-radius: 12px;
+}
+.card-section .wrapper .option i {
+    color: #7B17C1;
+    font-size: 28px;
+    display: block;
+}
+.card-section .wrapper .option span {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px !important;
+    line-height: 40px;
+    text-align: center;
+    color: #757F8F !important;
+    display: block;
+}
+.card-section .wrapper .option .dot {
+    height: 20px;
+    width: 20px;
+    background: transparent;
+    border-radius: 50%;
+    position: relative;
+}
+.card-section .wrapper .option .dot::before{
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background:transparent;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+.card-section input[type="radio"]{
+  display: none;
+}
+.card-section #option-1:checked:checked ~ .option-1, .card-section #option-2:checked:checked ~ .option-2 {
+    border: 2px solid #7B17C1;
+}
+.card-section #option-1:checked:checked ~ .option-1 .dot,
+.card-section #option-2:checked:checked ~ .option-2 .dot{
+  background:transparent;
+}
+.card-section #option-1:checked:checked ~ .option-1 .dot::before,
+.card-section #option-2:checked:checked ~ .option-2 .dot::before{
+  opacity: 1;
+  transform: scale(1);
+}
+.card-section .wrapper .option span{
+  font-size: 20px;
+  color: #808080;
+}
+#option-1:checked:checked ~ .option-1 span, #option-2:checked:checked ~ .option-2 span {
+    color: #7b17c1 !important;
+}
 /*-------------------media css-------------*/
 
 @media (max-width: 1800px) {
