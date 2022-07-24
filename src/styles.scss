@@ -845,7 +845,11 @@ li.item-2.item h5 {
     position: absolute;
     top: -175px;
 }
-
+.banner-text {
+    text-align: left;
+    height: 412px;
+    margin-bottom: 180px;
+}
 .mat-autocomplete-panel.mat-autocomplete-visible {
     visibility: visible;
     z-index: 9999;
@@ -3516,6 +3520,7 @@ section.pay-confirm-box .confirm-box a {
 section.about-card img {
     width: 80%;
 }
+
 /*-------------------media css-------------*/
 
 @media (max-width: 1800px) {
