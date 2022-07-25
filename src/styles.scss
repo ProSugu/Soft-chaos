@@ -446,7 +446,12 @@ h1 span {
 
 
 /*---------------------my css---------------*/
-
+section.banner.slick-slider .slick-track, .slick-slider .slick-list {
+    transform: translate3d(0, 0, 0) !important;
+    height: 500px !important;
+    overflow: hidden;
+    
+}
 section.services {
     padding: 60px 0;
 }
@@ -852,8 +857,9 @@ li.item-2.item h5 {
     box-shadow: 0px 39px 66px rgba(10, 30, 59, 0.16);
     border-radius: 15px;
     position: absolute;
-    top: -175px;
+    top: -155px;
 }
+
 .banner-text {
     text-align: left;
     height: 412px;
@@ -2726,7 +2732,7 @@ section.banner {
     color: #757F8F;
     position: relative;
     top: 0;
-    margin-bottom: 0;
+    margin:30px 0 0;
 }
 
 section.banner .form-inline .form-group {
