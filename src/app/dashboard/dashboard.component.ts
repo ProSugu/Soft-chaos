@@ -147,8 +147,8 @@ export class DashboardComponent {
     }, 3000)
   }
 
-  public checkData(): void {
-    this.router.navigate(['/','booking'])
+  public exploreTour(): void {
+    this.router.navigate(['/','tour'])
   }
 }
 

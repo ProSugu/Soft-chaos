@@ -1,0 +1,34 @@
+{
+    "bookingTimeSlots": [
+        {
+            "From_HH": "8",
+            "To_HH": "9",
+            "slotAvailable": false
+        },
+        {
+            "From_HH": "10",
+            "To_HH": "11",
+            "slotAvailable": true
+        },
+        {
+            "From_HH": "12",
+            "To_HH": "13",
+            "slotAvailable": true
+        },
+        {
+            "From_HH": "16",
+            "To_HH": "17",
+            "slotAvailable": true
+        },
+        {
+            "From_HH": "18",
+            "To_HH": "19",
+            "slotAvailable": true
+        },
+        {
+            "From_HH": "20",
+            "To_HH": "21",
+            "slotAvailable": true
+        }
+    ]
+}

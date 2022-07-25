@@ -1,0 +1,16 @@
+{
+    "regionList": [
+        {
+            "id": 1,
+            "label": "Region 1"
+        },
+        {
+            "id": 2,
+            "label": "Region 2"
+        },
+        {
+            "id": 2,
+            "label": "Region 3"
+        }
+    ]
+}

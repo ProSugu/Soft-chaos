@@ -1,0 +1,16 @@
+{
+    "cityList": [
+        {
+            "id": 1,
+            "label": "Meerut"
+        },
+        {
+            "id": 2,
+            "label": "Ghaziabad"
+        },
+        {
+            "id": 2,
+            "label": "Chandigarh"
+        }
+    ]
+}

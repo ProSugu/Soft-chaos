@@ -6,7 +6,33 @@ import { DURATION_FILTERS, months, weekDay } from 'src/app/book-per-schedule/boo
 })
 export class CalenderService {
 
+  WEEK_DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat'];
+
   constructor() { }
+
+  getOneMonthDaysListFromToday() {
+    const todayDate: any = new Date();
+    const nextMonth: any = new Date(todayDate.getFullYear(), todayDate.getMonth()+1, todayDate.getDate());
+    console.log(nextMonth)
+    const diffTime = Math.abs(nextMonth - todayDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+    let daysList: any[] = [];
+    Array(diffDays).fill(1).forEach((elm, i) => {
+      daysList.push({
+        date: todayDate.getDate(),
+        day: this.WEEK_DAYS[todayDate.getDay()],
+        formatDate: `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
+      })
+      todayDate.setDate(todayDate.getDate()+1);
+    })
+    return daysList;
+  }
+
+  differenceBetweenTwoDates(date1: any, date2: any) {
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+    return diffDays;
+  }
 
   getTodayDay() {
     const todayDate = new Date();

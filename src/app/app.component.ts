@@ -1,5 +1,6 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
 import { ApiService } from './core/service/api.service';
+import { StoreService } from './core/service/store.service';
 import { DeviceService } from './core/service/device.service';
 
 @Component({
@@ -13,13 +14,16 @@ export class AppComponent {
   public scrollPosition: any;
   title = 'soft-chaos';
 
-  constructor(private apiService: ApiService,
+  constructor(
+    private apiService: ApiService,
+    private storeService: StoreService,
     private deviceService: DeviceService) {
     window.addEventListener('scroll', this.scroll, true);
     this.loadHeader();
   }
 
   scroll = (event: any): void => {
+    this.storeService.scrollRef = event;
     this.deviceService.scrollEventFn = event;
     this.scrollPosition = event.target.scrollTop;
     this.deviceService.scrollY = this.scrollPosition;

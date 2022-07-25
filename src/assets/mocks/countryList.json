@@ -1,0 +1,16 @@
+{
+    "countryList": [
+        {
+            "id": 1,
+            "label": "China"
+        },
+        {
+            "id": 2,
+            "label": "India"
+        },
+        {
+            "id": 3,
+            "label": "Russia"
+        }
+    ]
+}

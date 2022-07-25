@@ -1,252 +1,354 @@
-<section class="booking-flow-baar" *ngIf="step < 4">
+<section class="booking-flow-baar">
     <div class="container">
-        <ul class="progressbar">
-            <li class="active">Order Details</li>
-            <li [ngClass]="step >= 2 ? 'active' : ''">About you</li>
-            <li [ngClass]="step >= 3 ? 'active' : ''">Payment</li>
-            <li [ngClass]="step >= 4 ? 'active' : ''">Confirm</li>
+
+        <!-- Stepper -->
+        <ul class="progressbar" #progressbarRef>
+            <li [ngClass]="{'active': step > 1, 'bordered-circle': step === 1}">Order Details</li>
+            <li [ngClass]="{'active': step > 2, 'bordered-circle': step === 2}">About you</li>
+            <li [ngClass]="{'active': step > 3, 'bordered-circle': step === 3}" class="bordered-circle">Payment</li>
+            <li [ngClass]="{'active': step === 4}">Confirm</li>
         </ul>
         <hr>
-        <div class="row" *ngIf="step === 1">
-            <div class="col-md-8">
-                <div class="booking-form">
-                    <div class="row">
-                        <div class="col-md-6 t-left">
-                            <h5>Select Date</h5>
+        <ng-container *ngIf="step < 4">
+            <div class="row" *ngIf="step === 1">
+                <div class="col-md-8 col-left">
+                    <div class="booking-form">
+
+                        <!-- Date Range Slider Header Label -->
+                        <div class="row row--date">
+                            <div class="col-md-6 t-left d-flex align-items-center">
+                                <h5 class="mb-0">Select Date</h5>
+                            </div>
+                            <div class="col-md-6 t-right">
+                                <div class="dropdown">
+                                    <button class="btn btn--date" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jun 2022 <img
+                                            src="assets/images/arrow-down-gray.svg" alt="arrow-down-gray">
+                                    </button>
+                                    <div (click)="$event.stopPropagation();" class="dropdown-menu dropdown-menu--calender" aria-labelledby="dropdownMenuButton">
+                                        <mat-calendar #matCalenderRef [selected]="selectedDateControl.value" [minDate]="todayDate" [maxDate]="dateAfterOneMonth" (selectedChange)="onBookingDateSelect($event, progressbarRef)">
+                                        </mat-calendar>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6 t-right">
-                            <select>
-                                <option>Jun 2022</option>
-                                <option>July 2022</option>
-                                <option>August 2022</option>
-                            </select>
+
+
+                        <!-- Date Range Slider -->
+                        <ngx-slick-carousel class="carousel month-days-carousel-wrapper" #slickModal="slick-carousel" [config]="slideConfigWeek">
+                            <div ngxSlickItem>
+                                <div class="weekly-list-slides" [ngClass]="{'active': !selectedBookingDate}" (click)="selectedBookingDate = 0;onBookingDateSelectFromSlider();">
+                                    <span>Today</span>
+                                </div>
+                            </div>
+                            <div ngxSlickItem *ngFor="let monthDay of monthList;let i = index;">
+                                <div class="weekly-list-slides" (click)="selectedBookingDate = (i+1);onBookingDateSelectFromSlider(monthDay?.formatDate);" [ngClass]="{'active': (i+1) === selectedBookingDate}"><span>{{ monthDay?.day
+                                        }}</span><strong>{{ monthDay?.date }}</strong></div>
+                            </div>
+                        </ngx-slick-carousel>
+                        <hr>
+
+                        <!-- Time Slots -->
+                        <h5 class="form_heading form_heading--time">Select Time</h5>
+                        <ul class="time">
+                            <li [ngClass]="{'time-list--disabled': !timeSlot.slotAvailable, 'active': SelectedTimeSlotIndex === (i+1)}" *ngFor="let timeSlot of bookingTimeSlots; let i = index;" class="time-list" (click)="timeSlot.slotAvailable ? (SelectedTimeSlotIndex = (i+1)): '';">
+                                <div class="time-list__inner">{{ timeSlot?.From_HH | twelveHourFormat}} - {{ timeSlot?.To_HH | twelveHourFormat }} {{ +timeSlot?.To_HH
+                                    <=12 ? 'AM' : 'PM' }}</div>
+                            </li>
+                        </ul>
+                        <ul class="next-btn">
+                            <li><a href="javascript:void(0);" [ngClass]="{'disabled': isFirstStepDisabled }" class="disabled" (click)="next()">Next</a></li>
+                        </ul>
                         </div>
                     </div>
-                    <ul class="weekly">
-                        <li class="active"><a href="javascript:void(0);">Today</a></li>
-                        <li><a href="javascript:void(0);"><span>THR</span><strong>02</strong></a></li>
-                        <li><a href="javascript:void(0);"><span>FRI</span><strong>03</strong></a></li>
-                        <li><a href="javascript:void(0);"><span>SAT</span><strong>04</strong></a></li>
-                        <li><a href="javascript:void(0);"><span>SUN</span><strong>05</strong></a></li>
-                        <li><a href="javascript:void(0);"><span>MON</span><strong>06</strong></a></li>
-                        <a href="javascript:void(0);" class="right_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                    </ul>
-                    <hr>
-                    <h5 class="form_heading">Select Time</h5>
-                    <ul class="time">
-                        <li><a href="javascript:void(0);">Today</a></li>
-                        <li><a href="javascript:void(0);">08 - 09 AM</a></li>
-                        <li class="active"><a href="javascript:void(0);">10 - 11 AM</a></li>
-                        <li><a href="javascript:void(0);">11 - 12 AM</a></li>
-                        <li><a href="javascript:void(0);">04 - 06 PM</a></li>
-                        <li><a href="javascript:void(0);">05 - 06 PM</a></li>
-                        <li><a href="javascript:void(0);">11 - 12 AM</a></li>
-                    </ul>
-                    <ul class="next-btn">
-                        <li><a href="javascript:void(0);" (click)="next()">Next</a></li>
-                    </ul>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h5>Order Summary</h5>
+                            <div class="order-summary-thumbnail">
+                                <img src="assets/images/g3.png">
+                            </div>
+                            <h4>Taj Mahal - India</h4>
+                            <p>Safari</p>
+                            <ul>
+                                <li>
+                                    <div class="pricing">
+                                        Taj Mahal - India (safari) <span>$ 22.00</span>
+                                    </div>
+                                    <div class="pricing">
+                                        Discount <span>$ 0.00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="pricing">
+                                        Total <strong>$22.00</strong>
+                                    </div>
+                                </li>
+                                <li class="apply-coupne"><a href="javascript:void(0);">Apply Promocode</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <h5>Order Summary</h5>
-                    <img src="assets/images/g3.png">
-                    <h4>Taj Mahal - India</h4>
-                    <p>Safari</p>
-                    <ul>
-                        <li>Taj Mahal - India (safari) <span>$ 22.00</span></li>
-                        <li>Discount <span>$ 0.00</span></li>
-                        <li>Total <strong>$22.00</strong></li>
-                        <li class="apply-coupne"><a href="javascript:void(0);">Apply Promocode</a></li>
-                    </ul>
+                <div class="row" *ngIf="step === 2">
+                    <div class="col-md-8 col-left">
+                        <div class="booking-form booking-form--contactdetails">
+                            <h5>Contact Information</h5>
+                            <form [formGroup]="contactInformationForm">
+                                <div class="row mb-10">
+                                    <div class="col-md-6 form-field-col">
+                                        <label>First Name</label>
+                                        <input type="text" maxlength="100" formControlName="firstName" class="form-control" placeholder="">
+                                        <p class="error-msg" [@enterAnimation] *ngIf="hasStep2Error('firstName', 'required') && (contactInformationForm.get('firstName')?.touched || contactInformationForm.get('firstName')?.dirty)">
+                                            This field is required</p>
+                                        <p class="error-msg" [@enterAnimation] *ngIf="!hasStep2Error('firstName', 'required') && hasStep2Error('firstName', 'pattern') && (contactInformationForm.get('firstName')?.touched || contactInformationForm.get('firstName')?.dirty)">
+                                            Invalid first name entered</p>
+                                    </div>
+                                    <div class="col-md-6 form-field-col">
+                                        <label>Last Name</label>
+                                        <input type="text" maxlength="100" formControlName="lastName" class="form-control" placeholder="">
+                                        <p class="error-msg" [@enterAnimation] *ngIf="hasStep2Error('lastName', 'required') && (contactInformationForm.get('lastName')?.touched || contactInformationForm.get('lastName')?.dirty)">
+                                            This field is required</p>
+                                        <p class="error-msg" [@enterAnimation] *ngIf="!hasStep2Error('lastName', 'required') && hasStep2Error('lastName', 'pattern') && (contactInformationForm.get('lastName')?.touched || contactInformationForm.get('lastName')?.dirty)">
+                                            Invalid last name entered</p>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6 form-field-col">
+                                        <label>Contact Number</label>
+                                        <div class="input-conuntry-dropdown">
+                                            <div class="dropdown">
+                                                <button class="btn btn--flag" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{contactInformationForm.get('countryForContact')?.value?.dial_code}}
+                                                <img src="assets/images/arrow-down-gray.svg" alt="arrow-down-gray">
+
+                                            </button>
+                                                <div class="dropdown-menu dropdown-menu--flag" aria-labelledby="dropdownMenuButton">
+                                                    <div class="seach-wrap">
+                                                        <input id="searchCountryCode" type="text" placeholder="search country" autofocus formControlName="searchCountryCode">
+                                                    </div>
+                                                    <ul>
+                                                        <ng-container *ngIf="flagList && flagList.length; else noData">
+                                                            <li *ngFor="let flagObj of flagList;" (click)="selectCountryCode(flagObj)" [ngClass]="{'active': contactInformationForm.get('countryForContact')?.value?.name === flagObj.name}">
+                                                                {{ flagObj.name}} <span>({{flagObj.dial_code}})</span></li>
+                                                        </ng-container>
+                                                        <ng-template #noData>
+                                                            <li>No Result Found.</li>
+                                                        </ng-template>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <input formControlName="contactNumber" type="text" class="form-control" placeholder="">
+                                        </div>
+                                        <p class="error-msg" [@enterAnimation] *ngIf="hasStep2Error('contactNumber', 'required') && (contactInformationForm.get('contactNumber')?.touched || contactInformationForm.get('contactNumber')?.dirty)">
+                                            This field is required</p>
+                                        <p class="error-msg" [@enterAnimation] *ngIf="!hasStep2Error('contactNumber', 'required') && hasStep2Error('contactNumber', 'pattern') && (contactInformationForm.get('contactNumber')?.touched || contactInformationForm.get('contactNumber')?.dirty)">
+                                            Invalid contact number entered</p>
+                                    </div>
+                                    <div class="col-md-6 form-field-col">
+                                        <label>Email</label>
+                                        <input formControlName="email" maxlength="250" type="text" class="form-control" placeholder="">
+                                        <p class="error-msg" [@enterAnimation] *ngIf="hasStep2Error('email', 'required') && (contactInformationForm.get('email')?.touched || contactInformationForm.get('email')?.dirty)">
+                                            This field is required</p>
+                                        <p class="error-msg" [@enterAnimation] *ngIf="!hasStep2Error('email', 'required') && hasStep2Error('email', 'pattern') && (contactInformationForm.get('email')?.touched || contactInformationForm.get('email')?.dirty)">
+                                            Invalid email entered</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <h5>Your Location</h5>
+                                <div class="row loaction-input mb-10">
+                                    <div class="col-md-12 form-field-col">
+                                        <label>Address</label>
+                                        <input formControlName="address" type="text" class="form-control" placeholder="">
+                                        <p class="error-msg" [@enterAnimation] *ngIf="hasStep2Error('address', 'required') && (contactInformationForm.get('address')?.touched || contactInformationForm.get('address')?.dirty)">
+                                            This field is required</p>
+
+                                    </div>
+                                </div>
+                                <div class="row mb-20">
+                                    <div class="col-md-6 form-field-col">
+                                        <label>Country</label>
+                                        <select formControlName="country">
+                                        <option class="dropdown-item" *ngFor="let country of countryList;"
+                                            [value]="country.id">{{ country.label}}</option>
+                                    </select>
+
+                                        <p class="error-msg" [@enterAnimation] *ngIf="hasStep2Error('country', 'required') && (contactInformationForm.get('country')?.touched || contactInformationForm.get('country')?.dirty)">
+                                            This field is required</p>
+                                    </div>
+                                    <div class="col-md-6 form-field-col">
+                                        <label>City</label>
+                                        <select formControlName="city">
+                                        <option class="dropdown-item" *ngFor="let city of cityList;" [value]="city.id">
+                                            {{ city.label}}</option>
+                                    </select>
+                                        <p class="error-msg" [@enterAnimation] *ngIf="hasStep2Error('city', 'required') && (contactInformationForm.get('city')?.touched || contactInformationForm.get('city')?.dirty)">
+                                            This field is required</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-field-col">
+                                        <label>Region</label>
+                                        <select formControlName="region">
+                                        <option class="dropdown-item" *ngFor="let region of regionList;"
+                                            [value]="region.id">{{ region.label }}</option>
+                                    </select>
+                                        <p class="error-msg" [@enterAnimation] *ngIf="hasStep2Error('region', 'required') && (contactInformationForm.get('region')?.touched || contactInformationForm.get('region')?.dirty)">
+                                            This field is required</p>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12">
+                                        <ul class="next-btn">
+                                            <li class="back-btn"><a href="javascript:void(0);" (click)="prev()">Back</a>
+                                            </li>
+                                            <li><a href="javascript:void(0);" [ngClass]="{'disabled': isSecondStepDisabled }" (click)="next()">Next</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h5>Order Summary</h5>
+                            <div class="order-summary-thumbnail">
+                                <img src="assets/images/g3.png">
+                            </div>
+                            <h4>Taj Mahal - India</h4>
+                            <p>Safari</p>
+                            <ul>
+                                <li>
+                                    <div class="pricing">
+                                        Taj Mahal - India (safari) <span>$ 22.00</span>
+                                    </div>
+                                    <div class="pricing">
+                                        Discount <span>$ 0.00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="pricing">
+                                        Total <strong>$22.00</strong>
+                                    </div>
+                                </li>
+                                <li class="apply-coupne"><a href="javascript:void(0);">Apply Promocode</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="row" *ngIf="step === 3">
+                    <div class="col-md-8 col-left">
+                        <div class="booking-form booking-form--payment">
+                            <div class="heading-custom">
+                                <h5>Payment Details</h5>
+                                <p class="mb-0">Enter your personal details to complete your viewing.</p>
+                            </div>
+                            <form [formGroup]="paymentForm">
+                                <div class="row payment-card-row">
+                                    <div class="col-md-6">
+                                        <div class="payment-type-block" [ngClass]="{'active': getControlValue('paymentType') === '1'}" (click)="onPaymentModeSelect(1)">
+                                            <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                            <span>Cards</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="payment-type-block" [ngClass]="{'active': getControlValue('paymentType') === '2'}" (click)="onPaymentModeSelect(2)">
+                                            <i class="fa fa-paypal" aria-hidden="true"></i>
+                                            <span>PayPal</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="getControlValue('paymentType') === '1'" [@enterAnimation]>
+                                    <div class="form-row card-number mb-20">
+                                        <div class="col">
+                                            <label>Card Number</label>
+                                            <div class="form-group--card">
+                                                <input formControlName="cardNumber" maxlength="20" type="text" class="form-control form-control--cardnum" placeholder="">
+                                                <img src="assets/images/visa.png" alt="visa">
+                                                <p class="error-msg" [@enterAnimation] *ngIf="hasStep3Error('cardNumber', 'required') && (paymentForm.get('cardNumber')?.touched || paymentForm.get('cardNumber')?.dirty)">
+                                                    This field is required</p>
+                                                <p class="error-msg" [@enterAnimation] *ngIf="!hasStep3Error('cardNumber', 'required') && hasStep3Error('cardNumber', 'pattern') && (paymentForm.get('cardNumber')?.touched || paymentForm.get('cardNumber')?.dirty)">
+                                                    Invalid card number entered</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mb-20">
+                                        <div class="col">
+                                            <label>Card holder Name</label>
+                                            <input formControlName="cardHolderName" maxlength="100" type="text" class="form-control" placeholder="">
+                                            <p class="error-msg" [@enterAnimation] *ngIf="hasStep3Error('cardHolderName', 'required') && (paymentForm.get('cardHolderName')?.touched || paymentForm.get('cardHolderName')?.dirty)">
+                                                This field is required</p>
+                                            <p class="error-msg" [@enterAnimation] *ngIf="!hasStep3Error('cardHolderName', 'required') && hasStep3Error('cardHolderName', 'pattern') && (paymentForm.get('cardHolderName')?.touched || paymentForm.get('cardHolderName')?.dirty)">
+                                                Invalid card holder name entered</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mb-20">
+                                        <div class="col">
+                                            <label>Expiry</label>
+                                            <input formControlName="expiry" maxlength="7" type="text" class="form-control" placeholder="">
+                                            <p class="error-msg" [@enterAnimation] *ngIf="hasStep3Error('expiry', 'required') && (paymentForm.get('expiry')?.touched || paymentForm.get('expiry')?.dirty)">
+                                                This field is required</p>
+                                            <p class="error-msg" [@enterAnimation] *ngIf="!hasStep3Error('expiry', 'required') && hasStep3Error('expiry', 'pattern') && (paymentForm.get('expiry')?.touched || paymentForm.get('expiry')?.dirty)">
+                                                Invalid expiry details entered</p>
+                                        </div>
+                                        <div class="col">
+                                            <label>CVC/CVV</label>
+                                            <input formControlName="cvvNumber" maxlength="4" type="text" class="form-control" placeholder="">
+                                            <p class="error-msg" [@enterAnimation] *ngIf="hasStep3Error('cvvNumber', 'required') && (paymentForm.get('cvvNumber')?.touched || paymentForm.get('cvvNumber')?.dirty)">
+                                                This field is required</p>
+                                            <p class="error-msg" [@enterAnimation] *ngIf="!hasStep3Error('cvvNumber', 'required') && hasStep3Error('cvvNumber', 'pattern') && (paymentForm.get('cvvNumber')?.touched || paymentForm.get('cvvNumber')?.dirty)">
+                                                Invalid CVC/CVV entered</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="desc">By confirming payment you are approving our Terms & Conditions and
+                                acknowledging our Privacy Policy.
+                                Your Payment information and test information will remain Confidential.</small>
+                                <div class="row mt-3">
+                                    <div class="col-md-12">
+                                        <ul class="next-btn">
+                                            <li class="back-btn"><a href="javascript:void(0);" (click)="prev()">Back</a>
+                                            </li>
+                                            <li><a [ngClass]="{'disabled': isThirdStepDisabled }" href="javascript:void(0);" (click)="next()">Confirm Payment</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h5>Order Summary</h5>
+                            <div class="order-summary-thumbnail">
+                                <img src="assets/images/g3.png">
+                            </div>
+                            <h4>Taj Mahal - India</h4>
+                            <p>Safari</p>
+                            <ul>
+                                <li>
+                                    <div class="pricing">
+                                        Taj Mahal - India (safari) <span>$ 22.00</span>
+                                    </div>
+                                    <div class="pricing">
+                                        Discount <span>$ 0.00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="pricing">
+                                        Total <strong>$22.00</strong>
+                                    </div>
+                                </li>
+                                <li class="apply-coupne"><a href="javascript:void(0);">Apply Promocode</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </ng-container>
+
         </div>
-        <div class="row" *ngIf="step === 2">
-            <div class="col-md-8">
-                <div class="booking-form">
-                    <h5>Contact Information</h5>
-                    <form>
-                        <div class="form-row">
-                            <div class="col">
-                                <label>First Name</label>
-                                <input type="text" class="form-control" placeholder="Enatr your first name">
-                            </div>
-                            <div class="col">
-                                <label>Last Name</label>
-                                <input type="text" class="form-control" placeholder="Enatr your last name">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="col">
-                                <label>Contact Number</label>
-                                <input type="text" class="form-control" placeholder="989-8256-234">
-                            </div>
-                            <div class="col">
-                                <label>Email</label>
-                                <input type="text" class="form-control" placeholder="Enatr your email">
-                            </div>
-                        </div>
-                        <h5>Your Location</h5>
-                        <div class="form-row loaction-input">
-                            <div class="col">
-                                <label>Address</label>
-                                <input type="text" class="form-control" placeholder="124 City Road, London, EC1V 2NX">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label>Country</label>
-                                <select>
-                                  <option>Enter your country</option>
-                                  <option>Enter your country</option>
-                                  <option>Enter your country</option>
-                                  <option>Enter your country</option>
-                              </select>
-                            </div>
-                            <div class="col">
-                                <label>CIty</label>
-                                <select>
-                                  <option>Enter your city</option>
-                                  <option>Enter your city</option>
-                                  <option>Enter your city</option>
-                                  <option>Enter your city</option>
-                              </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label>Region</label>
-                                <select>
-                                  <option>Enter your region</option>
-                                  <option>Enter your region</option>
-                                  <option>Enter your region</option>
-                                  <option>Enter your region</option>
-                              </select>
-                            </div>
-                        </div>
-                        <div class="form-row mt-3">
-                            <div class="col">
-                                <ul class="next-btn">
-                                    <li class="back-btn"><a href="javascript:void(0);" (click)="prev()">Back</a></li>
-                                    <li><a href="javascript:void(0);" (click)="next()">Next</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <h5>Order Summary</h5>
-                    <img src="assets/images/g3.png">
-                    <h4>Taj Mahal - India</h4>
-                    <p>Safari</p>
-                    <ul>
-                        <li>Taj Mahal - India (safari) <span>$ 22.00</span></li>
-                        <li>Discount <span>$ 0.00</span></li>
-                        <li>Total <strong>$22.00</strong></li>
-                        <li class="apply-coupne"><a href="javascript:void(0);">Apply Promocode</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row" *ngIf="step === 3">
-            <div class="col-md-8">
-                <div class="booking-form">
-                    <h5>Payment Details</h5>
-                    <p>Enter your personal details to complete your viewing.</p>
-                    <form>
-                        <div class="form-row card-section">
-                            <div class="col">
-                                <div class="wrapper">
-                                    <input type="radio" name="select" id="option-1" checked>
-                                      <label for="option-1" class="option option-1">
-                                        <div class="dot"></div>
-                                        <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                        <span>Cards</span>
-                                    </label>
-                                   </div>
-                                <!-- <a href="javascript:void(0);" class="active">
-                                    <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                    <span>Cards</span>
-                                </a> -->
-                            </div>
-                            <div class="col">
-                                <div class="wrapper">
-                                    <input type="radio" name="select" id="option-2">
-                                
-                                      <label for="option-2" class="option option-2">
-                                        <div class="dot"></div>
-                                        <i class="fa fa-paypal" aria-hidden="true"></i>
-                                         <span>PayPal</span>
-                                      </label>
-                                   </div>
-                                <!-- <a href="javascript:void(0);">
-                                    <i class="fa fa-paypal" aria-hidden="true"></i>
-                                    <span>PayPal</span>
-                                </a> -->
-                            </div>
-                        </div>
-                        <div class="form-row card-number">
-                            <div class="col">
-                                <label>Card Number</label>
-                                <input type="text" class="form-control" placeholder="9898  8256  4586  4558">
-                                <i class="fa fa-cc-visa" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label>Card holder Name</label>
-                                <input type="text" class="form-control" placeholder="Enatr your name">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label>Expiry</label>
-                                <input type="text" class="form-control" placeholder="Enatr card expiry date">
-                            </div>
-                            <div class="col">
-                                <label>CVC/CVV</label>
-                                <input type="text" class="form-control" placeholder="Enatr card CVC/CVV">
-                            </div>
-                        </div>
-                        <small>By confirming payment you are approving our Terms & Conditions and acknowledging our Privacy Policy.
-                        Your Payment information and test information will remain Confidential.</small>
-                        <div class="form-row mt-3">
-                            <div class="col">
-                                <ul class="next-btn">
-                                    <li class="back-btn"><a href="javascript:void(0);" (click)="prev()">Back</a></li>
-                                    <li><a href="javascript:void(0);" (click)="next()">Confirm Payment</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <h5>Order Summary</h5>
-                    <img src="assets/images/g3.png">
-                    <h4>Taj Mahal - India</h4>
-                    <p>Safari</p>
-                    <ul>
-                        <li>Taj Mahal - India (safari) <span>$ 22.00</span></li>
-                        <li>Discount <span>$ 0.00</span></li>
-                        <li>Total <strong>$22.00</strong></li>
-                        <li class="apply-coupne"><a href="javascript:void(0);">Apply Promocode</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
 </section>
 
-<section class="pay-confirm-box booking-flow-baar" *ngIf="step === 4">
+<section class="pay-confirm-box" *ngIf="step === 4">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

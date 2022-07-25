@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tour',
@@ -94,9 +95,12 @@ export class TourComponent implements OnInit {
     prevArrow: "<button type='button' matRipple class='slick-prev pull-right'><img src='assets/images/left-arrow.png'></button>",
     nextArrow: "<button type='button' matRipple class='slick-next pull-right'><img src='assets/images/right-arrow.png'></button>",
   };
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
   }
 
+  goToBooking() {
+    this._router.navigate(['/','booking']);
+  }
 }

@@ -161,7 +161,7 @@
     @extend .center-position;
     opacity: 0;
     pointer-events: none;
-    user-select:none;
+    user-select: none;
     @include transition;
     z-index: 9999;
     display: flex;

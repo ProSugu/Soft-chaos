@@ -3,11 +3,11 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 // @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import './variables';
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    user-select: none;
 }
 
 body {
@@ -38,11 +38,11 @@ img {
 
 .container {
     //max-width: 1920px;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    // user-select: none;
+    // -moz-user-select: none;
+    // -webkit-user-drag: none;
+    // -webkit-user-select: none;
+    // -ms-user-select: none;
 }
 
 ::selection {
@@ -107,6 +107,7 @@ h1 span {
         transform: translateY(-20px);
         width: 400px;
         bottom: -25px;
+        z-index: 1;
         @media (max-width: 480px) {
             width: 200px;
             overflow: hidden;
@@ -131,6 +132,10 @@ h1 span {
                     background: #ae99bc;
                     padding: 0;
                     margin: 0;
+                    font-size: 0;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
                 }
             }
         }
@@ -151,10 +156,14 @@ h1 span {
         &.slick-prev {
             right: 90px;
             left: inherit;
+            width: 30px;
+            height: 30px;
         }
         &.slick-next {
             right: 40px;
             left: inherit;
+            width: 30px;
+            height: 30px;
         }
         &.slick-disabled {
             opacity: 0.3;
@@ -191,39 +200,39 @@ h1 span {
     }
 }
 
-::-webkit-scrollbar {
-    width: 5px;
-    border-radius: 4px;
-}
+// ::-webkit-scrollbar {
+//     width: 5px;
+//     border-radius: 4px;
+// }
 
-::-webkit-scrollbar-button {
-    display: none;
-}
+// ::-webkit-scrollbar-button {
+//     display: none;
+// }
 
-::-webkit-scrollbar-track {
-    background: #e5e2ad;
-    border-radius: 4px;
-}
+// ::-webkit-scrollbar-track {
+//     background: #e5e2ad;
+//     border-radius: 4px;
+// }
 
-::-webkit-scrollbar-track-piece {
-    background: #e5e2ad;
-    border-radius: 4px;
-    border: 1px solid #c5b481;
-}
+// ::-webkit-scrollbar-track-piece {
+//     background: #e5e2ad;
+//     border-radius: 4px;
+//     border: 1px solid #c5b481;
+// }
 
-::-webkit-scrollbar-thumb {
-    background: #fbfae3;
-    border-radius: 4px;
-    border: 1px solid #c5b481;
-}
+// ::-webkit-scrollbar-thumb {
+//     background: #fbfae3;
+//     border-radius: 4px;
+//     border: 1px solid #c5b481;
+// }
 
-::-webkit-scrollbar-corner {
-    border-radius: 4px;
-}
+// ::-webkit-scrollbar-corner {
+//     border-radius: 4px;
+// }
 
-::-webkit-resizer {
-    display: none;
-}
+// ::-webkit-resizer {
+//     display: none;
+// }
 
 .btn {
     height: 48px;
@@ -2872,6 +2881,7 @@ section.gallary .image-gallery .modal-body img {
 
 .booking-flow-baar .progressbar {
     counter-reset: step;
+    margin-bottom: 35px;
 }
 
 .booking-flow-baar .progressbar li {
@@ -2880,7 +2890,6 @@ section.gallary .image-gallery .modal-body img {
     width: 25%;
     max-width: 25%;
     position: relative;
-    cursor: pointer;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -2891,19 +2900,27 @@ section.gallary .image-gallery .modal-body img {
 }
 
 .booking-flow-baar .progressbar li:before {
-    content: counter(step);
+    content: '';
+    // content: counter(step);
     counter-increment: step;
     width: 30px;
     height: 30px;
     line-height: 30px;
-    border: 1px solid #ddd;
+    border: 3px solid #E5E9ED;
     border-radius: 100%;
     display: block;
     text-align: center;
     margin: 0 auto 10px auto;
-    background-color: #fff;
+    background-color: #E5E9ED;
     z-index: 2;
     position: relative;
+}
+
+.booking-flow-baar .progressbar li.bordered-circle {
+    &::before {
+        background: $light;
+        border-color: $primary1;
+    }
 }
 
 .booking-flow-baar .progressbar li:after {
@@ -2923,15 +2940,25 @@ section.gallary .image-gallery .modal-body img {
 
 .booking-flow-baar .progressbar li.active {
     color: #7B17C1;
+    font-weight: 600;
 }
 
 .booking-flow-baar .progressbar li.active:before {
     border-color: #7B17C1;
+    background-color: #7B17C1;
+    background-image: url(../src/assets/images/check-white.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .booking-flow-baar .progressbar li.active+li:after {
     background-color: #7B17C1;
 }
+
+// .booking-flow-baar .progressbar li.active + li::before {
+//     background: $light;
+//     border-color: $primary1
+// }
 
 section.booking-flow-baar {
     padding: 100px 0 50px;
@@ -2942,9 +2969,9 @@ body {
 }
 
 section.booking-flow-baar hr {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 40px;
     border: 0;
+    margin-top: 0;
     border-top: 2px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -2972,70 +2999,6 @@ section.booking-flow-baar hr {
     text-align: right;
 }
 
-.booking-form ul.weekly {
-    display: flex;
-    margin-top: 20px;
-}
-
-.booking-form ul.weekly li {
-    list-style: none;
-}
-
-.booking-form ul.weekly li {
-    list-style: none;
-    border: 1px solid #31496d52;
-    border-radius: 5px;
-    padding: 10px;
-    margin-right: 20px;
-    width: 20%;
-    text-align: center;
-    height: 70px;
-}
-
-.booking-form ul.weekly li a {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
-    text-align: center;
-    color: #757F8F;
-    text-decoration: none;
-}
-
-.booking-form ul.weekly li a span {
-    display: block;
-}
-
-.booking-form ul.weekly li.active {
-    background: #7B17C1;
-}
-
-.booking-form ul.weekly li.active a {
-    color: #fff;
-    line-height: 45px;
-}
-
-a.right_arrow {
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
-    display: block !important;
-    text-align: center;
-    box-shadow: 0px 39px 66px rgb(10 30 59 / 16%);
-    border-radius: 100%;
-    line-height: 30px;
-    font-size: 20px;
-    color: #000;
-    position: absolute;
-    right: 15px;
-    top: 80px;
-}
-
-.booking-form ul.time {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 h5.form_heading {
     font-family: 'Poppins';
@@ -3044,27 +3007,9 @@ h5.form_heading {
     font-size: 20px;
     line-height: 30px;
     color: #31496D;
-}
-
-.booking-form ul.time li {
-    list-style: none;
-    width: 25%;
-}
-
-.booking-form ul.time li a {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
-    color: #757F8F;
-    border: 1px solid #757F8F;
-    padding: 8px 20px;
-    display: block;
-    border-radius: 5px;
-    margin: 8px;
-    text-decoration: none;
+    &--time {
+        margin-bottom: 30px;
+    }
 }
 
 .booking-form ul.next-btn {
@@ -3095,6 +3040,7 @@ section.booking-flow-baar .card {
     box-shadow: 0px 0px 30px rgba(10, 30, 59, 0.05);
     border-radius: 20px;
     padding: 20px;
+    border: none;
 }
 
 section.booking-flow-baar .card h5 {
@@ -3107,7 +3053,17 @@ section.booking-flow-baar .card h5 {
 }
 
 section.booking-flow-baar .card img {
+}
+
+.order-summary-thumbnail {
     border-radius: 10px;
+    margin-bottom: 30px;
+    height: 196px;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 section.booking-flow-baar .card h4 {
@@ -3115,9 +3071,9 @@ section.booking-flow-baar .card h4 {
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
-    line-height: 42px;
+    line-height: 1.4;
     color: #31496D;
-    margin: 15px 0 0;
+    margin-bottom: 10px;
 }
 
 section.booking-flow-baar .card p {
@@ -3125,13 +3081,14 @@ section.booking-flow-baar .card p {
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 150%;
+    margin-bottom: 30px;
     color: #757F8F;
 }
 
 section.booking-flow-baar .card ul {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 0;
 }
 
 section.booking-flow-baar .card ul li {
@@ -3154,8 +3111,12 @@ section.booking-flow-baar .card ul li {
     line-height: 150%;
     color: #757F8F;
     list-style: none;
-    border-top: 1px solid #00000036;
+    border-top: 1px solid $gray-300;
     padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
 }
 
 section.booking-flow-baar .card ul li span {
@@ -3167,6 +3128,15 @@ section.booking-flow-baar .card ul li span {
     line-height: 150%;
     text-align: right;
     color: #31496D;
+}
+
+.pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
 }
 
 section.booking-flow-baar .card ul li strong {
@@ -3185,13 +3155,13 @@ li.apply-coupne a {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
     color: #7B17C1 !important;
     border: 1px dotted #ccc;
-    padding: 10px 20px !important;
+    padding: 15px 20px !important;
     border-radius: 10px;
     text-decoration: none;
     display: block;
+    margin-top: 20px;
 }
 
 .booking-form ul.time li.active a {
@@ -3224,10 +3194,10 @@ li.apply-coupne a {
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    height: 42px;
+    height: 60px;
+    border: 2px solid $gray-300;
     background: transparent;
-    margin-bottom: 20px;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
 .form-row.loaction-input input.form-control {
@@ -3251,19 +3221,26 @@ li.apply-coupne a {
 }
 
 .booking-form form select {
-    height: 42px;
+    height: 60px;
     background: transparent;
-    margin-bottom: 20px;
-    border-radius: 6px;
+    border-radius: 10px;
+    border: 2px solid $gray-300;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
     color: #757F8F;
-    border-color: #757f8f70;
     width: 100%;
     padding-left: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url(../src/assets/images/arrow-down-gray.svg);
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    &:focus {
+        outline: none;
+    }
 }
 
 .booking-form ul.next-btn li.back-btn a {
@@ -3278,6 +3255,13 @@ li.apply-coupne a {
     border: 1px solid #757f8f66;
     margin-right: 20px;
 }
+.booking-form ul.next-btn li a.disabled {
+    color: #fff;
+    background: #959DA9;
+    border-color: #959DA9;
+	pointer-events: none;
+}
+
 
 .booking-form p {
     font-family: 'Poppins';
@@ -3307,6 +3291,22 @@ li.apply-coupne a {
     display: block;
     margin-top: 20px;
     font-size: 20px;
+}
+.booking-form {
+    &--contactdetails {
+        h5 {
+            margin-bottom: 50px;
+        }
+    }
+    &--payment {
+        h5 {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.heading-custom {
+    margin-bottom: 50px;
 }
 
 .form-row.card-number i {
@@ -4068,3 +4068,63 @@ section.about-card img {
 .input-error {
     border: red 1px solid;
 }
+.dropdown-menu {
+    border-radius: 10px;
+    box-shadow: 0px 39px 66px rgb(10 30 59 / 16%);
+    border: none;
+}
+
+.booking-form p {
+    &.error-msg {
+        color: red;
+        margin-bottom: 0;
+        // font-size: $text-sm;
+        font-size: 12px;
+        margin-top: 2px;
+        position: absolute;
+    }
+}
+
+.form-field-col {
+    margin-bottom: 20px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.month-days-carousel-wrapper {
+    margin:0 -7.5px;
+    margin-bottom: 35px;
+    .slick-slide{
+        padding: 0 7px;
+    }
+    button.slick-arrow {
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 50%;
+        &.slick-prev {
+            margin-left: 10px;
+            img {
+                transform: rotate(180deg);
+            }
+            &.slick-disabled {
+                display: none !important;
+            }
+        }
+        &.slick-next {
+            margin-right: 10px;
+            &.slick-disabled {
+                display: none !important;
+            }
+        }
+        &::before {
+            content: none;
+        }
+    }
+}  
