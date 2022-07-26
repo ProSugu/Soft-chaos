@@ -3,7 +3,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 // @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import './variables';
-
 * {
     padding: 0;
     margin: 0;
@@ -204,36 +203,29 @@ h1 span {
 //     width: 5px;
 //     border-radius: 4px;
 // }
-
 // ::-webkit-scrollbar-button {
 //     display: none;
 // }
-
 // ::-webkit-scrollbar-track {
 //     background: #e5e2ad;
 //     border-radius: 4px;
 // }
-
 // ::-webkit-scrollbar-track-piece {
 //     background: #e5e2ad;
 //     border-radius: 4px;
 //     border: 1px solid #c5b481;
 // }
-
 // ::-webkit-scrollbar-thumb {
 //     background: #fbfae3;
 //     border-radius: 4px;
 //     border: 1px solid #c5b481;
 // }
-
 // ::-webkit-scrollbar-corner {
 //     border-radius: 4px;
 // }
-
 // ::-webkit-resizer {
 //     display: none;
 // }
-
 .btn {
     height: 48px;
     border-radius: 10px;
@@ -446,12 +438,14 @@ h1 span {
 
 
 /*---------------------my css---------------*/
-section.banner.slick-slider .slick-track, .slick-slider .slick-list {
+
+section.banner.slick-slider .slick-track,
+.slick-slider .slick-list {
     transform: translate3d(0, 0, 0) !important;
     height: 500px !important;
     overflow: hidden;
-    
 }
+
 section.services {
     padding: 60px 0;
 }
@@ -865,6 +859,7 @@ li.item-2.item h5 {
     height: 412px;
     margin-bottom: 180px;
 }
+
 // section.banner .slick-vertical .slick-slide {
 //     display: block;
 //     height: auto;
@@ -1475,27 +1470,36 @@ section.contact-detail a {
     color: #31496D;
     text-decoration: none;
 }
-.swal2-container.swal2-top-end.swal2-shown{z-index:99999999999999999999;}
+
+.swal2-container.swal2-top-end.swal2-shown {
+    z-index: 99999999999999999999;
+}
+
 .calender-top-section .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
     background-color: rgb(156 29 247);
     color: #fff;
 }
-button.mat-focus-indicator.mat-calendar-next-button.mat-icon-button.mat-button-base:hover{
+
+button.mat-focus-indicator.mat-calendar-next-button.mat-icon-button.mat-button-base:hover {
     background: #9c1df7;
     color: #fff;
 }
-button.mat-focus-indicator.mat-calendar-previous-button.mat-icon-button.mat-button-base:hover{
+
+button.mat-focus-indicator.mat-calendar-previous-button.mat-icon-button.mat-button-base:hover {
     background: #9c1df7;
     color: #fff;
 }
-button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base:hover{
+
+button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base:hover {
     background: #9c1df7;
     color: #fff;
 }
+
 button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base:hover svg {
     color: #fff;
     fill: currentColor;
 }
+
 .col-md-6.hori-carousel.position-relative button.slick-prev.slick-arrow {
     width: 135px;
     height: 37px;
@@ -1503,25 +1507,31 @@ button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base
     left: 90px;
     bottom: -60px;
 }
+
 .col-md-6.hori-carousel.position-relative .slick-arrow.slick-next {
     right: 184px;
     left: inherit;
     bottom: -53px;
 }
+
 .hori-carousel .slick-dots li button {
     bottom: -10px;
     width: 24px;
     height: 24px;
 }
-.carousel-wrapper{
+
+.carousel-wrapper {
     max-height: none !important;
 }
+
 .main-body-section .wave-top {
     display: none;
 }
+
 .main-body-section .container.dashboard-container {
     padding: 150px 0 0;
 }
+
 .main-body-section .container.dashboard-container .hori-carousel .slick-dots {
     display: flex;
     justify-content: center;
@@ -1529,12 +1539,14 @@ button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base
     width: 100%;
     bottom: -52px;
 }
+
 .main-body-section .container.dashboard-container .hori-carousel .slick-dots li {
     flex: inherit;
     height: auto;
     margin: 0;
     background: none;
 }
+
 .main-body-section .container.dashboard-container .hori-carousel .slick-dots li.slick-active button {
     width: 24px;
     height: 24px;
@@ -1544,6 +1556,7 @@ button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base
     margin: 0;
     color: #fff;
 }
+
 .main-body-section .container.dashboard-container .slick-dots li.slick-active button {
     border: 0;
     background: transparent;
@@ -1562,6 +1575,7 @@ button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base
     color: #7B17C1;
     left: -25px !important;
 }
+
 
 /*-----------join us page css-----------*/
 
@@ -1904,6 +1918,7 @@ section.testimonials .slick-next:before {
 section.testimonials .slick-prev:before {
     display: none;
 }
+
 section.testimonials.main-testimonials button.slick-prev.slick-arrow:before {
     content: ">";
     position: absolute;
@@ -1923,6 +1938,7 @@ section.testimonials.main-testimonials button.slick-prev.slick-arrow:before {
     bottom: 88%;
     z-index: 9999;
 }
+
 section.testimonials.main-testimonials button.slick-next.slick-arrow:before {
     content: "<";
     position: absolute;
@@ -1939,11 +1955,12 @@ section.testimonials.main-testimonials button.slick-next.slick-arrow:before {
     border-radius: 100%;
     margin-right: 20px;
     padding-right: 3px;
-    bottom:0;
+    bottom: 0;
     z-index: 999;
     right: 1130px;
     float: left;
 }
+
 section.testimonials button img {
     position: absolute;
     top: -277px;
@@ -2557,7 +2574,7 @@ section.about-gallry h2:after {
     height: 3px;
     position: absolute;
     left: 0;
-    top: 50px;
+    bottom: 0;
     background: #7B17C1;
 }
 
@@ -2628,6 +2645,7 @@ section.service-boxes .main-heading img {
     position: absolute;
     top: 41px;
 }
+
 .block img {
     width: 100%;
     height: 220px;
@@ -2644,10 +2662,12 @@ section.service-boxes .main-heading img {
     color: #31496D;
     margin: 10px 0;
 }
+
 ul.aboutUsTest {
     bottom: 0;
     top: 20px;
 }
+
 .block span {
     font-family: "Poppins";
     font-style: normal;
@@ -2732,7 +2752,7 @@ section.banner {
     color: #757F8F;
     position: relative;
     top: 0;
-    margin:30px 0 0;
+    margin: 30px 0 0;
 }
 
 section.banner .form-inline .form-group {
@@ -2965,7 +2985,6 @@ section.gallary .image-gallery .modal-body img {
 //     background: $light;
 //     border-color: $primary1
 // }
-
 section.booking-flow-baar {
     padding: 100px 0 50px;
 }
@@ -3004,7 +3023,6 @@ section.booking-flow-baar hr {
 .booking-form .t-right {
     text-align: right;
 }
-
 
 h5.form_heading {
     font-family: 'Poppins';
@@ -3058,8 +3076,7 @@ section.booking-flow-baar .card h5 {
     color: #31496D;
 }
 
-section.booking-flow-baar .card img {
-}
+section.booking-flow-baar .card img {}
 
 .order-summary-thumbnail {
     border-radius: 10px;
@@ -3261,13 +3278,13 @@ li.apply-coupne a {
     border: 1px solid #757f8f66;
     margin-right: 20px;
 }
+
 .booking-form ul.next-btn li a.disabled {
     color: #fff;
     background: #959DA9;
     border-color: #959DA9;
-	pointer-events: none;
+    pointer-events: none;
 }
-
 
 .booking-form p {
     font-family: 'Poppins';
@@ -3298,6 +3315,7 @@ li.apply-coupne a {
     margin-top: 20px;
     font-size: 20px;
 }
+
 .booking-form {
     &--contactdetails {
         h5 {
@@ -3445,7 +3463,6 @@ section.pay-confirm-box .confirm-box a {
     background-color: transparent !important;
 }
 
-
 .card-section .wrapper {
     display: flex;
     background: transparent;
@@ -3456,6 +3473,7 @@ section.pay-confirm-box .confirm-box a {
     padding: 0;
     margin-bottom: 15px;
 }
+
 .card-section .wrapper .option {
     background: transparent;
     height: 100%;
@@ -3465,7 +3483,7 @@ section.pay-confirm-box .confirm-box a {
     justify-content: center;
     margin: 0;
     border-radius: 5px;
-    text-align:center;
+    text-align: center;
     cursor: pointer;
     padding: 0 10px;
     transition: all 0.3s ease;
@@ -3473,11 +3491,13 @@ section.pay-confirm-box .confirm-box a {
     border: 2px solid #E5E9ED;
     border-radius: 12px;
 }
+
 .card-section .wrapper .option i {
     color: #7B17C1;
     font-size: 28px;
     display: block;
 }
+
 .card-section .wrapper .option span {
     font-family: "Poppins";
     font-style: normal;
@@ -3488,6 +3508,7 @@ section.pay-confirm-box .confirm-box a {
     color: #757F8F !important;
     display: block;
 }
+
 .card-section .wrapper .option .dot {
     height: 20px;
     width: 20px;
@@ -3495,44 +3516,55 @@ section.pay-confirm-box .confirm-box a {
     border-radius: 50%;
     position: relative;
 }
-.card-section .wrapper .option .dot::before{
-  position: absolute;
-  content: "";
-  top: 4px;
-  left: 4px;
-  width: 12px;
-  height: 12px;
-  background:transparent;
-  border-radius: 50%;
-  opacity: 0;
-  transform: scale(1.5);
-  transition: all 0.3s ease;
+
+.card-section .wrapper .option .dot::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
 }
-.card-section input[type="radio"]{
-  display: none;
+
+.card-section input[type="radio"] {
+    display: none;
 }
-.card-section #option-1:checked:checked ~ .option-1, .card-section #option-2:checked:checked ~ .option-2 {
+
+.card-section #option-1:checked:checked~.option-1,
+.card-section #option-2:checked:checked~.option-2 {
     border: 2px solid #7B17C1;
 }
-.card-section #option-1:checked:checked ~ .option-1 .dot,
-.card-section #option-2:checked:checked ~ .option-2 .dot{
-  background:transparent;
+
+.card-section #option-1:checked:checked~.option-1 .dot,
+.card-section #option-2:checked:checked~.option-2 .dot {
+    background: transparent;
 }
-.card-section #option-1:checked:checked ~ .option-1 .dot::before,
-.card-section #option-2:checked:checked ~ .option-2 .dot::before{
-  opacity: 1;
-  transform: scale(1);
+
+.card-section #option-1:checked:checked~.option-1 .dot::before,
+.card-section #option-2:checked:checked~.option-2 .dot::before {
+    opacity: 1;
+    transform: scale(1);
 }
-.card-section .wrapper .option span{
-  font-size: 20px;
-  color: #808080;
+
+.card-section .wrapper .option span {
+    font-size: 20px;
+    color: #808080;
 }
-#option-1:checked:checked ~ .option-1 span, #option-2:checked:checked ~ .option-2 span {
+
+#option-1:checked:checked~.option-1 span,
+#option-2:checked:checked~.option-2 span {
     color: #7b17c1 !important;
 }
+
 section.about-card img {
     width: 80%;
 }
+
 
 /*-------------------media css-------------*/
 
@@ -3557,6 +3589,10 @@ section.about-card img {
 @media (max-width: 1024px) {
     .mat-autocomplete-panel.mat-autocomplete-visible {
         top: 0 !important;
+    }
+    section.about-us {
+        height: auto;
+        min-height: auto;
     }
 }
 
@@ -3717,8 +3753,8 @@ section.about-card img {
         top: -150px;
     }
     section.about-us {
-        min-height: 800px;
-        height: 800px;
+        height: auto;
+        min-height: auto;
     }
     section.about-card img {
         width: 100%;
@@ -4074,6 +4110,7 @@ section.about-card img {
 .input-error {
     border: red 1px solid;
 }
+
 .dropdown-menu {
     border-radius: 10px;
     box-shadow: 0px 39px 66px rgb(10 30 59 / 16%);
@@ -4104,9 +4141,9 @@ section.about-card img {
 }
 
 .month-days-carousel-wrapper {
-    margin:0 -7.5px;
+    margin: 0 -7.5px;
     margin-bottom: 35px;
-    .slick-slide{
+    .slick-slide {
         padding: 0 7px;
     }
     button.slick-arrow {
@@ -4133,4 +4170,4 @@ section.about-card img {
             content: none;
         }
     }
-}  
+}

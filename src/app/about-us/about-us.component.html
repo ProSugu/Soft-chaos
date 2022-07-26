@@ -2,19 +2,30 @@
 <section class="about-us">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">
-                <h2>Let’s make it happen</h2>
-                <p>Our vocation is to give you a memorable virtual vacation with the help of drone technology. If you’re passionate about traveling as much as we’re to guide you through your virtual itinerary, let’s fly together.</p>
+            <div class="col-md-5 about-left-col text-center">
+                <div class="heading-wrapper">
+                    <h2>
+                        <span>Let’s make it happen</span>
+                        <img src="./assets/images/heading-strip.png" alt="">
+                    </h2>
+                    <p>It doesn’t where you’re coming from, how you look or any other aspect about yourself. If you’re passionate about what you do, we can’t wait to meet you.</p>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
             </div>
-            <div class="col-md-12">
-                <ul>
-                    <li *ngIf="requestingServerForBannerText">
+            <div class="col-md-7 about-right-col">
+                <ul *ngIf="requestingServerForBannerText">
+                    <li>
                         <app-skeleton-loader [anotherStructure]="'aboutUsgallery'"></app-skeleton-loader>
                     </li>
-                    <li *ngFor="let gallery of data?.gallery;let i = index" [ngClass]="'about-'+(i+1)">
-                        <img [src]="gallery">
-                    </li>
                 </ul>
+                <div class="grid-wrapper">
+                    <ul>
+                        <li *ngFor="let gallery of data?.gallery;let i = index" class="about" [ngClass]="'about--'+(i+1)">
+                            <img [src]="gallery">
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
