@@ -438,14 +438,20 @@ h1 span {
 
 
 /*---------------------my css---------------*/
-
-section.banner.slick-slider .slick-track,
-.slick-slider .slick-list {
-    transform: translate3d(0, 0, 0) !important;
-    height: 500px !important;
-    overflow: hidden;
+section.banner.tour .banner-text {
+    margin-bottom: 90px;
 }
-
+section.banner.main-banner .slick-list.draggable {
+    height: 468px !important;
+    width: 100%;
+    position: relative;
+    top: 0;
+}
+section.banner .skeleton-box::after {
+    background: #0000000d;
+    height: auto;
+    width: 100%;
+}
 section.services {
     padding: 60px 0;
 }
