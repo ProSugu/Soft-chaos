@@ -438,6 +438,19 @@ h1 span {
 
 
 /*---------------------my css---------------*/
+ul.tourGallery {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.bg-slider ul{
+    justify-content: flex-end;
+}
+.skeleton-box::after {
+    background: #d6d2d9 !important;
+    height: auto;
+    width: 100%;
+}
 section.banner.tour .banner-text {
     margin-bottom: 90px;
 }
