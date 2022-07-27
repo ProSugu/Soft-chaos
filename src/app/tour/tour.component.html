@@ -16,72 +16,30 @@
             </div>
             <div class="col-md-6">
                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigSec">
-                    <div ngxSlickItem class="slide">
+                    <ng-container *ngIf="requestingServerForBannerText">
+                        <div ngxSlickItem class=" block">
+                            <app-skeleton-loader [anotherStructure]="'tourBanner'"></app-skeleton-loader>
+                        </div>
+                        <div ngxSlickItem class=" block">
+                            <app-skeleton-loader [anotherStructure]="'tourBanner'"></app-skeleton-loader>
+                        </div>
+                        <div ngxSlickItem class=" block">
+                            <app-skeleton-loader [anotherStructure]="'tourBanner'"></app-skeleton-loader>
+                        </div>
+                    </ng-container>
+                    <div ngxSlickItem class="slide" *ngFor="let banner of tourData?.banner;let i = index">
                         <div class="banner-img">
-                            <img src="assets/images/Silder Photo.png">
+                            <img [src]="banner?.image">
                             <ul>
-                                <li class="item-1 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>20M+</h5>
-                                    <p>User Online</p>
-                                </li>
-                                <li class="item-2 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>5M+</h5>
-                                    <p>Visit Tajmahal</p>
-                                </li>
-                                <li class="item-3 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>50M+</h5>
-                                    <p>Destination</p>
+                                <li class="item" *ngFor="let subItems of banner?.subItems;let j = index" [ngClass]="'item-'+(j+1)">
+                                    <img [src]="subItems?.image">
+                                    <h5>{{subItems?.count}}</h5>
+                                    <p>{{subItems?.desc}}</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div ngxSlickItem class="slide">
-                        <div class="banner-img">
-                            <img src="assets/images/Silder Photo.png">
-                            <ul>
-                                <li class="item-1 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>20M+</h5>
-                                    <p>User Online</p>
-                                </li>
-                                <li class="item-2 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>5M+</h5>
-                                    <p>Visit Tajmahal</p>
-                                </li>
-                                <li class="item-3 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>50M+</h5>
-                                    <p>Destination</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div ngxSlickItem class="slide">
-                        <div class="banner-img">
-                            <img src="assets/images/Silder Photo.png">
-                            <ul>
-                                <li class="item-1 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>20M+</h5>
-                                    <p>User Online</p>
-                                </li>
-                                <li class="item-2 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>5M+</h5>
-                                    <p>Visit Tajmahal</p>
-                                </li>
-                                <li class="item-3 item">
-                                    <img src="assets/images/2nd.png">
-                                    <h5>50M+</h5>
-                                    <p>Destination</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </ngx-slick-carousel>
             </div>
         </div>
@@ -98,11 +56,67 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 image-gallery">
+            <ng-container *ngIf="requestingServerForBannerText">
+                <div class=" block">
+                    <app-skeleton-loader [anotherStructure]="'tourGallery'"></app-skeleton-loader>
+                </div>
+            </ng-container>
+            <ng-container *ngFor="let gallery of tourData?.gallery;let i = index">
+                <div class="col-md-4 image-gallery" *ngIf="i === 0 || i ===3">
+                    <a href="javascript:void(0);" data-toggle="modal" [attr.data-target]="'#img' + (i+1)"><img [src]="gallery"></a>
+                    <div [attr.id]="'img' + (i+1)" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>
+                          </button>
+                                    <img [src]="gallery">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 image-gallery img-group" *ngIf="i === 1 ">
+                    <!--|| i === 2    hide for 2-->
+                    <a href="javascript:void(0);" data-toggle="modal" [attr.data-target]="'#img' + (i)"><img [src]="tourData?.gallery[i]"></a>
+                    <a href="javascript:void(0);" data-toggle="modal" [attr.data-target]="'#img' + (i+1)"><img [src]="tourData?.gallery[i+1]"></a>
+                    <div [attr.id]="'img' + (i)" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>
+                        </button>
+                                    <img [src]="tourData?.gallery[i]">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div [attr.id]="'img' + (i+1)" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>
+                        </button>
+                                    <img [src]="tourData?.gallery[i+1]">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <!-- <div class="col-md-4 image-gallery">
                 <a href="javascript:void(0);" data-toggle="modal" data-target="#img1"><img src="assets/images/g1.png"></a>
                 <div id="img1" class="modal fade" role="dialog">
                     <div class="modal-dialog">
-                        <!-- Modal content-->
                         <div class="modal-content">
 
                             <div class="modal-body">
@@ -116,11 +130,10 @@
                 </div>
             </div>
             <div class="col-md-4 image-gallery img-group">
-                <a href="javascript:void(0);" data-toggle="modal" data-target="#img2"><img src="assets/images/g2.png"></a>
+                <a href="javascript:void(0);" data-toggle="modal" data-target="#img2"><img src="gallery"></a>
                 <a href="javascript:void(0);" data-toggle="modal" data-target="#img3"><img src="assets/images/g3.png"></a>
                 <div id="img2" class="modal fade" role="dialog">
                     <div class="modal-dialog">
-                        <!-- Modal content-->
                         <div class="modal-content">
 
                             <div class="modal-body">
@@ -134,7 +147,6 @@
                 </div>
                 <div id="img3" class="modal fade" role="dialog">
                     <div class="modal-dialog">
-                        <!-- Modal content-->
                         <div class="modal-content">
 
                             <div class="modal-body">
@@ -151,7 +163,6 @@
                 <a href="javascript:void(0);" data-toggle="modal" data-target="#img5"><img src="assets/images/g4.png"></a>
                 <div id="img5" class="modal fade" role="dialog">
                     <div class="modal-dialog">
-                        <!-- Modal content-->
                         <div class="modal-content">
 
                             <div class="modal-body">
@@ -163,7 +174,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -181,61 +192,34 @@
             </div> -->
         </div>
         <!-- <div class="row"> -->
-            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigTes">
-                <div ngxSlickItem class="slide">
-                  
-                        <div class="slide-box">
-                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                 specimen book. </p>
-                             <ul>
-                                 <li><img src="assets/images/g4.png"></li>
-                                 <li>
-                                     <h5>Samantha William</h5>
-                                     <p>Lorem ipsum is simply</p>
-                                 </li>
-                             </ul>
-                         </div>
-                     </div> 
-                
-                <div ngxSlickItem class="slide">
-                        <div class="slide-box">
-                            <img src="assets/images/Rectangle 1413.png">
-                            <ul>
-                                <li><img src="assets/images/g4.png"></li>
-                                <li>
-                                    <h5>Samantha William</h5>
-                                    <p>Lorem ipsum is simply</p>
-                                </li>
-                            </ul>
-                        </div>
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigTes">
+            <ng-container *ngIf="requestingServerForBannerText">
+                <div ngxSlickItem class=" block">
+                    <app-skeleton-loader [anotherStructure]="'tourAboutTestimonials'"></app-skeleton-loader>
                 </div>
-                <div ngxSlickItem class="slide">
-                        <div class="slide-box">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                specimen book. </p>
-                            <ul>
-                                <li><img src="assets/images/g4.png"></li>
-                                <li>
-                                    <h5>Samantha William</h5>
-                                    <p>Lorem ipsum is simply</p>
-                                </li>
-                            </ul>
-                        </div>
+                <div ngxSlickItem class=" block">
+                    <app-skeleton-loader [anotherStructure]="'tourAboutTestimonials'"></app-skeleton-loader>
                 </div>
-                <div ngxSlickItem class="slide">
-                    <div class="slide-box">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book. </p>
-                        <ul>
-                            <li><img src="assets/images/g4.png"></li>
-                            <li>
-                                <h5>Samantha William</h5>
-                                <p>Lorem ipsum is simply</p>
-                            </li>
-                        </ul>
-                    </div>
+                <div ngxSlickItem class=" block">
+                    <app-skeleton-loader [anotherStructure]="'tourAboutTestimonials'"></app-skeleton-loader>
+                </div>
+            </ng-container>
+            <div ngxSlickItem class="slide" *ngFor="let testimonial of tourData?.testimonials;let i = index">
+
+                <div class="slide-box">
+                    <p *ngIf="testimonial?.desc && testimonial?.desc?.length">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                        specimen book. </p>
+                    <img *ngIf="!testimonial?.desc && !testimonial?.desc?.length" [src]="testimonial.banner">
+                    <ul>
+                        <li><img [src]="testimonial.image"></li>
+                        <li>
+                            <h5>{{testimonial.name}}</h5>
+                            <p>{{testimonial.role}}</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            </ngx-slick-carousel>
+        </ngx-slick-carousel>
 
 
 
@@ -245,9 +229,9 @@
 
 
 
-            
-            
-            
+
+
+
         <!-- </div> -->
     </div>
 </section>
@@ -270,56 +254,36 @@
 
 
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigCar">
-            <div ngxSlickItem class="slide">
-              
-                <div class="card">
-                    <div class="row">
-                        <div class="col-md-6 mt-5 pt-5">
-                            <h4>White back sweater </h4>
-                            <p>some testimonials from those who go traveling using our services</p>
-                            <span>Price:</span>
-                            <h5>$ 120.00</h5>
-                            <a href="javascript:void(0)">Shop Now</a>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="assets/images/Rectangle 1374.png">
-                        </div>
-                    </div>
+            <ng-container *ngIf="requestingServerForBannerText">
+                <div ngxSlickItem class=" block">
+                    <app-skeleton-loader [anotherStructure]="'tourAboutServices'"></app-skeleton-loader>
                 </div>
-                 </div> 
-            
-            <div ngxSlickItem class="slide">
+                <div ngxSlickItem class=" block">
+                    <app-skeleton-loader [anotherStructure]="'tourAboutServices'"></app-skeleton-loader>
+                </div>
+                <div ngxSlickItem class=" block">
+                    <app-skeleton-loader [anotherStructure]="'tourAboutServices'"></app-skeleton-loader>
+                </div>
+            </ng-container>
+            <div ngxSlickItem class="slide" *ngFor="let service of tourData?.services;let i = index">
+
                 <div class="card">
                     <div class="row">
                         <div class="col-md-6 mt-5 pt-5">
-                            <h4>White back sweater </h4>
-                            <p>some testimonials from those who go traveling using our services</p>
+                            <h4>{{service?.name}}</h4>
+                            <p>{{service?.desc}}</p>
                             <span>Price:</span>
-                            <h5>$ 120.00</h5>
+                            <h5>$ {{service?.price}}</h5>
                             <a href="javascript:void(0)">Shop Now</a>
                         </div>
                         <div class="col-md-6">
-                            <img src="assets/images/Rectangle 1374.png">
+                            <img [src]="service?.image">
                         </div>
                     </div>
                 </div>
             </div>
-            <div ngxSlickItem class="slide">
-                <div class="card">
-                    <div class="row">
-                        <div class="col-md-6 mt-5 pt-5">
-                            <h4>White back sweater </h4>
-                            <p>some testimonials from those who go traveling using our services</p>
-                            <span>Price:</span>
-                            <h5>$ 120.00</h5>
-                            <a href="javascript:void(0)">Shop Now</a>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="assets/images/Rectangle 1374.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
         </ngx-slick-carousel>
 
 

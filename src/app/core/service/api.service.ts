@@ -19,11 +19,11 @@ export class ApiService {
   getBannerTextList() {
     return this.http.get('assets/mocks/bannerTextList.json');
   }
-  
+
   getBookingSlotDetails(bookingDate: any, locationId: any) {
     return this.http.get('assets/mocks/bookingSlotDetails.json');
   }
-  
+
   getCountryList() {
     return this.http.get('assets/mocks/countryList.json');
   }
@@ -39,7 +39,7 @@ export class ApiService {
   getFlagList() {
     return this.http.get('assets/mocks/flags.json');
   }
-  
+
   getBookPerData() {
     return this.http.get('assets/mocks/bookingEvents.json');
   }
@@ -49,5 +49,9 @@ export class ApiService {
   }
   getdashboardData() {
     return this.http.get('assets/mocks/dashboard.json');
+  }
+
+  getTourData() {
+    return this.http.get('assets/mocks/tour.json');
   }
 }

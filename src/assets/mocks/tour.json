@@ -1,0 +1,146 @@
+{
+    "banner": [{
+            "id": "1",
+            "image": "assets/images/Silder Photo.png",
+            "subItems": [{
+                    "id": "1",
+                    "count": "20M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "User Online"
+                },
+                {
+                    "id": "2",
+                    "count": "5M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Visit Tajmahal"
+                },
+                {
+                    "id": "3",
+                    "count": "50M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Destination"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "image": "assets/images/Silder Photo.png",
+            "subItems": [{
+                    "id": "1",
+                    "count": "20M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "User Online"
+                },
+                {
+                    "id": "2",
+                    "count": "5M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Visit Tajmahal"
+                },
+                {
+                    "id": "3",
+                    "count": "50M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Destination"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "image": "assets/images/Silder Photo.png",
+            "subItems": [{
+                    "id": "1",
+                    "count": "20M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "User Online"
+                },
+                {
+                    "id": "2",
+                    "count": "5M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Visit Tajmahal"
+                },
+                {
+                    "id": "3",
+                    "count": "50M+",
+                    "image": "assets/images/2nd.png",
+                    "desc": "Destination"
+                }
+            ]
+        }
+    ],
+    "gallery": [
+        "assets/images/g1.png",
+        "assets/images/g2.png",
+        "assets/images/g3.png",
+        "assets/images/g4.png"
+    ],
+    "services": [{
+            "id": "1",
+            "name": "White back sweater",
+            "price": "120.00",
+            "desc": "some testimonials from those who go traveling using our services.",
+            "image": "assets/images/Rectangle 1374.png"
+        },
+        {
+            "id": "2",
+            "name": "White back sweater",
+            "price": "120.00",
+            "desc": "some testimonials from those who go traveling using our services.",
+            "image": "assets/images/Rectangle 1374.png"
+        },
+        {
+            "id": "3",
+            "name": "White back sweater",
+            "price": "120.00",
+            "desc": "some testimonials from those who go traveling using our services.",
+            "image": "assets/images/Rectangle 1374.png"
+        },
+        {
+            "id": "$",
+            "name": "White back sweater",
+            "price": "120.00",
+            "desc": "some testimonials from those who go traveling using our services.",
+            "image": "assets/images/Rectangle 1374.png"
+        }
+    ],
+
+    "testimonials": [{
+            "id": "1",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "name": "Samantha William",
+            "role": "Lorem ipsum is simply",
+            "image": "assets/images/g4.png",
+            "banner": ""
+        },
+        {
+            "id": "2",
+            "desc": "",
+            "name": "Samantha William",
+            "role": "Lorem ipsum is simply",
+            "image": "assets/images/g4.png",
+            "banner": "assets/images/Rectangle 1413.png"
+        }, {
+            "id": "3",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "name": "Samantha William",
+            "role": "Lorem ipsum is simply",
+            "image": "assets/images/g4.png",
+            "banner": ""
+        }, {
+            "id": "4",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "name": "Samantha William",
+            "role": "Lorem ipsum is simply",
+            "image": "assets/images/g4.png",
+            "banner": ""
+        }, {
+            "id": "5",
+            "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "name": "Samantha William",
+            "role": "Lorem ipsum is simply",
+            "image": "assets/images/g4.png",
+            "banner": ""
+        }
+    ]
+}

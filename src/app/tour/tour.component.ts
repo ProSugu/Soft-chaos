@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../core/service/api.service';
 
 @Component({
   selector: 'app-tour',
   templateUrl: './tour.component.html',
   styleUrls: ['./tour.component.scss']
 })
-export class TourComponent implements OnInit {
+export class TourComponent  {
   public slideConfigSec = {
     'slidesToShow': 1,
     'slidesToScroll': 1,
@@ -16,7 +17,7 @@ export class TourComponent implements OnInit {
     vertical:true,
     speed: 1000
   };
-  
+
   public slideConfigTes = {
     'slidesToShow': 3,
     'slidesToScroll': 3,
@@ -56,7 +57,6 @@ export class TourComponent implements OnInit {
     nextArrow: "<button type='button' matRipple class='slick-next pull-right'><img src='assets/images/right-arrow.png'></button>",
   };
 
-
   public slideConfigCar = {
     'slidesToShow': 1,
     'slidesToScroll': 1,
@@ -95,12 +95,27 @@ export class TourComponent implements OnInit {
     prevArrow: "<button type='button' matRipple class='slick-prev pull-right'><img src='assets/images/left-arrow.png'></button>",
     nextArrow: "<button type='button' matRipple class='slick-next pull-right'><img src='assets/images/right-arrow.png'></button>",
   };
-  constructor(private _router: Router) { }
+  requestingServerForBannerText = false;
+  public tourData:any=  [];
 
-  ngOnInit(): void {
-  }
+  constructor(
+    private _router: Router,
+    private apiService: ApiService,
+    ) {
+      this.loadDashboardData();
+    }
 
   goToBooking() {
     this._router.navigate(['/','booking']);
+  }
+
+  public loadDashboardData() : void {
+    this.requestingServerForBannerText = true
+    setTimeout(() => {
+      this.apiService.getTourData().subscribe((response: any) => {
+        this.tourData = response;
+        this.requestingServerForBannerText = false;
+      })
+    }, 3000)
   }
 }
