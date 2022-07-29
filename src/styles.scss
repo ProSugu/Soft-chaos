@@ -755,8 +755,8 @@ section.banner {
 
 .banner-text a {
     background: #7B17C1;
-    -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    // -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    // box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
     padding: 10px 20px;
     font-family: 'Poppins';
@@ -1996,7 +1996,7 @@ section.testimonials .slick-prev {
 
 section.tour-card .slick-prev {
     left: inherit;
-    right: 74px;
+    right: 100px;
     top: -57px;
 }
 
@@ -2508,7 +2508,7 @@ section.tour-card .card a {
 }
 
 section.tour-card .slick-next {
-    right: 30px;
+    right: 60px;
     top: -58px;
 }
 
@@ -3584,7 +3584,16 @@ section.about-card img {
     width: 80%;
 }
 
-
+ul.tourGallery li span {
+    width: 350px;
+    height: 420px !important;
+    margin-left: 15px;
+}
+ul.tourGallery li {list-style:none;}
+section.banner.tour .banner-img {
+    width: 90%;
+    margin: 0 auto;
+}
 /*-------------------media css-------------*/
 
 @media (max-width: 1800px) {
@@ -3791,6 +3800,10 @@ section.about-card img {
 @media (max-width: 767px) {
     section.banner {
         padding: 85px 0 0;
+    }
+    section.tour-card .card .col-md-6 img {
+        object-fit: contain;
+        height: auto;
     }
     section.testimonials.main-testimonials .col-md-4 {
         width: 100%;
