@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../core/service/api.service';
-
+import * as Aos from 'aos';
 @Component({
   selector: 'app-tour',
   templateUrl: './tour.component.html',
-  styleUrls: ['./tour.component.scss']
+  styleUrls: ['./tour.component.scss'],
+  
 })
-export class TourComponent  {
+
+export class TourComponent implements OnInit  {
+  ngOnInit(){
+    Aos.init();
+  }
   public slideConfigSec = {
     'slidesToShow': 1,
     'slidesToScroll': 1,

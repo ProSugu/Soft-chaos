@@ -2,7 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mt-4">
-                <div class="banner-text">
+                <div class="banner-text" data-aos="fade-up"
+                data-aos-duration="3000">
                     <small>India</small>
                     <h3>Taj Mahal</h3>
                     <img src="assets/images/Vector (1).png">
@@ -14,7 +15,8 @@
                     <span><del>$100.00<br></del><strong>$120.00</strong></span>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="fade-up"
+            data-aos-duration="3000">
                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigSec">
                     <ng-container *ngIf="requestingServerForBannerText">
                         <div ngxSlickItem class=" block">
@@ -49,7 +51,7 @@
 <section class="gallary">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center main-heading">
+            <div class="col-md-12 text-center main-heading" >
                 <h1>Live the Exprience</h1>
                 <img src="assets/images/Vector (1).png">
                 <p>Soft Chaos provides the most compelling and enjoyable experience of flying in the real world in real-time. <br>Let’s fly high and explore the unexplored. </p>

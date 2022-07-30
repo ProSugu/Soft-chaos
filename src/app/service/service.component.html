@@ -7,6 +7,16 @@
                 <p>In addition to our own solutions, we offer to be your technology partner helping you to implement new concepts. We can support you and work with you throughout your concept lifecycle process. Our key services focus on:</p>
             </div>
             <div class="col-md-12">
+                <ul *ngIf="requestingServerForBannerText">
+                    <li>
+                        <app-skeleton-loader [anotherStructure]="'servicegallery'"></app-skeleton-loader>
+                    </li>
+                </ul>
+                <ul>
+                    <li *ngFor="let gallery of data?.gallery;let i = index" class="about" [ngClass]="'about--'+(i+1)">
+                        <img [src]="gallery">
+                    </li>
+                </ul>
                 <ul>
                     <li class="about-1"><img src="assets/images/Rectangle 1398.png"></li>
                     <li class="about-2"><img src="assets/images/Rectan-2.png"></li>

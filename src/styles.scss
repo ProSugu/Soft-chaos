@@ -1257,11 +1257,11 @@ section.gallary .col-md-12.text-center.main-heading img {
     font-size: 18px;
 }
 
-button.slick-prev.slick-arrow {
-    width: 135px;
-    height: 200px;
-    z-index: 99;
-}
+// button.slick-prev.slick-arrow {
+//     width: 135px;
+//     height: 200px;
+//     z-index: 99;
+// }
 
 .banner-text {
     text-align: left;
@@ -1982,7 +1982,7 @@ section.testimonials.main-testimonials button.slick-next.slick-arrow:before {
 
 section.testimonials button img {
     position: absolute;
-    top: -277px;
+    top: -210px;
     right: 36px;
     width: 25px;
     background: none;
@@ -1990,23 +1990,56 @@ section.testimonials button img {
 
 section.testimonials .slick-prev {
     left: inherit;
-    right: 10px;
-    top: 236px;
+    right: 80px;
+    top: 237px;
+    height:200px;
 }
-
+section.testimonials .slick-next {
+    left: inherit;
+    right:40px;
+    top: 147px;
+    width:auto;
+}
 section.tour-card .slick-prev {
     left: inherit;
     right: 100px;
     top: -57px;
 }
+section.banner.tour .banner-img ul li img{
+    animation:alternate-reverse;
+}
+section.banner.tour .banner-img img{
+    animation: fade-in-down  8s ease infinite;
+}
+@keyframes fade-in-down {
+  0% {
+    opacity: 0.7;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-5);
+  }
+}
 
-
+section.banner.tour .banner-img ul li {
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 2.8s infinite alternate;
+    }
+    @-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+    }
+    @keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+    }
 /*--------------about page css-------------*/
 
 section.about-us {
     padding: 120px 0 0;
     background: #F5F5F5;
-    min-height: 950px;
+    min-height: 900px;
     height: 800px;
 }
 
@@ -2261,6 +2294,7 @@ section.banner.tour .banner-img ul li.item-2.item {
     position: absolute;
     right: 0;
     top: 50px;
+    z-index:9;
 }
 
 section.gallary {
@@ -2513,18 +2547,20 @@ section.tour-card .slick-next {
 }
 
 section.tour-card button img {
+    right: 0;
     width: 25px;
+    transition: right 0.5s ease-in-out;
 }
 
-section.tour-card button img:hover {
-    width: 48px;
-    -webkit-transition: opacity 0.8s ease-in-out;
-    -moz-transition: opacity 0.8s ease-in-out;
-    -ms-transition: opacity 0.8s ease-in-out;
-    -o-transition: opacity 0.8s ease-in-out;
-    transition: opacity 0.8s ease-in-out;
-    margin: -5px -10px;
-}
+// section.tour-card button img:hover {
+//     width: 48px;
+//     -webkit-transition: opacity 0.8s ease-in-out;
+//     -moz-transition: opacity 0.8s ease-in-out;
+//     -ms-transition: opacity 0.8s ease-in-out;
+//     -o-transition: opacity 0.8s ease-in-out;
+//     transition: opacity 0.8s ease-in-out;
+//     margin: -5px -10px;
+// }
 
 section.tour-card .slick-next.active img {
     width: 44px;
@@ -2534,29 +2570,54 @@ section.testimonials .slick-next.active img {
     width: 44px;
 }
 
-section.testimonials .slick-arrow img:hover {
+// section.testimonials .slick-arrow img:hover {
+//     width: 48px;
+//     transition: right 0.5s ease-in-out;
+//     margin: -5px -10px;
+// }
+section.tour-card button.slick-prev.slick-arrow:hover img {
     width: 48px;
-    -webkit-transition: opacity 0.8s ease-in-out;
-    -moz-transition: opacity 0.8s ease-in-out;
-    -ms-transition: opacity 0.8s ease-in-out;
-    -o-transition: opacity 0.8s ease-in-out;
-    transition: opacity 0.8s ease-in-out;
-    margin: -5px -10px;
+    transition: right 0.5s ease-in-out;
+    margin-right: 0;
+    right: 15px !important;
+    position: absolute;
+    top: -11px;
+    left:inherit;
 }
-
-section.testimonials .slick-arrow img {
-    -webkit-transition: opacity 0.8s ease-in-out;
-    -moz-transition: opacity 0.8s ease-in-out;
-    -ms-transition: opacity 0.8s ease-in-out;
-    -o-transition: opacity 0.8s ease-in-out;
-    transition: opacity 0.8s ease-in-out;
-}
-
-section.testimonials .slick-prev {
+section.tour-card button.slick-next.slick-arrow:hover img {
+    width: 48px;
+    transition: right 0.5s ease-in-out;
+    margin-right: 0;
+    right: -40px !important;
+    position: absolute;
+    top:0px;
     left: inherit;
-    right: 18px;
-    top: 241px;
 }
+section.tour-card .slick-arrow img {
+    transition: right 0.5s ease-in-out;
+}
+section.testimonials button.slick-prev.pull-right.slick-arrow:hover img {
+    right: 50px;
+    width: 48px;
+    transition: right 0.5s ease-in-out;
+    top: -216px;
+}
+section.testimonials button.slick-next.pull-right.slick-arrow:hover img {
+    left: inherit;
+    right:0px;
+    width: 48px;
+    transition: right 0.5s ease-in-out;
+    top: -216px;
+}
+section.testimonials .slick-arrow img {
+    transition: right 0.5s ease-in-out;
+}
+
+// section.testimonials .slick-prev {
+//     left: inherit;
+//     right: 18px;
+//     top: 241px;
+// }
 
 section.tour-card button.slick-prev.slick-arrow {
     width: auto;
@@ -2567,7 +2628,24 @@ section.tour-card button.slick-prev.slick-arrow {
 .col-md-4.quick-links ul {
     display: none;
 }
-
+ul.servicegallery {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap !important;
+    position: absolute;
+    margin-top: 16px;
+}
+ul.servicegallery li{
+    width:auto !important;
+    margin-left: 20px;
+}
+ul.servicegallery li span {
+    width: 255px;
+    height: 420px !important;
+    margin-left: 15px;
+}
 
 /*---------------about css------------*/
 
@@ -2657,7 +2735,7 @@ img.gallery-6 {
 
 section.service-boxes {
     background-color: #f5f5f5;
-    padding: 60px 0;
+    padding: 20px 0;
 }
 
 section.service-boxes .main-heading img {
@@ -3590,6 +3668,14 @@ ul.tourGallery li span {
     margin-left: 15px;
 }
 ul.tourGallery li {list-style:none;}
+
+ul.servicegallery li span {
+    width: 255px;
+    height: 420px !important;
+    margin-left: 15px;
+}
+ul.servicegallery li {list-style:none;width:auto !important;}
+
 section.banner.tour .banner-img {
     width: 90%;
     margin: 0 auto;
@@ -3850,6 +3936,7 @@ section.banner.tour .banner-img {
         left: inherit;
         right: 80px;
         top: 344px;
+        width:auto;
     }
     section.testimonials button.slick-next.pull-right.slick-arrow {
         top: 254px;

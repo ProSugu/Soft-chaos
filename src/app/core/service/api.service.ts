@@ -47,6 +47,9 @@ export class ApiService {
   getAboutUsData() {
     return this.http.get('assets/mocks/aboutUs.json');
   }
+  getServiceData() {
+    return this.http.get('assets/mocks/service.json');
+  }
   getdashboardData() {
     return this.http.get('assets/mocks/dashboard.json');
   }
