@@ -1,10 +1,6 @@
-import { AfterViewChecked, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
+import {Component, ElementRef, ViewChild } from '@angular/core';
 import { ApiService } from '../core/service/api.service';
-import { Title } from "@angular/platform-browser";
-import { EMPTY_BANNER_TEXT_MODAL } from 'src/assets/constants/main-containt';
-import { ChangeDetectionStrategy } from '@angular/compiler';
-import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-
+  homeSlider = ['assets/images/s1.png','assets/images/s2.png','assets/images/s3.png','assets/images/s1.png','assets/images/s2.png'];
   pageSlideAnimationActive = false;
   requestingServerForBannerText = false;
   requestingServerForLocations = false;
@@ -73,17 +69,50 @@ export class DashboardComponent {
     'slidesToShow': 1,
     'slidesToScroll': 1,
     'dots': false,
-    'arrows': true,
+    'arrows': false,
     'infinite': false
   };
   slideConfigSec = {
-    'slidesToShow': 1,
-    'slidesToScroll': 1,
-    'dots': true,
-    'arrows': false,
-    'infinite': true,
-    vertical:true,
-    speed: 1000
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    vertical: false,
+    dots: false,
+    infinite: false,
+    adaptiveHeight: false,
+    centerPadding: '30',
+    variableWidth: false,
+    prevArrow: false,
+    nextArrow: false,
+    nav: true,
+    variableHeight: false,
+    speed: 1000,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 1.5,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2.5,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ],
   };
   rightSlideConfig = {
     slidesToShow: 2.5,
@@ -123,9 +152,7 @@ export class DashboardComponent {
           slidesToShow: 1,
         }
       }
-    ],
-    prevArrow: "<button type='button' matRipple class='slick-prev pull-left'><img width='30px' height='30px' src='assets/images/arrow-left.jpeg'></button>",
-    nextArrow: "<button type='button' matRipple class='slick-next pull-right'><img width='30px' height='30px' src='assets/images/arrow-right.jpeg'></button>",
+    ]
   };
   private verticalSliderInitRef: any;
   @ViewChild('slickModal1', { static: true }) verticalSliderDomRef: ElementRef | any;
@@ -145,6 +172,14 @@ export class DashboardComponent {
         this.requestingServerForBannerText = false;
       })
     }, 3000)
+  }
+
+  moveToSlide(slideIndex: number, carouselRef: any) {
+    carouselRef.slickGoTo(slideIndex);
+  }
+
+  afterSlaveCarouselChange(event: any) {
+    this.horizontalSlideNumber = event.currentSlide + 1;
   }
 
   public exploreTour(): void {

@@ -1,20 +1,22 @@
-<section class="banner main-banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 mt-4">
-                <div class="banner-text">
-                    <h3>Experience the chill of a virtual vacation from your home </h3>
-                    <img src="assets/images/Vector (1).png">
-                    <p>To manage chaos is to accept the challenges that we witness every day. It is inevitable but we do have the choice to put the chaos back into the trunk and experience the beauty of life from a virtual lens. You can experience a vacation
-                        from your home through the use of drone technology.
-                    </p>
-                    <a href="javascript:void(0)" routerLink="/about-us">Learn More About US<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    </a>
+<section class="banner-section">
+    <div class="container-fluid">
+        <div class="row banner-section-row">
+            <div class="col-md-6 mt-4 home-banner-left">
+                <div class="home-banner-left__content">
+                    <div class="banner-text">
+                        <h3>Experience the chill of a virtual vacation from your home </h3>
+                        <img src="assets/images/Vector (1).png">
+                        <p>To manage chaos is to accept the challenges that we witness every day. It is inevitable but we do have the choice to put the chaos back into the trunk and experience the beauty of life from a virtual lens. You can experience a
+                            vacation from your home through the use of drone technology.
+                        </p>
+                        <a href="javascript:void(0)" routerLink="/about-us">Learn More About US<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigSec">
-                    <ng-container *ngIf="requestingServerForBannerText">
+            <div class="col-md-6 home-slider-col-right">
+                <ngx-slick-carousel class="carousel home-hero-carousel" #slickModal="slick-carousel" [config]="slideConfigSec" (afterChange)="afterSlaveCarouselChange($event)">
+                    <!-- <ng-container *ngIf="requestingServerForBannerText">
                         <div ngxSlickItem class=" block">
                             <app-skeleton-loader [anotherStructure]="'dashboardBanner'"></app-skeleton-loader>
                         </div>
@@ -24,8 +26,8 @@
                         <div ngxSlickItem class=" block">
                             <app-skeleton-loader [anotherStructure]="'dashboardBanner'"></app-skeleton-loader>
                         </div>
-                    </ng-container>
-                    <div ngxSlickItem class="slide" *ngFor="let banner of dashboardData?.banner;let i = index">
+                    </ng-container> -->
+                    <!-- <div ngxSlickItem class="slide" *ngFor="let banner of dashboardData?.banner;let i = index">
                         <div class="banner-img">
                             <img [src]="banner?.image">
                             <ul>
@@ -36,11 +38,21 @@
                                 </li>
                             </ul>
                         </div>
+                    </div> -->
+
+                    <div ngxSlickItem class="slide" [ngClass]="{'active-slide': i == (horizontalSlideNumber-1), 'third-from-current': (i == (horizontalSlideNumber-3) || i == (horizontalSlideNumber+1)) }" *ngFor="let banner of homeSlider;let i = index" (click)="moveToSlide(i, slickModal)">
+                        <div class="home-slider-img">
+                            <img class="main-location-image" [src]="banner" alt="">
+                        </div>
                     </div>
 
                 </ngx-slick-carousel>
             </div>
         </div>
+    </div>
+</section>
+<section class="banner">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <form class="form-inline reservation-horizontal clearfix" role="form" method="post" name="reservationform" id="reservationform">

@@ -359,3 +359,105 @@
   }
 
 }
+
+.home-slider-img {
+  border-radius: 250px;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 160px;
+  overflow: hidden;
+  border: 10px solid #fff;
+  // transform-style: preserve-3d;
+  // transform: rotateY(180deg);
+  transition: transform 0.8s; 
+  @media (max-width:480px) {
+    height: 300px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.home-hero-carousel {
+  .slick-list {
+    height: auto !important;
+    padding-left: 120px;
+  }
+  .slick-slide {
+    margin-left: -60px;
+    position: relative;
+    // z-index: 0;
+    .home-slider-img {
+      box-shadow: 0 4px 58px 0 rgb(0 0 0 / 32%);
+      // transform: translateX(-70px);
+    }
+    &.slick-current {
+      filter: grayscale(0);
+      transform: scale(1.2);
+      transition: all 0.5s ease-in-out;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+      perspective: 1000px;
+      z-index: 9;
+      .home-slider-img {  
+        transform: rotateY(180deg);
+        transform-style: preserve-3d;  
+      }
+      &.slick-active {
+        // z-index: 1;
+      }
+      &+.slick-slide {
+        z-index: 8;
+      }
+      &+.slick-slide+.slick-slide{
+        transform: scale(0.8);
+      }
+    }
+    &:not(.slick-current) {
+      transform: scale(1);
+      filter: grayscale(1);
+      transition: all 0.5s ease-in-out;
+    }
+    &.third-from-current  {
+      transform: scale(0.8);
+    }
+  }
+}
+
+.banner-section {
+  padding-top: 120px;
+}
+
+.home-banner-left {
+  display: flex;
+  justify-content: flex-end;
+  &__content {
+    width: 74%;
+    position: relative;
+    @media (max-width:991px) {
+      width: 100%;
+    }
+  }
+}
+
+.home-slider-img {
+  overflow: hidden !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  .main-location-image {
+    transition: transform 1s;
+  }
+  &:hover {
+    .main-location-image {
+      transition: transform 1s;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.home-slider-col-right {
+  @media (max-width:576px) {
+    display: none;
+  }
+}
