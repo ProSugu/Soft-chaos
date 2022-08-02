@@ -70,7 +70,33 @@ export class DashboardComponent {
     'slidesToScroll': 1,
     'dots': false,
     'arrows': false,
-    'infinite': false
+    'infinite': false,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 1.5,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow:1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ],
   };
   slideConfigSec = {
     slidesToShow: 3,

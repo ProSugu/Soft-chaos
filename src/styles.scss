@@ -438,33 +438,40 @@ h1 span {
 
 
 /*---------------------my css---------------*/
+
 ul.tourGallery {
     display: flex;
     width: 100%;
     justify-content: center;
 }
-.bg-slider ul{
+
+.bg-slider ul {
     justify-content: flex-end;
 }
+
 .skeleton-box::after {
     background: #d6d2d9 !important;
     height: auto;
     width: 100%;
 }
+
 section.banner.tour .banner-text {
     margin-bottom: 90px;
 }
+
 section.banner.main-banner .slick-list.draggable {
     height: 468px !important;
     width: 100%;
     position: relative;
     top: 0;
 }
+
 section.banner .skeleton-box::after {
     background: #0000000d;
     height: auto;
     width: 100%;
 }
+
 section.services {
     padding: 60px 0;
 }
@@ -755,7 +762,7 @@ section.banner {
 
 .banner-text a {
     background: #7B17C1;
-        transition: right 0.5s ease-in-out;
+    transition: right 0.5s ease-in-out;
     // -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     // box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
@@ -862,15 +869,18 @@ li.item-2.item h5 {
 .banner-text a i {
     margin-left: 10px;
 }
-.banner-text a:hover i{
+
+.banner-text a:hover i {
     position: relative;
-    left:10px;
+    left: 10px;
     transition: right 0.5s ease-in-out;
 }
+
 section.testimonials.main-testimonials .slick-prev {
     left: inherit;
     right: 0;
 }
+
 .banner .form-inline {
     padding: 30px 30px;
     z-index: 9999;
@@ -878,14 +888,23 @@ section.testimonials.main-testimonials .slick-prev {
     -webkit-box-shadow: 0px 39px 66px rgba(10, 30, 59, 0.16);
     box-shadow: 0px 39px 66px rgba(10, 30, 59, 0.16);
     border-radius: 15px;
-    position: absolute;
-    top: -155px;
+    width: 90%;
+    margin-top: -70px;
+    @media (max-width:991px) {
+        width: 100%;
+    }
+    // position: absolute;
+    // top: -155px;
 }
 
 .banner-text {
     text-align: left;
     height: 412px;
     margin-bottom: 180px;
+    @media (max-width:767px) {
+        height: auto;
+        margin-bottom: 70px;
+    }
 }
 
 // section.banner .slick-vertical .slick-slide {
@@ -1271,7 +1290,6 @@ section.gallary .col-md-12.text-center.main-heading img {
 //     height: 200px;
 //     z-index: 99;
 // }
-
 .banner-text {
     text-align: left;
 }
@@ -1532,12 +1550,12 @@ button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base
     width: 135px;
     height: 37px;
     z-index: 99;
-    left: 90px;
+    right: 0;
     bottom: -60px;
 }
 
 .col-md-6.hori-carousel.position-relative .slick-arrow.slick-next {
-    right: 184px;
+    right: 0;
     left: inherit;
     bottom: -53px;
 }
@@ -1560,49 +1578,49 @@ button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base
     padding: 150px 0 0;
 }
 
-.main-body-section .container.dashboard-container .hori-carousel .slick-dots {
-    display: flex;
-    justify-content: center;
-    transform: inherit;
-    width: 100%;
-    bottom: -52px;
-}
+// .main-body-section .container.dashboard-container .hori-carousel .slick-dots {
+//     display: flex;
+//     justify-content: center;
+//     transform: inherit;
+//     width: 100%;
+//     bottom: -52px;
+// }
 
-.main-body-section .container.dashboard-container .hori-carousel .slick-dots li {
-    flex: inherit;
-    height: auto;
-    margin: 0;
-    background: none;
-}
+// .main-body-section .container.dashboard-container .hori-carousel .slick-dots li {
+//     flex: inherit;
+//     height: auto;
+//     margin: 0;
+//     background: none;
+// }
 
-.main-body-section .container.dashboard-container .hori-carousel .slick-dots li.slick-active button {
-    width: 24px;
-    height: 24px;
-    border-radius: 2px;
-    background: #8d1bdd;
-    padding: 0;
-    margin: 0;
-    color: #fff;
-}
+// .main-body-section .container.dashboard-container .hori-carousel .slick-dots li.slick-active button {
+//     width: 24px;
+//     height: 24px;
+//     border-radius: 2px;
+//     background: #8d1bdd;
+//     padding: 0;
+//     margin: 0;
+//     color: #fff;
+// }
 
-.main-body-section .container.dashboard-container .slick-dots li.slick-active button {
-    border: 0;
-    background: transparent;
-    display: block;
-    height: 20px;
-    width: 20px;
-    outline: none;
-    padding: 5px;
-    position: absolute;
-    top: -40px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 0;
-    text-align: center;
-    color: #7B17C1;
-    left: -25px !important;
-}
+// .main-body-section .container.dashboard-container .slick-dots li.slick-active button {
+//     border: 0;
+//     background: transparent;
+//     display: block;
+//     height: 20px;
+//     width: 20px;
+//     outline: none;
+//     padding: 5px;
+//     position: absolute;
+//     top: -40px;
+//     font-style: normal;
+//     font-weight: 700;
+//     font-size: 16px;
+//     line-height: 0;
+//     text-align: center;
+//     color: #7B17C1;
+//     left: -25px !important;
+// }
 
 
 /*-----------join us page css-----------*/
@@ -2001,48 +2019,65 @@ section.testimonials .slick-prev {
     left: inherit;
     right: 60px;
     top: 237px;
-    height:200px;
+    height: 200px;
 }
+
 section.testimonials .slick-next {
     left: inherit;
-    right:15px;
+    right: 15px;
     top: 147px;
-    width:auto;
+    width: auto;
 }
+
 section.tour-card .slick-prev {
     left: inherit;
     right: 100px;
     top: -40px;
 }
-section.banner.tour .banner-img ul li img{
-    animation:alternate-reverse;
+
+section.banner.tour .banner-img ul li img {
+    animation: alternate-reverse;
 }
-section.banner.tour .banner-img img{
-    animation: fade-in-down  8s ease infinite;
+
+section.banner.tour .banner-img img {
+    animation: fade-in-down 8s ease infinite;
 }
+
 @keyframes fade-in-down {
-  0% {
-    opacity: 0.7;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(-5);
-  }
+    0% {
+        opacity: 0.7;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-5);
+    }
 }
 
 section.banner.tour .banner-img ul li {
     -webkit-animation: mover 1s infinite alternate;
     animation: mover 2.8s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
     }
-    @-webkit-keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+    100% {
+        transform: translateY(-20px);
     }
-    @keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
     }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+
 /*--------------about page css-------------*/
 
 section.about-us {
@@ -2303,7 +2338,7 @@ section.banner.tour .banner-img ul li.item-2.item {
     position: absolute;
     right: 0;
     top: 50px;
-    z-index:9;
+    z-index: 9;
 }
 
 section.gallary {
@@ -2556,7 +2591,6 @@ section.tour-card .card a {
 //     width: 50px;
 //     height: 50px;
 // }
-
 section.tour-card button img {
     right: 0;
     width: 25px;
@@ -2572,7 +2606,6 @@ section.tour-card button img {
 //     transition: opacity 0.8s ease-in-out;
 //     margin: -5px -10px;
 // }
-
 section.tour-card .slick-next.active img {
     width: 44px;
 }
@@ -2595,9 +2628,11 @@ section.tour-card button.slick-prev.slick-arrow:hover img {
     top: 0;
     left: inherit;
 }
+
 section.tour-card .slick-next {
     right: 0;
 }
+
 section.tour-card button.slick-next.slick-arrow:hover img {
     width: 60px;
     transition: right 0.5s ease-in-out;
@@ -2606,6 +2641,7 @@ section.tour-card button.slick-next.slick-arrow:hover img {
     left: -35px !important;
     height: 60px;
 }
+
 section.tour-card .slick-next {
     right: 0;
     width: 50px;
@@ -2613,11 +2649,13 @@ section.tour-card .slick-next {
     left: inherit;
     position: relative;
 }
+
 section.tour-card button.slick-next.pull-right.slick-arrow img {
     top: -580px;
     position: absolute;
     right: 40px;
 }
+
 section.tour-card .slick-arrow img {
     transition: right 0.5s ease-in-out;
     width: 50px;
@@ -2626,26 +2664,29 @@ section.tour-card .slick-arrow img {
     object-fit: contain !important;
     margin: 0 0 10px 10px;
 }
+
 section.testimonials button.slick-prev.pull-right.slick-arrow:hover img {
-    right:45px;
+    right: 45px;
     width: 65px;
     transition: right 0.5s ease-in-out;
     top: -210px;
 }
+
 section.testimonials button.slick-next.pull-right.slick-arrow:hover img {
     left: inherit;
-    right:20px;
+    right: 20px;
     width: 65px;
     transition: right 0.5s ease-in-out;
     top: -210px;
 }
+
 section.testimonials .slick-arrow img {
     transition: right 0.5s ease-in-out;
     width: 50px;
     height: 50px;
-    padding:10px;
+    padding: 10px;
     object-fit: contain !important;
-    margin:0 0 10px 10px;
+    margin: 0 0 10px 10px;
 }
 
 // section.testimonials .slick-prev {
@@ -2653,7 +2694,6 @@ section.testimonials .slick-arrow img {
 //     right: 18px;
 //     top: 241px;
 // }
-
 section.tour-card button.slick-prev.slick-arrow {
     width: 50px;
     height: 50px;
@@ -2663,6 +2703,7 @@ section.tour-card button.slick-prev.slick-arrow {
 .col-md-4.quick-links ul {
     display: none;
 }
+
 ul.servicegallery {
     display: flex;
     justify-content: flex-end;
@@ -2672,15 +2713,18 @@ ul.servicegallery {
     position: absolute;
     margin-top: 16px;
 }
-ul.servicegallery li{
-    width:auto !important;
+
+ul.servicegallery li {
+    width: auto !important;
     margin-left: 20px;
 }
+
 ul.servicegallery li span {
     width: 255px;
     height: 420px !important;
     margin-left: 15px;
 }
+
 
 /*---------------about css------------*/
 
@@ -2766,6 +2810,15 @@ img.gallery-6 {
     margin-left: 35px;
     -o-object-fit: cover;
     object-fit: cover;
+}
+
+
+section.about-gallry img[class*='gallery-'] {
+    width: 100%;
+    margin-left: 0;
+    @media (max-width:576px) {
+        margin-bottom: 15px;
+    }
 }
 
 section.service-boxes {
@@ -2872,6 +2925,7 @@ section.banner {
     text-align: center;
     padding: 100px 50px 80px;
     background-color: #f8f9fa;
+    padding-top: 0;
 }
 
 .col-md-12.text-center.logo-heading p {
@@ -3702,19 +3756,28 @@ ul.tourGallery li span {
     height: 420px !important;
     margin-left: 15px;
 }
-ul.tourGallery li {list-style:none;}
+
+ul.tourGallery li {
+    list-style: none;
+}
 
 ul.servicegallery li span {
     width: 255px;
     height: 420px !important;
     margin-left: 15px;
 }
-ul.servicegallery li {list-style:none;width:auto !important;}
+
+ul.servicegallery li {
+    list-style: none;
+    width: auto !important;
+}
 
 section.banner.tour .banner-img {
     width: 90%;
     margin: 0 auto;
 }
+
+
 /*-------------------media css-------------*/
 
 @media (max-width: 1800px) {
@@ -3817,8 +3880,8 @@ section.banner.tour .banner-img {
         padding: 20px;
     }
     .col-md-12.text-center.logo-heading p {
-        top: 0;
-        margin-top: -22px;
+        // top: 0;
+        // margin-top: -22px;
     }
     section.banner .slick-dots {
         right: -48px;
@@ -3831,8 +3894,7 @@ section.banner.tour .banner-img {
         margin: 30px 0 0;
     }
     section.banner {
-        padding: 100px 50px 40px;
-        overflow: hidden;
+        padding: 20px 0px 40px;
     }
     .main-heading p br {
         display: none;
@@ -4343,6 +4405,341 @@ section.banner.tour .banner-img {
         top: 0;
         margin-top: -56px;
     }
+    section.banner {
+        padding: 85px 0 0;
+    }
+    section.tour-card .card .col-md-6 img {
+        object-fit: contain;
+        height: auto;
+    }
+    section.testimonials.main-testimonials .col-md-4 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+        margin-bottom: 20px;
+    }
+    section.service-boxes .slick-next:before {
+        left: -55px;
+        top: -300px;
+    }
+    section.service-boxes .slick-prev:before {
+        left: 300px;
+        top: -213px;
+    }
+    section.service-boxes .slick-prev.slick-disabled:before,
+    .slick-next.slick-disabled:before {
+        left: 300px;
+        top: -298px;
+    }
+    section.service-boxes .block {
+        width: 100%;
+    }
+    section.testimonials.main-testimonials .main-heading img {
+        position: absolute;
+        top: 46px;
+        right: 14%;
+    }
+    section.testimonials.main-testimonials p {
+        margin-bottom: 10px;
+        text-align: center;
+        left: 0;
+    }
+    section.testimonials {
+        overflow: hidden;
+    }
+    .slide-box ul {
+        display: flex;
+        margin-bottom: 0;
+        position: relative;
+        bottom: -10px;
+    }
+    section.testimonials .slick-prev {
+        left: inherit;
+        right: 80px;
+        top: 344px;
+        width: auto;
+    }
+    section.testimonials button.slick-next.pull-right.slick-arrow {
+        top: 254px;
+        right: 13px;
+    }
+    section.tour-card .col-md-7 {
+        margin-bottom: 5pc;
+    }
+    section.tour-card {
+        padding-top: 0;
+    }
+    section.tour-card .card .col-md-6.mt-5.pt-5 {
+        margin-top: 0 !important;
+        padding: 20px !important;
+    }
+    bs-datepicker-container,
+    bs-daterangepicker-container {
+        z-index: 999999 !important;
+    }
+    .mat-autocomplete-panel.mat-autocomplete-visible {
+        top: -100px !important;
+        left: -12px !important;
+        width: 200px !important;
+    }
+    .bs-datepicker {
+        top: 29px;
+        left: 20px !important;
+    }
+    .cdk-overlay-pane {
+        bottom: -394.156px !important;
+    }
+    .bs-datepicker {
+        left: 0;
+    }
+    .bg-text {
+        padding-left: 0;
+    }
+    section.banner .slick-dots {
+        right: 0;
+        bottom: -45px !important;
+    }
+    .slick-dots li button {
+        font-size: 18px;
+    }
+    .banner-img {
+        padding: 32px 30px 20px 0px;
+    }
+    .slick-dots li.slick-active button {
+        font-size: 18px;
+    }
+    section.banner .form-inline input {
+        width: 100%;
+    }
+    .col-md-7.main-flex.d-flex {
+        left: 0;
+        display: block !important;
+        width: 100%;
+        overflow: hidden;
+        height: auto;
+    }
+    .bg-slider button.slick-prev.slick-arrow:before {
+        left: -5px;
+        top: 180px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px;
+    }
+    .bg-slider button.slick-next.slick-arrow:before {
+        right: -10px;
+        top: 100px;
+    }
+    .bg-slider .slick-next:before {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px;
+    }
+    section.banner .form-inline label {
+        display: block;
+    }
+    section.banner .form-inline .form-group {
+        border-right: none;
+        text-align: left;
+    }
+    .banner-logo ul {
+        margin: 0;
+    }
+    section.services {
+        padding: 50px 20px;
+    }
+    .slider-block {
+        width: 84%;
+        margin: 20px auto 0 18px;
+    }
+    .bg-text.mt-5.pt-5 {
+        margin-top: 0 !important;
+    }
+    .bg-text h2 {
+        font-size: 44px;
+        margin-top: 0 !important;
+    }
+    .bg-slider .slick-next {
+        right: 0px !important;
+    }
+    .col-md-12.text-center.main-heading img.bg-vector {
+        display: none;
+    }
+    section.banner.tour .banner-img img {
+        margin-top: 30px;
+    }
+    section.about-us ul li {
+        width: 50%;
+        list-style: none;
+        position: static !important;
+    }
+    section.about-us ul li img {
+        width: 90% !important;
+        height: 200px !important;
+        margin-bottom: 20px;
+    }
+    section.about-us {
+        min-height: auto;
+        height: auto;
+    }
+    .banner-img ul li.item-2.item {
+        /* position: absolute; */
+        right: inherit;
+        top: 206px !important;
+        left: 33px !important;
+    }
+    .banner-img ul li.item-3.item {
+        bottom: 123px;
+        left: -326px;
+    }
+    .banner-img ul li.item-1.item {
+        top: -327px;
+        left: 0;
+    }
+    .banner .form-inline {
+        position: relative;
+        top: -176px;
+    }
+    .row.banner-logo {
+        margin-top: -40px;
+    }
+    .banner-logo ul {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 0 0 40px;
+    }
+    .banner-logo ul li {
+        list-style: none;
+        width: 40%;
+        margin: 20px 15px 0 0;
+    }
+    .banner-logo ul li img {
+        width: 110px;
+    }
+    section.gallary .col-md-12.text-center.main-heading img {
+        display: none;
+    }
+    section.tour-card .card .col-md-6 img {
+        margin-top: 20px;
+    }
+    .main-heading h1 {
+        font-size: 28px;
+        line-height: 20px;
+    }
+    .bg-section {
+        padding: 20px;
+    }
+    .bg-slider {
+        position: relative;
+        left: 0;
+    }
+    .bg-slider ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .bg-slider ul li {
+        width: 100%;
+        height: auto;
+        margin: 0 0 20px;
+    }
+    .quick-links ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .quick-links ul li {
+        list-style: none;
+        padding: 25px 8px 0;
+    }
+    .social-icon ul {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+    }
+    .copyright p {
+        text-align: center;
+    }
+    .copyright ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 20px 0 0;
+    }
+    .map {
+        position: relative;
+        left: 0;
+    }
+    .map iframe {
+        width: 100%;
+        height: 400px;
+    }
+    section.contact-detail {
+        padding: 20px 0;
+    }
+    section.join-us ul li {
+        padding: 30px 8px 0 0;
+    }
+    section.join-us img {
+        width: 80%;
+    }
+    section.join-us-form form {
+        width: 100%;
+    }
+    .join-us-form .wrapper {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        margin-bottom: 20px;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .join-us-form .wrapper label {
+        width: 126px !important;
+        margin-bottom: 20px !important;
+    }
+    section.about-gallry .col-md-3 {
+        width: 50%;
+    }
+    section.about-gallry .col-md-3 img {
+        width: 100%;
+        height: 200px;
+        margin: 10px 0 !important;
+    }
+    section.service-boxes .main-heading img {
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+    section.testimonials.main-testimonials .main-heading h1 {
+        margin-bottom: 60px;
+        font-size: 25px;
+        line-height: 41px;
+    }
+    .slide-box {
+        height: auto;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    section.service-boxes {
+        overflow: hidden;
+    }
+    .banner-img ul li {
+        min-width: 164px;
+    }
+    .col-md-12.text-center.logo-heading p {
+        top: 0;
+        margin-top: -56px;
+    }
 }
 
 .error2 {
@@ -4414,3 +4811,249 @@ section.banner.tour .banner-img {
         }
     }
 }
+
+.hori-carousel {
+    margin-top: -20px;
+    @media (max-width: 767px) {
+        margin-top: 0;
+        padding-left: 0;
+    }
+    .slick-list {
+        height: 507px;
+    }
+    .slick-dots {
+        display: flex;
+        justify-content: flex-start;
+        transform: translateY(-20px);
+        width: 400px;
+        bottom: -25px;
+        z-index: 1;
+        @media (max-width: 480px) {
+            width: 200px;
+            overflow: hidden;
+        }
+        li {
+            // width: 40px;
+            flex: 1;
+            height: 3px;
+            margin: 0;
+            background: #ededed;
+            button {
+                bottom: -10px;
+                &::before {
+                    content: none;
+                }
+            }
+            &.slick-active {
+                button {
+                    width: inherit;
+                    height: 4px;
+                    border-radius: 2px;
+                    background: #ae99bc;
+                    padding: 0;
+                    margin: 0;
+                    font-size: 0;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+    .slick-arrow {
+        width: 30px;
+        height: 30px;
+        border-radius: 25px;
+        overflow: hidden;
+        z-index: 9;
+        bottom: -35px;
+        position: absolute;
+        top: inherit;
+        cursor: pointer;
+        &::before {
+            content: none;
+        }
+        &.slick-prev {
+            right: 90px;
+            left: inherit;
+            width: 30px;
+            height: 30px;
+        }
+        &.slick-next {
+            right: 40px;
+            left: inherit;
+            width: 30px;
+            height: 30px;
+        }
+        &.slick-disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.home-hero-carousel {
+    margin-top: -37px;
+    .slick-list {
+      height: auto !important;
+      padding-top: 90px;
+      padding-bottom: 130px;
+      margin-bottom: 110px;
+      padding-left: 120px;
+      @media (max-width:767px) {
+        margin-bottom: 150px;
+      }
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 100%;
+        background: linear-gradient(90deg, #f7f8f9, transparent);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        z-index: 9;
+      }
+    }
+    .slick-arrow {
+        width: 30px;
+        height: 30px;
+        border-radius: 25px;
+        overflow: hidden;
+        z-index: 9;
+        bottom: -35px;
+        position: absolute;
+        top: inherit;
+        cursor: pointer;
+        &::before {
+            content: none;
+        }
+        &.slick-prev {
+            right: 90px;
+            left: inherit;
+            width: 30px;
+            height: 30px;
+            bottom: -10px;
+        }
+        &.slick-next {
+            right: 40px;
+            left: inherit;
+            width: 30px;
+            height: 30px;
+            bottom: -10px;
+        }
+        &.slick-disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+    }
+    .slick-dots {
+        height: 5px;
+        width: 400px;
+        display: flex;
+        bottom: 15px;
+        @media (max-width:991px) {
+            width: 250px;
+        }
+        li {
+            height: 5px;
+            flex: 1;
+            margin: 0;
+            background: #ededed;
+            button {
+                position: static;
+                font-size: 0;
+                height: 5px;
+                padding: 0;
+                width: 100%;
+                &::before {
+                    content: none;
+                }
+            }
+            &.slick-active {
+                background: #dddddd;
+            }
+        }
+    }
+}
+
+.vert-carousel {
+    .slick-list {
+        @media (max-width: 991px) {
+          height: auto !important;
+        }
+      }
+}
+
+.hori-carousel {
+    margin-top: -37px;
+    .slick-list {
+      position: relative;
+    }
+    .slick-arrow {
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 25px;
+        overflow: hidden;
+        z-index: 9;
+        bottom: -35px;
+        position: absolute;
+        top: inherit;
+        cursor: pointer;
+        &::before {
+            content: none;
+        }
+        &.slick-prev {
+            right: 45px !important;
+            left: inherit;
+            width: 30px;
+            height: 30px;
+            bottom: -53px !important;
+        }
+        &.slick-next {
+            right: 40px;
+            left: inherit;
+            width: 30px;
+            height: 30px;
+            bottom: -10px;
+        }
+        &.slick-disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+    }
+    .slick-dots {
+        height: 5px;
+        width: 400px;
+        display: flex;
+        bottom: -45px;
+        @media (max-width:991px) {
+            width: 250px;
+        }
+        li {
+            height: 5px;
+            flex: 1;
+            margin: 0;
+            background: #ededed;
+            button {
+                position: static;
+                font-size: 0;
+                height: 5px;
+                padding: 0;
+                width: 100%;
+                &::before {
+                    content: none;
+                }
+            }
+            &.slick-active {
+                background: #dddddd;
+            }
+        }
+    }
+}
+
+
+
