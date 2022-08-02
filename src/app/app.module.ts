@@ -45,6 +45,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookPerTourComponent } from './book-per-tour/bookpertour.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 
 const environmentConfig: any = environment.logger;
 
@@ -76,7 +78,9 @@ const environmentConfig: any = environment.logger;
     NgVarDirective,
     DateRangePickerComponent,
     BookPerTourComponent,
-    TwelveHourFormatPipe
+    TwelveHourFormatPipe,
+    PrivacyPolicyComponent,
+    TermsConditionsComponent
   ],
   imports: [
     BrowserModule,

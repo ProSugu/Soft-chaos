@@ -55,6 +55,33 @@ export class BookingComponent implements OnInit {
     'margin':'10px',
     centerPadding: '10px',
     speed: 1000,
+    responsive: [
+      {
+        breakpoint: 920,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 3,
+
+        }
+      },
+      {
+        breakpoint: 556,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+        }
+      }
+    ],
     prevArrow:
     "<button type='button' class='slick-prev pull-left'><img src='assets/images/gray-arrow-right.svg'></button>",
   nextArrow:

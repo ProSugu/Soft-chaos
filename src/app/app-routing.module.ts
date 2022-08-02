@@ -11,6 +11,8 @@ import { ServiceComponent } from './service/service.component';
 import { TourComponent } from './tour/tour.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookPerTourComponent } from './book-per-tour/bookpertour.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 
 const routes: Routes = [
   {
@@ -61,6 +63,14 @@ const routes: Routes = [
   {
     path: 'our-services',
     component: ServiceComponent
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent
+  },
+  {
+    path: 'terms-conditions',
+    component: TermsConditionsComponent
   },
   {
     path: '**',
