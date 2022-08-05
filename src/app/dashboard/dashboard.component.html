@@ -39,8 +39,24 @@
                             </ul>
                         </div>
                     </div> -->
-
-                    <div ngxSlickItem class="slide" [ngClass]="{'active-slide': i == (horizontalSlideNumber-1), 'third-from-current': (i == (horizontalSlideNumber-3) || i == (horizontalSlideNumber+1)) }" *ngFor="let banner of homeSlider;let i = index" (click)="moveToSlide(i, slickModal)">
+                    <ng-container *ngIf="requestingServerForBannerText">
+                        <div ngxSlickItem class="slide horizontal-slide">
+                            <div class="skeleton-wrapper">
+                                <app-skeleton-loader [anotherStructure]="'homeBannerImage'"></app-skeleton-loader>
+                            </div>
+                        </div>
+                        <div ngxSlickItem class="slide horizontal-slide">
+                            <div class="skeleton-wrapper">
+                                <app-skeleton-loader [anotherStructure]="'homeBannerImage'"></app-skeleton-loader>
+                            </div>
+                        </div>
+                        <div ngxSlickItem class="slide horizontal-slide">
+                            <div class="skeleton-wrapper">
+                                <app-skeleton-loader [anotherStructure]="'homeBannerImage'"></app-skeleton-loader>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <div ngxSlickItem class="slide" [ngClass]="{'active-slide': i == (horizontalSlideNumber-1), 'third-from-current': (i == (horizontalSlideNumber-3) || i == (horizontalSlideNumber+1)) }" *ngFor="let banner of dashboardData?.mainBannerImagesList;let i = index" (click)="moveToSlide(i, slickModal)">
                         <div class="home-slider-img">
                             <img class="main-location-image" [src]="banner" alt="">
                         </div>

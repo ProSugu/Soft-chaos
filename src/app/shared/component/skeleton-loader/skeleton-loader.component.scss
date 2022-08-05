@@ -70,3 +70,24 @@
         }
     }
 }
+
+.homeBannerImage {
+    background-color: white;
+    border-radius: 200px;
+    overflow: hidden;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 #eee;
+    height: 380px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    li {
+        width: 100%;
+    }
+    .o-media__figure {
+        display: none;
+    }
+}

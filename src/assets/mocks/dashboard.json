@@ -1,4 +1,11 @@
 {
+    "mainBannerImagesList": [
+        "assets/images/s1.png",
+        "assets/images/s2.png",
+        "assets/images/s3.png",
+        "assets/images/s1.png",
+        "assets/images/s2.png"
+    ],
     "banner": [{
             "id": "1",
             "image": "assets/images/banner-img.png",
