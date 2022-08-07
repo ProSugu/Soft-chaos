@@ -760,12 +760,10 @@ section.banner {
 
 .banner-text a {
     background: #7B17C1;
-    transition: right 0.5s ease-in-out;
-    // -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-    // box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    transition: left 0.5s ease-in-out;
     border-radius: 40px;
     padding: 10px 30px;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -774,6 +772,7 @@ section.banner {
     display: inline-block;
     margin-top: 25px;
     text-decoration: none;
+    position: relative;
 }
 
 .banner-img img {
@@ -867,7 +866,40 @@ li.item-2.item h5 {
 .banner-text a i {
     margin-left: 10px;
 }
-
+section.banner.tour .banner-text .explore-btn-section button img {
+    position: absolute;
+    right: 26px;
+    top: 17px;
+    width: 22px;
+    display: block;
+    left: inherit;
+}
+section.banner.tour .banner-text .explore-btn-section button {
+    width: 200px;
+}
+.banner-text .explore-btn-section button:hover img {
+    right: 20px;
+    transition: right 0.5s ease-in-out;
+}
+section.banner.tour .banner-text .explore-btn-section button:hover img {
+    right: 20px;
+    transition: right 0.5s ease-in-out;
+    position: absolute;
+}
+.banner-text .explore-btn-section button {
+    width: 300px;
+    border: none;
+    background: linear-gradient(90deg, #9F1EFB 0%, #7A17BF 100%);
+    border-radius: 30px;
+    color: #fff;
+    height: 48px;
+    position: relative;
+}
+.explore-btn-section button:hover img{
+    right: 30px;
+    transition: right 0.5s ease-in-out;
+    position:absolute;
+}
 .banner-text a:hover i {
     position: relative;
     left: 10px;
@@ -2020,17 +2052,47 @@ section.testimonials .slick-prev {
 
 section.testimonials .slick-next {
     left: inherit;
-    right: 15px;
+    right: -5px;
     top: 147px;
     width: auto;
 }
 
 section.tour-card .slick-prev {
     left: inherit;
-    right: 100px;
-    top: -40px;
+    right: 105px;
+    top: -46px;
+    width: 40px;
+    height: 30px;
 }
-
+section.service-boxes button.slick-prev.slick-arrow:hover {
+    transition: left 0.5s ease-in-out;
+    left: -40px;
+    position: absolute;
+    right: 0;
+}
+section.service-boxes button.slick-next.slick-arrow:hover {
+    transition: left 0.5s ease-in-out;
+    left:0;
+    position: absolute;
+    right: -40px;
+}
+section.service-boxes button.slick-next.slick-arrow:hover {
+    transition: right 0.5s ease-in-out;
+    left: inherit;
+    position: absolute;
+    right: -40px;
+}
+section.testimonials .slick-next:hover {
+    transition: right 0.5s ease-in-out;
+    right: 10px;
+    position: absolute;
+}
+section.testimonials.main-testimonials .slick-prev:hover{
+    transition: right 0.5s ease-in-out;
+    left: inherit;
+    position: absolute;
+    right: -20px;
+}
 section.banner.tour .banner-img ul li img {
     animation: alternate-reverse;
 }
@@ -2616,13 +2678,14 @@ section.testimonials .slick-next.active img {
 //     margin: -5px -10px;
 // }
 section.tour-card button.slick-prev.slick-arrow:hover img {
-    width: 65px;
+    width: 40px;
     transition: right 0.5s ease-in-out;
     margin-right: 0;
-    right: 0 !important;
+    right: 8px !important;
     position: absolute;
-    top: 0;
+    top: -4px;
     left: inherit;
+    height: 40px;
 }
 
 section.tour-card .slick-next {
@@ -2630,33 +2693,34 @@ section.tour-card .slick-next {
 }
 
 section.tour-card button.slick-next.slick-arrow:hover img {
-    width: 60px;
+    width: 40px;
     transition: right 0.5s ease-in-out;
     position: absolute;
-    top: -586px !important;
-    left: -35px !important;
+    top: -10px;
+    right: -15px !important;
     height: 60px;
 }
 
 section.tour-card .slick-next {
-    right: 0;
+    right: 50px;
     width: 50px;
     height: 50px;
-    left: inherit;
-    position: relative;
-}
-
-section.tour-card button.slick-next.pull-right.slick-arrow img {
-    top: -580px;
+    left: 0;
     position: absolute;
-    right: 40px;
+    top: -41px;
+    margin: 0 0 0 auto;
 }
 
+// section.tour-card button.slick-next.pull-right.slick-arrow img {
+//     top: -580px;
+//     position: absolute;
+//     right: 40px;
+// }
 section.tour-card .slick-arrow img {
     transition: right 0.5s ease-in-out;
-    width: 50px;
-    height: 50px;
-    padding: 10px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
     object-fit: contain !important;
     margin: 0 0 10px 10px;
 }
@@ -2670,8 +2734,8 @@ section.testimonials button.slick-prev.pull-right.slick-arrow:hover img {
 
 section.testimonials button.slick-next.pull-right.slick-arrow:hover img {
     left: inherit;
-    right: 20px;
-    width: 65px;
+    right: 0px;
+    width: 60px;
     transition: right 0.5s ease-in-out;
     top: -210px;
 }
@@ -2691,8 +2755,8 @@ section.testimonials .slick-arrow img {
 //     top: 241px;
 // }
 section.tour-card button.slick-prev.slick-arrow {
-    width: 50px;
-    height: 50px;
+    // width: 50px;
+    // height: 50px;
     z-index: 99;
 }
 
@@ -2940,13 +3004,10 @@ section.banner .form-inline .form-group {
     border-right: 1px solid #757f8f47;
 }
 
-.banner-text img {
+.banner-text .explore-btn-section button img {
     position: absolute;
-    top: 65px;
-    left: 9px;
-    -webkit-transform: rotate(-3deg);
-    -ms-transform: rotate(-3deg);
-    transform: rotate(-3deg);
+    top: 18px;
+    right: 38px;
 }
 
 .col-md-12.text-center.main-heading img.bg-vector {
@@ -2977,7 +3038,7 @@ section.services {
 
 .col-md-7.main-flex.d-flex {
     position: relative;
-    left: 8%;
+    left: 7%;
     z-index: 9;
 }
 
@@ -3011,14 +3072,31 @@ section.services {
 .slick-next:before {
     font-family: 'Poppins';
 }
-
 .bg-section .bg-slider .slick-next {
-    right: 0;
+    right: 40px;
     opacity: 1;
     position: absolute;
     color: #fff !important;
 }
 
+.bg-section .bg-slider button.slick-prev.slick-arrow {
+    position: absolute;
+    right: 45px;
+    z-index: 99;
+    left: 30px;
+}
+.bg-section .bg-slider button.slick-prev:hover {
+    display: block;
+    margin: auto 0;
+    transition: left 0.5s ease-in-out;
+    left:20px;
+}
+.bg-section .bg-slider button.slick-next:hover {
+    display: block;
+    right: 25px;
+    margin: auto;
+    transition: right 0.5s ease-in-out;
+}
 .bg-slider .slick-next:before {
     content: "→";
     opacity: 9999;
@@ -4250,11 +4328,11 @@ section.banner.tour .banner-img {
         min-height: 1030px;
         height: 1000px;
     }
-    section.tour-card button.slick-next.pull-right.slick-arrow img {
-        top: -847px !important;
-        position: absolute;
-        right: 40px;
-    }
+    // section.tour-card button.slick-next.pull-right.slick-arrow img {
+    //     top: -847px !important;
+    //     position: absolute;
+    //     right: 40px;
+    // }
     section.testimonials button img {
         top: -292px;
     }
@@ -4429,7 +4507,17 @@ section.banner.tour .banner-img {
     }
     section.service-boxes .slick-prev:before {
         left: 300px;
-        top: -213px;
+        top: -300px;
+    }
+    section.testimonials.main-testimonials .slick-next {
+        right: 0;
+        top: -8px !important;
+        width: auto;
+        left: 40%;
+        height: auto;
+    }
+    section.testimonials.main-testimonials .slick-prev:hover {
+        right: 65px;
     }
     section.service-boxes .slick-prev.slick-disabled:before,
     .slick-next.slick-disabled:before {
@@ -4524,15 +4612,15 @@ section.banner.tour .banner-img {
         height: auto;
     }
     .bg-slider button.slick-prev.slick-arrow:before {
-        left: -5px;
-        top: 180px;
+        left: -50px;
+        top: 108px;
         width: 35px;
         height: 35px;
         line-height: 35px;
         font-size: 14px;
     }
     .bg-slider button.slick-next.slick-arrow:before {
-        right: -10px;
+        right:0;
         top: 100px;
     }
     .bg-slider .slick-next:before {
@@ -4556,7 +4644,7 @@ section.banner.tour .banner-img {
     }
     .slider-block {
         width: 84%;
-        margin: 20px auto 0 18px;
+        margin: 20px auto 0 24px;
     }
     .bg-text.mt-5.pt-5 {
         margin-top: 0 !important;
@@ -4914,7 +5002,7 @@ section.banner.tour .banner-img {
         display: block;
         width: 100px;
         height: 100%;
-        background: linear-gradient(90deg, #f7f8f9, transparent);
+        // background: linear-gradient(90deg, #f7f8f9, transparent);
         position: absolute;
         top: 0;
         bottom: 0;

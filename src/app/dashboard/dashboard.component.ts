@@ -22,13 +22,16 @@ export class DashboardComponent {
     items :2,
     centerMode: true,
     vertical: true,
-    dots: false,
-    nav: false,
-    infinite: false,
     margin:10,
+    arrows: true,
     verticalSwiping: true,
     centerPadding: '75px',
-    navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+    dots: true,
+    infinite: true,
+    speed: 300,
+    variableWidth: true,
+    prevArrow:'<i class=" fas fa-angle-right clr-gry"></i>',
+    nextArrow:'<i class="fas fa-angle-left clr-gry"></i>',
     responsive: [
       {
         breakpoint: 1024,
@@ -69,7 +72,7 @@ export class DashboardComponent {
     'slidesToShow': 1,
     'slidesToScroll': 1,
     'dots': false,
-    'arrows': false,
+    'arrows': true,
     'infinite': false,
     responsive: [
       {

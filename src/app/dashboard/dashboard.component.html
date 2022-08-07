@@ -9,8 +9,13 @@
                         <p>To manage chaos is to accept the challenges that we witness every day. It is inevitable but we do have the choice to put the chaos back into the trunk and experience the beauty of life from a virtual lens. You can experience a
                             vacation from your home through the use of drone technology.
                         </p>
-                        <a href="javascript:void(0)" routerLink="/about-us">Learn More About US<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
+                        <div class="explore-btn-section">
+                            <button class="mat-ripple" tabindex="-1"  routerLink="/about-us">Learn More About US 
+                                <img src="assets/images/card-images/right-arrow.png" class="btn-arrow-img">
+                            </button>
+                        </div>
+                            <!-- <a href="javascript:void(0)" routerLink="/about-us">Learn More About US<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a> -->
                     </div>
                 </div>
             </div>
@@ -67,7 +72,7 @@
         </div>
     </div>
 </section>
-<section class="banner">
+<section class="banner" style="display:none;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -203,7 +208,7 @@
 <section class="bg-section">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 p-0">
                 <div class="bg-slider">
                     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
                         <ng-container *ngIf="requestingServerForBannerText">

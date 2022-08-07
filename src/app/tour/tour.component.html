@@ -10,9 +10,15 @@
                     <p>Chaos becomes manageable when you sign up for a seamless virtual tour experience. Whether you desire to visit the Taj Mahal in India or Eifel Tower in Paris we have the product to give you breath-taking views and provide a unique traveling
                         perspective. Are you ready to experience the unimaginable?
                     </p>
-                    <a href="javascript:void(0)" (click)="goToBooking()">Book Now<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    </a>
-                    <span><del>$100.00<br></del><strong>$120.00</strong></span>
+                    <div class="explore-btn-section">
+                        <button class="mat-ripple mt-4"(click)="goToBooking()" tabindex="-1"  routerLink="/about-us">Book Now 
+                            <img src="assets/images/card-images/right-arrow.png" class="btn-arrow-img">
+                        </button>
+                        <span><del>$100.00<br></del><strong>$120.00</strong></span>
+                    </div>
+                    <!-- <a href="javascript:void(0)" (click)="goToBooking()">Book Now<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </a> -->
+                    
                 </div>
             </div>
             <div class="col-md-6" data-aos="fade-up"
