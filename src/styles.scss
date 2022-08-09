@@ -2405,7 +2405,7 @@ section.gallary {
 }
 
 section.banner.tour {
-    padding-bottom: 20px !important;
+    padding:120px 0 20px !important;
 }
 
 section.gallary .image-gallery img {
@@ -3077,6 +3077,7 @@ section.services {
     opacity: 1;
     position: absolute;
     color: #fff !important;
+    top: 40%;
 }
 
 .bg-section .bg-slider button.slick-prev.slick-arrow {
@@ -3084,6 +3085,7 @@ section.services {
     right: 45px;
     z-index: 99;
     left: 30px;
+    top: 40%;
 }
 .bg-section .bg-slider button.slick-prev:hover {
     display: block;
