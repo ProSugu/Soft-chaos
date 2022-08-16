@@ -1,162 +1,142 @@
-<section class="banner-section">
-    <div class="container-fluid">
-        <div class="row banner-section-row">
-            <div class="col-md-6 mt-4 home-banner-left">
-                <div class="home-banner-left__content">
-                    <div class="banner-text">
-                        <h3>Experience the chill of a virtual vacation from your home </h3>
-                        <img src="assets/images/Vector (1).png">
-                        <p>To manage chaos is to accept the challenges that we witness every day. It is inevitable but we do have the choice to put the chaos back into the trunk and experience the beauty of life from a virtual lens. You can experience a
-                            vacation from your home through the use of drone technology.
-                        </p>
-                        <div class="explore-btn-section">
-                            <button class="mat-ripple" tabindex="-1"  routerLink="/about-us">Learn More About US 
-                                <img src="assets/images/card-images/right-arrow.png" class="btn-arrow-img">
-                            </button>
-                        </div>
-                            <!-- <a href="javascript:void(0)" routerLink="/about-us">Learn More About US<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                            </a> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 home-slider-col-right">
-                <ngx-slick-carousel class="carousel home-hero-carousel" #slickModal="slick-carousel" [config]="slideConfigSec" (afterChange)="afterSlaveCarouselChange($event)">
-                    <!-- <ng-container *ngIf="requestingServerForBannerText">
-                        <div ngxSlickItem class=" block">
-                            <app-skeleton-loader [anotherStructure]="'dashboardBanner'"></app-skeleton-loader>
-                        </div>
-                        <div ngxSlickItem class=" block">
-                            <app-skeleton-loader [anotherStructure]="'dashboardBanner'"></app-skeleton-loader>
-                        </div>
-                        <div ngxSlickItem class=" block">
-                            <app-skeleton-loader [anotherStructure]="'dashboardBanner'"></app-skeleton-loader>
-                        </div>
-                    </ng-container> -->
-                    <!-- <div ngxSlickItem class="slide" *ngFor="let banner of dashboardData?.banner;let i = index">
-                        <div class="banner-img">
-                            <img [src]="banner?.image">
-                            <ul>
-                                <li class="item" *ngFor="let subItems of banner?.subItems;let j = index" [ngClass]="'item-'+(j+1)">
-                                    <img [src]="subItems?.image">
-                                    <h5>{{subItems?.count}}</h5>
-                                    <p>{{subItems?.desc}}</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> -->
-                    <ng-container *ngIf="requestingServerForBannerText">
-                        <div ngxSlickItem class="slide horizontal-slide">
-                            <div class="skeleton-wrapper">
-                                <app-skeleton-loader [anotherStructure]="'homeBannerImage'"></app-skeleton-loader>
-                            </div>
-                        </div>
-                        <div ngxSlickItem class="slide horizontal-slide">
-                            <div class="skeleton-wrapper">
-                                <app-skeleton-loader [anotherStructure]="'homeBannerImage'"></app-skeleton-loader>
-                            </div>
-                        </div>
-                        <div ngxSlickItem class="slide horizontal-slide">
-                            <div class="skeleton-wrapper">
-                                <app-skeleton-loader [anotherStructure]="'homeBannerImage'"></app-skeleton-loader>
-                            </div>
-                        </div>
-                    </ng-container>
-                    <div ngxSlickItem class="slide" [ngClass]="{'active-slide': i == (horizontalSlideNumber-1), 'third-from-current': (i == (horizontalSlideNumber-3) || i == (horizontalSlideNumber+1)) }" *ngFor="let banner of dashboardData?.mainBannerImagesList;let i = index" (click)="moveToSlide(i, slickModal)">
-                        <div class="home-slider-img">
-                            <img class="main-location-image" [src]="banner" alt="">
-                        </div>
-                    </div>
-
-                </ngx-slick-carousel>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="banner" style="display:none;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <form class="form-inline reservation-horizontal clearfix" role="form" method="post" name="reservationform" id="reservationform">
-                    <!-- Error message -->
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <label type="button" class="m-btn">Type <i class="fa fa-angle-down" aria-hidden="true"></i>  </label>
-                                <!-- <div id="demo" class="collapse">
-                                    <ul>
-                                        <li><a href="javascript:void(0)">Safari</a></li>
-                                        <li><a href="javascript:void(0)">City View</a></li>
-                                        <li><a href="javascript:void(0)">Back to the post</a></li>
-                                    </ul>
-                                </div> -->
-                                <!-- <input name="email" type="text" id="" value="" class="form-control" placeholder="Where do you want to visit?"> -->
-                                <mat-form-field class="example-full-width" appearance="fill">
-                                    <!-- <mat-label>Type <i class="fa fa-angle-down" aria-hidden="true"></i>  </mat-label> -->
-                                    <input type="text" placeholder="Where do you want to visit?" aria-label="Number" matInput [matAutocomplete]="auto">
-                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                                        <mat-option [value]="'Safari'"> Safari </mat-option>
-                                        <mat-option [value]="'City View'"> City View </mat-option>
-                                        <mat-option [value]="'Back to the post'"> Back to the post </mat-option>
-                                    </mat-autocomplete>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <label type="button" class="m-btn">Date <i class="fa fa-angle-down" aria-hidden="true"></i>  </label>
-                                <!-- <div id="demo1" class="collapse">
-                                    <ul>
-                                        <li><a href="javascript:void(0)">Safari</a></li>
-                                        <li><a href="javascript:void(0)">City View</a></li>
-                                        <li><a href="javascript:void(0)">Back to the post</a></li>
-                                    </ul>
-                                </div> -->
-                                <mat-form-field class="example-full-width" appearance="fill">
-                                    <!-- <mat-label>Date <i class="fa fa-angle-down" aria-hidden="true"></i>  </mat-label> -->
-                                    <input name="date" type="text" id="" value="" class="form-control" placeholder="When it will start?" bsDatepicker matInput>
-                                </mat-form-field>
-                                <!--[bsConfig]="bsConfig"-->
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <label type="button" class="m-btn">Location <i class="fa fa-angle-down" aria-hidden="true"></i>  </label>
-                                <mat-form-field class="example-full-width" appearance="fill">
-                                    <!-- <mat-label>Location <i class="fa fa-angle-down" aria-hidden="true"></i>  </mat-label> -->
-                                    <input type="text" placeholder="Enter your destinations" aria-label="" matInput [matAutocomplete]="auto1">
-                                    <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
-                                        <mat-option [value]="'Agra, India'"> Agra, India </mat-option>
-                                        <mat-option [value]="'New York, USA'"> New York, USA </mat-option>
-                                        <!-- <mat-option [value]="'Back to the post'"> Back to the post </mat-option> -->
-                                    </mat-autocomplete>
-                                </mat-form-field>
-                                <!-- <input name="email" type="text" id="" value="" class="form-control" placeholder="Enter your destinations"> -->
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <button type="submit" class="btn btn-primary btn-block" (click)="exploreTour()">Explore Now</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="row banner-logo">
-            <div class="col-md-12 text-center logo-heading">
-                <p>Join 4,000 + companies already growing</p>
-
-            </div>
-            <div class="col-md-12">
+<div class="hero-section">
+    <div class="row banner-grid-wrapper">
+        <div class="col-md-12">
+            <ul class="skeleton-grid" *ngIf="requestingServerForBannerText">
+                <li>
+                    <app-skeleton-loader [anotherStructure]="'aboutUsgalleryMobile'"></app-skeleton-loader>
+                </li>
+            </ul>
+            <div class="grid-wrapper">
                 <ul>
-                    <li><img src="assets/images/Logo-1.png"></li>
-                    <li><img src="assets/images/Logo-2.png"></li>
-                    <li><img src="assets/images/Logo-3.png"></li>
-                    <li><img src="assets/images/Logo-4.png"></li>
-                    <li><img src="assets/images/Logo-5.png"></li>
+                    <li *ngFor="let gallery of gridGalleryImageList;let i = index" class="about" [ngClass]="'about--'+(i+1)">
+                        <div class="gallery-inner-col">
+                            <img [src]="gallery">
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-</section>
+    <section class="banner-section">
+        <div class="container-fluid">
+            <div class="row banner-section-row">
+                <div class="col-md-6 mt-4 home-banner-left">
+                    <div class="home-banner-left__content">
+                        <div class="banner-text">
+                            <h3>Experience the chill of a virtual vacation from your home </h3>
+                            <img src="assets/images/Vector (1).png">
+                            <p>To manage chaos is to accept the challenges that we witness every day. It is inevitable but we do have the choice to put the chaos back into the trunk and experience the beauty of life from a virtual lens. You can experience
+                                a vacation from your home through the use of drone technology.
+                            </p>
+                            <a href="javascript:void(0)" routerLink="/about-us">Learn More About US<i
+                                    class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 home-slider-col-right">
+                    <ngx-slick-carousel class="carousel home-hero-carousel" #slickModal="slick-carousel" [config]="slideConfigSec" (afterChange)="afterSlaveCarouselChange($event)">
+                        <ng-container *ngIf="requestingServerForBannerText">
+                            <div ngxSlickItem class="slide horizontal-slide">
+                                <div class="skeleton-wrapper">
+                                    <app-skeleton-loader [anotherStructure]="'homeBannerImage'"></app-skeleton-loader>
+                                </div>
+                            </div>
+                            <div ngxSlickItem class="slide horizontal-slide">
+                                <div class="skeleton-wrapper">
+                                    <app-skeleton-loader [anotherStructure]="'homeBannerImage'"></app-skeleton-loader>
+                                </div>
+                            </div>
+                            <div ngxSlickItem class="slide horizontal-slide">
+                                <div class="skeleton-wrapper">
+                                    <app-skeleton-loader [anotherStructure]="'homeBannerImage'"></app-skeleton-loader>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngFor="let banner of dashboardData?.mainBannerImagesList, index as j;trackBy:trackItem">
+                            <div ngxSlickItem class="slide" [ngClass]="{'active-slide': j == (horizontalSlideNumber-1), 'third-from-current': (j == (horizontalSlideNumber-3) || j == (horizontalSlideNumber+1)) }" (click)="moveToSlide(j, slickModal)">
+                                <div class="home-slider-img">
+                                    <img class="main-location-image" [src]="banner" alt="">
+                                </div>
+                            </div>
+
+                        </ng-container>
+                    </ngx-slick-carousel>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--<section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-inline reservation-horizontal clearfix" role="form" method="post"
+                        name="reservationform" id="reservationform">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label type="button" class="m-btn">Type <i class="fa fa-angle-down"
+                                            aria-hidden="true"></i> </label>
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input type="text" placeholder="Where do you want to visit?" aria-label="Number"
+                                            matInput [matAutocomplete]="auto">
+                                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                            <mat-option [value]="'Safari'"> Safari </mat-option>
+                                            <mat-option [value]="'City View'"> City View </mat-option>
+                                            <mat-option [value]="'Back to the post'"> Back to the post </mat-option>
+                                        </mat-autocomplete>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label type="button" class="m-btn">Date <i class="fa fa-angle-down"
+                                            aria-hidden="true"></i> </label>
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input name="date" type="text" id="" value="" class="form-control"
+                                            placeholder="When it will start?" bsDatepicker matInput>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label type="button" class="m-btn">Location <i class="fa fa-angle-down"
+                                            aria-hidden="true"></i> </label>
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input type="text" placeholder="Enter your destinations" aria-label="" matInput
+                                            [matAutocomplete]="auto1">
+                                        <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+                                            <mat-option [value]="'Agra, India'"> Agra, India </mat-option>
+                                            <mat-option [value]="'New York, USA'"> New York, USA </mat-option>
+                                        </mat-autocomplete>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="submit" class="btn btn-primary btn-block" (click)="exploreTour()">Explore
+                                    Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div> -->
+    <!-- <div class="row banner-logo">
+                <div class="col-md-12 text-center logo-heading">
+                    <p>Join 4,000 + companies already growing</p>
+                </div>
+                <div class="col-md-12">
+                    <ul class="company-brands">
+                        <li><img src="assets/images/Logo-1.png"></li>
+                        <li><img src="assets/images/Logo-2.png"></li>
+                        <li><img src="assets/images/Logo-3.png"></li>
+                        <li><img src="assets/images/Logo-4.png"></li>
+                        <li><img src="assets/images/Logo-5.png"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section> -->
+</div>
 <!-------------Our Key Objectives----------->
 <section class="services">
     <div class="container">
@@ -205,63 +185,80 @@
     </div>
 </section>
 <!-------------bg section---------->
-<section class="bg-section">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <div class="bg-slider">
-                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-                        <ng-container *ngIf="requestingServerForBannerText">
-                            <div ngxSlickItem class=" block">
-                                <app-skeleton-loader [anotherStructure]="'dashboardObjectives'"></app-skeleton-loader>
-                            </div>
-                            <div ngxSlickItem class=" block">
-                                <app-skeleton-loader [anotherStructure]="'dashboardObjectives'"></app-skeleton-loader>
-                            </div>
-                            <div ngxSlickItem class=" block">
-                                <app-skeleton-loader [anotherStructure]="'dashboardObjectives'"></app-skeleton-loader>
-                            </div>
+<!-- For Desktop Mode -->
+<section class="bg-section" *ngIf="deviceService.isDeskop()">
+    <div class="container">
+        <div class="bg-slider objective-slider">
+            <ng-container *ngVar="isSectionInViewport(0) as isFirstImageVisible;">
+                <ng-container *ngVar="isSectionInViewport(1) as isSecondImageVisible;">
+                    <ng-container *ngVar="isSectionInViewport(2) as isThirdImageVisible;">
+                        <ng-container *ngVar="isSectionInViewport(3) as isFourthImageVisible;">
+                            <ng-container *ngVar="isSectionInViewport(4) as isFifthImageVisible;">
+                                <ng-container *ngVar="isSectionInViewport(5) as isSixthImageVisible;">
+                                    <div class="fixed-img-box" *ngIf="isFirstImageVisible || isSecondImageVisible || isThirdImageVisible || isFourthImageVisible || isFifthImageVisible || isSixthImageVisible">
+
+                                        <img [src]="OBJECTIVE_SLIDES[0]?.bannerImage" alt="Banner Image" [ngClass]="{'show-objective-img': isFirstImageVisible, 'hide-objective-img': !isFirstImageVisible}">
+                                        <img [src]="OBJECTIVE_SLIDES[1]?.bannerImage" alt="Banner Image" [ngClass]="{'show-objective-img': isSecondImageVisible, 'hide-objective-img': !isSecondImageVisible}">
+                                        <img [src]="OBJECTIVE_SLIDES[2]?.bannerImage" alt="Banner Image" [ngClass]="{'show-objective-img': isThirdImageVisible, 'hide-objective-img': !isThirdImageVisible}">
+                                        <img [src]="OBJECTIVE_SLIDES[3]?.bannerImage" alt="Banner Image" [ngClass]="{'show-objective-img': isFourthImageVisible, 'hide-objective-img': !isFourthImageVisible}">
+                                        <img [src]="OBJECTIVE_SLIDES[4]?.bannerImage" alt="Banner Image" [ngClass]="{'show-objective-img': isFifthImageVisible, 'hide-objective-img': !isFifthImageVisible}">
+                                        <img [src]="OBJECTIVE_SLIDES[5]?.bannerImage" alt="Banner Image" [ngClass]="{'show-objective-img': isSixthImageVisible, 'hide-objective-img': !isSixthImageVisible}">
+
+                                    </div>
+                                </ng-container>
+                            </ng-container>
                         </ng-container>
-                        <div ngxSlickItem class="slide" *ngFor="let objective of dashboardData?.objective;let i = index">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="bg-text mt-5 pt-5">
-                                        <h2>{{objective?.title}} </h2>
-                                        <img src="assets/images/Vector (1).png">
-                                        <p>{{objective?.desc}}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-7 main-flex d-flex">
-                                    <div class="slider-block" *ngFor="let sub of objective?.subObj;let j = index">
-                                        <img [src]="sub?.image">
-                                        <h4>{{sub?.title}}</h4>
-                                        <p>{{sub?.desc}}</p>
-                                    </div>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <div class="slide" *ngFor="let objective of OBJECTIVE_SLIDES;let i = index">
+                <div class="row position-relative">
+                    <div class="col-md-6 objective-slider__left">
+                        <div class="objective-slider-image">
+                        </div>
+                    </div>
+                    <div class="col-md-6 objective-slider__right">
+                        <div class="info-box">
+                            <div class="objective-info-wrapper" id="info{{i}}">
+                                <span style="--item:1" class="objective-slider-content objective-slider__right__tag">{{objective?.tagName}}</span>
+                                <h4 style="--item:2" class="objective-slider-content objective-slider__right__section-name">
+                                    {{objective?.sectionName}}</h4>
+                                <p style="--item:3" class="objective-slider-content objective-slider__right__info-text">
+                                    {{objective?.infoText}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- For Non-Desktop Mode -->
+<section class="bg-section" *ngIf="!deviceService.isDeskop()">
+    <div class="container">
+        <div class="bg-slider objective-slider">
+            <ngx-slick-carousel class="carousel" #slickModal1="slick-carousel" [config]="slideConfig" (init)="onVerticalSliderInit($event)" (afterChange)="afterObjectiveCarouselChange($event, slickModal1)">
+                <div class="slide" *ngFor="let objective of OBJECTIVE_SLIDES;let i = index">
+                    <div class="row position-relative">
+                        <div class="col-md-6 objective-slider__left">
+                            <div class="objective-slider-image">
+                                <img [src]="objective?.bannerImage" alt="Banner Image">
+                            </div>
+                        </div>
+                        <div class="col-md-6 objective-slider__right">
+                            <div class="info-box">
+                                <div class="objective-info-wrapper" id="info{{i}}">
+                                    <span style="--item:1" class="objective-slider-content objective-slider__right__tag">{{objective?.tagName}}</span>
+                                    <h4 style="--item:2" class="objective-slider-content objective-slider__right__section-name">
+                                        {{objective?.sectionName}}</h4>
+                                    <p style="--item:3" class="objective-slider-content objective-slider__right__info-text">
+                                        {{objective?.infoText}}</p>
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-                    </ngx-slick-carousel>
-
-                    <!-- <ul>
-                        <li>
-                            <img src="assets/images/slide-1.png">
-                            <h4>Empathize</h4>
-                            <p>Conduct researches, interviews and shadowing customer for better understanding without judging.</p>
-                        </li>
-                        <li>
-                            <img src="assets/images/slide-2.png">
-                            <h4>Empathize</h4>
-                            <p>Conduct researches, interviews and shadowing customer for better understanding without judging.</p>
-                        </li>
-                    </ul> -->
+                    </div>
                 </div>
-            </div>
+            </ngx-slick-carousel>
         </div>
     </div>
 </section>

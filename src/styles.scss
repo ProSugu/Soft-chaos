@@ -455,8 +455,6 @@ ul.tourGallery {
     width: 100%;
 }
 
-
-
 section.banner.main-banner .slick-list.draggable {
     height: 468px !important;
     width: 100%;
@@ -529,12 +527,14 @@ section.tour-card .col-md-7 img {
 }
 
 .bg-section {
-    background: url(/assets/images/bg-frame.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
+    // background: url(/assets/images/bg-frame.png) no-repeat;
+    // background-size: cover;
+    // background-position: center;
+    background-color: #f5f5f5;
+    // text-align: center;
     padding: 50px 0;
     overflow: hidden;
+    // min-height: 500px;
 }
 
 .bg-text h2 {
@@ -551,10 +551,10 @@ section.tour-card .col-md-7 img {
 
 .bg-text img {
     position: absolute;
-    top: 173px;
-    -webkit-transform: rotate(-3deg);
-    -ms-transform: rotate(-3deg);
-    transform: rotate(-3deg);
+    // top: 173px;
+    // -webkit-transform: rotate(-3deg);
+    // -ms-transform: rotate(-3deg);
+    // transform: rotate(-3deg);
     z-index: 1;
 }
 
@@ -771,6 +771,7 @@ section.banner {
     color: #FFFFFF;
     display: inline-block;
     margin-top: 25px;
+    margin-bottom: 20px;
     text-decoration: none;
     position: relative;
 }
@@ -866,6 +867,7 @@ li.item-2.item h5 {
 .banner-text a i {
     margin-left: 10px;
 }
+
 section.banner.tour .banner-text .explore-btn-section button img {
     position: absolute;
     right: 26px;
@@ -874,18 +876,22 @@ section.banner.tour .banner-text .explore-btn-section button img {
     display: block;
     left: inherit;
 }
+
 section.banner.tour .banner-text .explore-btn-section button {
     width: 200px;
 }
+
 .banner-text .explore-btn-section button:hover img {
     right: 20px;
     transition: right 0.5s ease-in-out;
 }
+
 section.banner.tour .banner-text .explore-btn-section button:hover img {
     right: 20px;
     transition: right 0.5s ease-in-out;
     position: absolute;
 }
+
 .banner-text .explore-btn-section button {
     width: 300px;
     border: none;
@@ -895,11 +901,13 @@ section.banner.tour .banner-text .explore-btn-section button:hover img {
     height: 48px;
     position: relative;
 }
-.explore-btn-section button:hover img{
+
+.explore-btn-section button:hover img {
     right: 30px;
     transition: right 0.5s ease-in-out;
-    position:absolute;
+    position: absolute;
 }
+
 .banner-text a:hover i {
     position: relative;
     left: 10px;
@@ -920,8 +928,14 @@ section.testimonials.main-testimonials .slick-prev {
     border-radius: 15px;
     width: 100%;
     margin-top: 0px;
-    @media (max-width:991px) {
-        width: 100%;
+    @media (max-width: 991px) {
+        width: 96%;
+        margin-top: 10px;
+        margin: 0 auto;
+    }
+    @media (max-width: 576px) {
+        border-radius: 0;
+        box-shadow: none;
     }
     // position: absolute;
     // top: -155px;
@@ -929,7 +943,7 @@ section.testimonials.main-testimonials .slick-prev {
 
 .banner-text {
     text-align: left;
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
         height: auto;
         margin-bottom: 70px;
     }
@@ -1320,6 +1334,15 @@ section.gallary .col-md-12.text-center.main-heading img {
 // }
 .banner-text {
     text-align: left;
+    @media (max-width: 576px) {
+        z-index: 9999;
+        background: #FFFFFF;
+        box-shadow: 0px 39px 66px rgb(10 30 59 / 16%);
+        // border-radius: 15px;
+        width: 90%;
+        padding: 15px;
+        margin: 0 auto;
+    }
 }
 
 .banner .form-inline .collapse.show ul li {
@@ -1613,14 +1636,12 @@ button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base
 //     width: 100%;
 //     bottom: -52px;
 // }
-
 // .main-body-section .container.dashboard-container .hori-carousel .slick-dots li {
 //     flex: inherit;
 //     height: auto;
 //     margin: 0;
 //     background: none;
 // }
-
 // .main-body-section .container.dashboard-container .hori-carousel .slick-dots li.slick-active button {
 //     width: 24px;
 //     height: 24px;
@@ -1630,7 +1651,6 @@ button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base
 //     margin: 0;
 //     color: #fff;
 // }
-
 // .main-body-section .container.dashboard-container .slick-dots li.slick-active button {
 //     border: 0;
 //     background: transparent;
@@ -1649,7 +1669,6 @@ button.mat-focus-indicator.mat-calendar-period-button.mat-button.mat-button-base
 //     color: #7B17C1;
 //     left: -25px !important;
 // }
-
 
 /*-----------join us page css-----------*/
 
@@ -2064,35 +2083,41 @@ section.tour-card .slick-prev {
     width: 40px;
     height: 30px;
 }
+
 section.service-boxes button.slick-prev.slick-arrow:hover {
     transition: left 0.5s ease-in-out;
     left: -40px;
     position: absolute;
     right: 0;
 }
+
 section.service-boxes button.slick-next.slick-arrow:hover {
     transition: left 0.5s ease-in-out;
-    left:0;
+    left: 0;
     position: absolute;
     right: -40px;
 }
+
 section.service-boxes button.slick-next.slick-arrow:hover {
     transition: right 0.5s ease-in-out;
     left: inherit;
     position: absolute;
     right: -40px;
 }
+
 section.testimonials .slick-next:hover {
     transition: right 0.5s ease-in-out;
     right: 10px;
     position: absolute;
 }
-section.testimonials.main-testimonials .slick-prev:hover{
+
+section.testimonials.main-testimonials .slick-prev:hover {
     transition: right 0.5s ease-in-out;
     left: inherit;
     position: absolute;
     right: -20px;
 }
+
 section.banner.tour .banner-img ul li img {
     animation: alternate-reverse;
 }
@@ -2405,7 +2430,7 @@ section.gallary {
 }
 
 section.banner.tour {
-    padding:120px 0 20px !important;
+    padding: 120px 0 20px !important;
 }
 
 section.gallary .image-gallery img {
@@ -2872,11 +2897,10 @@ img.gallery-6 {
     object-fit: cover;
 }
 
-
 section.about-gallry img[class*='gallery-'] {
     width: 100%;
     margin-left: 0;
-    @media (max-width:576px) {
+    @media (max-width: 576px) {
         margin-bottom: 15px;
     }
 }
@@ -2985,6 +3009,7 @@ section.banner-section {
     text-align: center;
     background-color: #f8f9fa;
     padding-top: 0;
+    // margin-top: -115px;
 }
 
 .col-md-12.text-center.logo-heading p {
@@ -3072,6 +3097,7 @@ section.services {
 .slick-next:before {
     font-family: 'Poppins';
 }
+
 .bg-section .bg-slider .slick-next {
     right: 40px;
     opacity: 1;
@@ -3087,18 +3113,21 @@ section.services {
     left: 30px;
     top: 40%;
 }
+
 .bg-section .bg-slider button.slick-prev:hover {
     display: block;
     margin: auto 0;
     transition: left 0.5s ease-in-out;
-    left:20px;
+    left: 20px;
 }
+
 .bg-section .bg-slider button.slick-next:hover {
     display: block;
     right: 25px;
     margin: auto;
     transition: right 0.5s ease-in-out;
 }
+
 .bg-slider .slick-next:before {
     content: "→";
     opacity: 9999;
@@ -3981,7 +4010,7 @@ section.banner.tour .banner-img {
         font-size: 44px;
     }
     .bg-text img {
-        display: none;
+        // display: none;
     }
     .col-md-7.main-flex.d-flex {
         left: 0;
@@ -4076,7 +4105,7 @@ section.banner.tour .banner-img {
         margin-bottom: 20px;
         display: inline-block;
         margin-right: 12px;
-        margin-left:0;
+        margin-left: 0;
     }
     section.banner {
         padding: 85px 0 0;
@@ -4115,11 +4144,11 @@ section.banner.tour .banner-img {
         top: 65px;
     }
     section.testimonials .slick-next {
-    right: 0;
-    top: -22px;
-    width: auto;
-    left: 41%;
-}
+        right: 0;
+        top: -22px;
+        width: auto;
+        left: 41%;
+    }
     section.service-boxes .block {
         width: 100%;
     }
@@ -4146,7 +4175,7 @@ section.banner.tour .banner-img {
         left: inherit;
         right: 80px;
         top: 344px;
-        width:auto;
+        width: auto;
     }
     section.testimonials button.slick-next.pull-right.slick-arrow {
         top: 254px;
@@ -4276,7 +4305,7 @@ section.banner.tour .banner-img {
         max-width: 50%;
         flex: 50%;
     }
-    .time li{
+    .time li {
         width: 46%;
     }
     .booking-form ul.next-btn li {
@@ -4286,11 +4315,23 @@ section.banner.tour .banner-img {
         width: 100%;
         height: auto;
     }
-    .booking-form ul.next-btn li.back-btn a{float:left;}
-    .booking-form ul.next-btn li a{font-size:16px;padding: 10px 15px;float:right;}
-    section.booking-flow-baar .card{margin-top:20px;}
-    .btn--date{font-size:14px !important;}
-    .booking-flow-baar .progressbar li{font-size:14px;}
+    .booking-form ul.next-btn li.back-btn a {
+        float: left;
+    }
+    .booking-form ul.next-btn li a {
+        font-size: 16px;
+        padding: 10px 15px;
+        float: right;
+    }
+    section.booking-flow-baar .card {
+        margin-top: 20px;
+    }
+    .btn--date {
+        font-size: 14px !important;
+    }
+    .booking-flow-baar .progressbar li {
+        font-size: 14px;
+    }
     section.about-us {
         min-height: auto;
         height: auto;
@@ -4314,7 +4355,7 @@ section.banner.tour .banner-img {
         bottom: 156px;
         left: -169px;
     }
-    .about-right-col{
+    .about-right-col {
         display: block !important;
     }
     section.about-us ul li {
@@ -4323,7 +4364,7 @@ section.banner.tour .banner-img {
         position: static !important;
         height: 180px !important;
         margin: 0;
-        padding:0;
+        padding: 0;
     }
     section.banner.tour {
         padding-bottom: 20px !important;
@@ -4338,7 +4379,6 @@ section.banner.tour .banner-img {
     section.testimonials button img {
         top: -292px;
     }
-    
     .banner-img ul li.item-3.item {
         bottom: 123px;
         left: -326px;
@@ -4622,7 +4662,7 @@ section.banner.tour .banner-img {
         font-size: 14px;
     }
     .bg-slider button.slick-next.slick-arrow:before {
-        right:0;
+        right: 0;
         top: 100px;
     }
     .bg-slider .slick-next:before {
@@ -4694,7 +4734,7 @@ section.banner.tour .banner-img {
     }
     .banner .form-inline {
         position: relative;
-        top: -176px;
+        top: -70px;
     }
     .row.banner-logo {
         margin-top: -40px;
@@ -4834,6 +4874,7 @@ section.banner.tour .banner-img {
     .col-md-12.text-center.logo-heading p {
         top: 0;
         margin-top: -56px;
+        display: none;
     }
 }
 
@@ -4869,6 +4910,10 @@ section.banner.tour .banner-img {
 
 .mb-10 {
     margin-bottom: 10px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
 }
 
 .mb-20 {
@@ -4990,28 +5035,31 @@ section.banner.tour .banner-img {
 .home-hero-carousel {
     margin-top: -37px;
     .slick-list {
-      height: auto !important;
-      padding-top: 90px;
-      padding-bottom:80px;
-      margin-bottom:0px;
-      padding-left: 120px;
-      @media (max-width:767px) {
-        margin-bottom: 150px;
-      }
-      position: relative;
-      &::before {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 100%;
-        // background: linear-gradient(90deg, #f7f8f9, transparent);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        z-index: 9;
-      }
+        height: auto !important;
+        padding-top: 90px;
+        padding-bottom: 80px;
+        margin-bottom: 0px;
+        padding-left: 120px;
+        @media (max-width: 767px) {
+            margin-bottom: 150px;
+        }
+        @media (max-width:576px) {
+            margin-bottom: 0px;
+        }
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 100%;
+            // background: linear-gradient(90deg, #f7f8f9, transparent);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            z-index: 9;
+        }
     }
     .slick-arrow {
         width: 30px;
@@ -5050,7 +5098,7 @@ section.banner.tour .banner-img {
         width: 400px;
         display: flex;
         bottom: 15px;
-        @media (max-width:991px) {
+        @media (max-width: 991px) {
             width: 250px;
         }
         li {
@@ -5078,15 +5126,15 @@ section.banner.tour .banner-img {
 .vert-carousel {
     .slick-list {
         @media (max-width: 991px) {
-          height: auto !important;
+            height: auto !important;
         }
-      }
+    }
 }
 
 .hori-carousel {
     margin-top: -37px;
     .slick-list {
-      position: relative;
+        position: relative;
     }
     .slick-arrow {
         width: 30px !important;
@@ -5125,7 +5173,7 @@ section.banner.tour .banner-img {
         width: 400px;
         display: flex;
         bottom: -45px;
-        @media (max-width:991px) {
+        @media (max-width: 991px) {
             width: 250px;
         }
         li {
@@ -5150,5 +5198,33 @@ section.banner.tour .banner-img {
     }
 }
 
+.objective-slider {
+    .slick-slide {
+        .objective-slider__left {
+            opacity: 0;
+            transition: all ease-in-out 0.5s;
+        }
+        &.slick-current {
+            .objective-slider__left {
+                opacity: 1;
+                transition: all ease-in-out 0.5s;
+                transition-delay: 0.5s;
+            }
+            .objective-slider-content {
+                animation: wave-anim 1s alternate;
+                animation-delay: calc(0.1s * var(--item));
+            }
+        }
+    }
+}
 
-
+@keyframes wave-anim {
+    0% {
+        transform: translateY(-30px);
+        // opacity: 0;
+    }
+    100% {
+        // opacity: 1;
+        transform: translateY(0);
+    }
+}
