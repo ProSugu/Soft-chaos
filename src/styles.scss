@@ -558,8 +558,8 @@ section.tour-card .col-md-7 img {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 50px;
-    line-height: 75px;
+    font-size: 30px;
+    line-height: 40px;
     color: #31496D;
     margin-top: 40px;
     position: relative;
@@ -576,11 +576,11 @@ section.tour-card .col-md-7 img {
 }
 
 .bg-text p {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 34px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
     color: #66768F;
 }
 
@@ -645,6 +645,7 @@ section.tour-card .col-md-7 img {
 .bg-slider {
     position: relative;
     left: 0;
+    margin-top:50px;
 }
 
 footer {
@@ -3071,7 +3072,7 @@ section.services {
 
 .slider-block {
     width: 290px;
-    height: 450px;
+    height: 380px;
     background: rgba(255, 255, 255, 0.85);
     padding: 20px;
     text-align: left;
@@ -3080,14 +3081,15 @@ section.services {
 
 .col-md-7.main-flex.d-flex {
     position: relative;
-    left: 7%;
+    left:0;
     z-index: 9;
 }
 
 .slider-block img {
-    width: 50%;
-    height: 30%;
-    margin-left: inherit;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 .slider-block h4 {
@@ -4026,7 +4028,7 @@ section.banner.tour .banner-img {
         margin-left: 10px;
     }
     .bg-text h2 {
-        font-size: 44px;
+        font-size: 30px;
     }
     .bg-text img {
         // display: none;
@@ -4104,6 +4106,19 @@ section.banner.tour .banner-img {
 }
 
 @media (max-width: 767px) {
+    .main-slider-heading h1 {
+        font-size: 30px;
+        line-height: 43px;
+        text-align: left;
+    }
+    .banner-text h3 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    .main-slider-heading .bg-vector{
+        top: 16px !important;
+        margin-left: 2% !important;
+    }
     section.banner.tour .banner-text {
         margin-bottom: 0;
     }
@@ -4294,7 +4309,7 @@ section.banner.tour .banner-img {
         margin-top: 0 !important;
     }
     .bg-text h2 {
-        font-size: 44px;
+        font-size: 30px;
         margin-top: 0 !important;
     }
     .bg-slider .slick-next {
@@ -4711,7 +4726,7 @@ section.banner.tour .banner-img {
         margin-top: 0 !important;
     }
     .bg-text h2 {
-        font-size: 44px;
+        font-size: 24px;
         margin-top: 0 !important;
     }
     .bg-slider .slick-next {
