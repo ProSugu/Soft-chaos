@@ -68,15 +68,50 @@ export class DashboardComponent {
   //   containerClass:'theme-red'
   // };
 
+  // slideConfig = {
+  //   'slidesToShow': 1,
+  //   'slidesToScroll': 1,
+  //   'dots': false,
+  //   'arrows': false,
+  //   'infinite': false,
+  //   verticalSwiping: true,
+  //   vertical: true
+  // };
+
   slideConfig = {
     'slidesToShow': 1,
     'slidesToScroll': 1,
     'dots': false,
-    'arrows': false,
+    'arrows': true,
     'infinite': false,
-    verticalSwiping: true,
-    vertical: true
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 1.5,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow:1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ],
   };
+
   slideConfigSec = {
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -92,6 +127,9 @@ export class DashboardComponent {
     nav: true,
     variableHeight: false,
     speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 991,
@@ -161,6 +199,7 @@ export class DashboardComponent {
   };
   private verticalSliderInitRef: any;
   @ViewChild('slickModal1', { static: true }) verticalSliderDomRef: ElementRef | any;
+  @ViewChild('slickModal', { static: true }) mainHeroSliderDomRef: ElementRef | any;
   allLocations: any = [];
   public readonly OBJECTIVE_SLIDES = OBJECTIVES_SLIDES;
   public gridGalleryImageList = [];
@@ -234,6 +273,7 @@ export class DashboardComponent {
 
   afterSlaveCarouselChange(event: any) {
     this.horizontalSlideNumber = event.currentSlide + 1;
+    this.mainHeroSliderDomRef.slickPlay();
   }
 
   public exploreTour(): void {

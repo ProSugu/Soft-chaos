@@ -1,16 +1,17 @@
 {
     "mainBannerImagesList": [
-        "assets/images/s1.png",
-        "assets/images/s2.png",
-        "assets/images/s3.png",
-        "assets/images/s1.png",
-        "assets/images/s2.png",
-        "assets/images/s1.png",
-        "assets/images/s2.png",
-        "assets/images/s3.png",
-        "assets/images/s1.png",
-        "assets/images/s2.png",
-        "assets/images/s1.png"
+        "assets/images/main-slider/2.jpg",
+        "assets/images/main-slider/6.jpg",
+        "assets/images/main-slider/5.jpg",
+        "assets/images/main-slider/7.jpg",
+        "assets/images/main-slider/8.jpg",
+        "assets/images/main-slider/9.jpg",
+        "assets/images/main-slider/10.jpg",
+        "assets/images/main-slider/4.jpg",
+        "assets/images/main-slider/11.jpg",
+        "assets/images/main-slider/12.jpg",
+        "assets/images/main-slider/13.jpg",
+        "assets/images/main-slider/14.jpg"
     ],
     "banner": [{
             "id": "1",
@@ -90,13 +91,13 @@
                     "id": "1",
                     "title": "Empathize",
                     "desc": "Conduct research, interviews, and shadowing customers for better understanding without judging.",
-                    "image": "assets/images/slide-1.png"
+                    "image": "assets/images/Empathize Icon.png"
                 },
                 {
                     "id": "2",
                     "title": "Define",
                     "desc": "Identify and pinpoint the list of problems in hand along with objectives, personas, and challenges.",
-                    "image": "assets/images/slide-1.png"
+                    "image": "assets/images/Define Icon.png"
                 }
             ]
         },
@@ -108,13 +109,13 @@
                     "id": "3",
                     "title": "Ideate",
                     "desc": "Generate a list of ideas. Share ideas, discuss, segment, and prioritize ideas.",
-                    "image": "assets/images/slide-1.png"
+                    "image": "assets/images/Ideate Icon.png"
                 },
                 {
                     "id": "4",
                     "title": "Prototype",
                     "desc": "Build representations for a range of ideas. Create a simple storyboard and don’t be afraid to iterate or to fail fast.",
-                    "image": "assets/images/slide-1.png"
+                    "image": "assets/images/Prototype Build Icon.png"
                 }
             ]
         }, {
@@ -125,13 +126,13 @@
                     "id": "5",
                     "title": "Test",
                     "desc": "Understand impediments, seek user feedback and use it to improvise your user’s experience.",
-                    "image": "assets/images/slide-1.png"
+                    "image": "assets/images/Test Icon.png"
                 },
                 {
                     "id": "6",
                     "title": "Implement",
                     "desc": "Put your vision into action, recognize the synergy and achieve project success.",
-                    "image": "assets/images/slide-1.png"
+                    "image": "assets/images/Implement Icon.png"
                 }
             ]
         }

@@ -462,6 +462,12 @@ section.banner.main-banner .slick-list.draggable {
     top: 0;
 }
 
+.banner-text img {
+    position: absolute;
+    top: 20px;
+    // transform: rotate(-3deg);
+}
+
 section.banner .skeleton-box::after {
     background: #0000000d;
     height: auto;
@@ -480,6 +486,17 @@ section.tour-card .col-md-7 img {
 }
 
 .main-heading h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 75px;
+    color: #31496D;
+    position: relative;
+    z-index: 2;
+}
+
+.main-slider-heading h1 {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -945,7 +962,7 @@ section.testimonials.main-testimonials .slick-prev {
     text-align: left;
     @media (max-width: 767px) {
         height: auto;
-        margin-bottom: 70px;
+        margin-bottom: 30px !important;
     }
 }
 
@@ -3003,7 +3020,7 @@ section.testimonials.main-testimonials .slide-box ul li img {
 }
 
 section.banner-section {
-    background: url(/assets/images/background.png) no-repeat;
+    // background: url(/assets/images/background.png) no-repeat;
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -3068,7 +3085,9 @@ section.services {
 }
 
 .slider-block img {
-    width: 60%;
+    width: 50%;
+    height: 30%;
+    margin-left: inherit;
 }
 
 .slider-block h4 {
@@ -5037,14 +5056,14 @@ section.banner.tour .banner-img {
     .slick-list {
         height: auto !important;
         padding-top: 90px;
-        padding-bottom: 80px;
-        margin-bottom: 0px;
+        padding-bottom: 130px;
+        //   margin-bottom: 110px;
         padding-left: 120px;
         @media (max-width: 767px) {
-            margin-bottom: 150px;
+            // margin-bottom: 150px;
         }
         @media (max-width:576px) {
-            margin-bottom: 0px;
+            margin-bottom: 50px;
         }
         position: relative;
         &::before {
@@ -5052,7 +5071,7 @@ section.banner.tour .banner-img {
             display: block;
             width: 100px;
             height: 100%;
-            // background: linear-gradient(90deg, #f7f8f9, transparent);
+            background: linear-gradient(90deg, #f7f8f9, transparent);
             position: absolute;
             top: 0;
             bottom: 0;
