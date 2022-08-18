@@ -45,7 +45,6 @@
                         transition: all ease-in-out 0.5s;
                         -webkit-transition: all ease-in-out 0.5s;
                         -moz-transition: all ease-in-out 0.5s;
-                        // transform: scale(1.1);
                     }
                 }
                 &.about {
@@ -80,7 +79,6 @@
                     } 
                 }
                 &:hover {
-                    // transform: scale(1.1);
                     transition: all ease-in-out 2s;
                     -webkit-transition: all ease-in-out 2s;
                     -moz-transition: all ease-in-out 2s;
