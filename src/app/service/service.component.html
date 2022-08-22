@@ -1,13 +1,13 @@
 <!----------------------our service page html---------------------->
-<section class="about-us">
+<section class="services-banner">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">
-                <h2>Your technology partner for tourism development</h2>
-                <p>In addition to our own solutions, we offer to be your technology partner helping you to implement new concepts. We can support you and work with you throughout your concept lifecycle process. Our key services focus on:</p>
+            <div class="col-md-6 t-left mt-5 pt-5">
+                <h2>How we make it happen</h2>
+                <p>It doesn’t where you’re coming from, how you look or any other aspect about yourself. If you’re passionate about what you do, we can’t wait to meet you.</p>
             </div>
-            <div class="col-md-12">
-                <ul *ngIf="requestingServerForBannerText">
+            <div class="col-md-6 t-right mt-5 pt-5">
+                <!-- <ul *ngIf="requestingServerForBannerText">
                     <li>
                         <app-skeleton-loader [anotherStructure]="'servicegallery'"></app-skeleton-loader>
                     </li>
@@ -16,8 +16,8 @@
                     <li *ngFor="let gallery of data?.gallery;let i = index" class="about" [ngClass]="'about-'+(i+1)">
                         <img [src]="gallery">
                     </li>
-                </ul>
-
+                </ul> -->
+                <img src="assets/images/service-banner.png">
             </div>
         </div>
     </div>
