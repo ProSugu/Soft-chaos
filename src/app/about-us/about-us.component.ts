@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../core/service/api.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about-us',
@@ -7,6 +8,7 @@ import { ApiService } from '../core/service/api.service';
   styleUrls: ['./about-us.component.scss']
 })
 export class AboutUsComponent implements OnInit {
+  [x: string]: any;
   slideConfig = {
     'slidesToShow': 3,
     'slidesToScroll': 1,
@@ -43,19 +45,17 @@ export class AboutUsComponent implements OnInit {
   };
   requestingServerForBannerText!: boolean;
   public data: any;
-
-  constructor(
-    private apiService: ApiService,
-  ) { }
-
+ constructor(private titleService:Title){
+  } 
   ngOnInit(): void {
     this.loaddata();
+       this.titleService.setTitle("soft chaos-About")
   }
 
   loaddata() {
     this.requestingServerForBannerText = true;
     setTimeout(() => {
-      this.apiService.getAboutUsData().subscribe((response: any) => {
+      this['apiService'].getAboutUsData().subscribe((response: any) => {
         this.data = response;
         console.log(this.data);
         this.requestingServerForBannerText = false;

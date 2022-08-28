@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { MessagingService } from '../utils/services/messaging/messaging.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class JoinUsServiceComponent {
   files: File[] = [];
   joinUsForm!: FormGroup;
   constructor(
+    private titleService:Title,
     private fb: FormBuilder,
     private message: MessagingService
   ) {
@@ -25,8 +27,9 @@ export class JoinUsServiceComponent {
       doc:[]
     });
   }
-
-
+  ngOnInit(): void {
+       this.titleService.setTitle("soft chaos-Promote-service")
+  }
   onSelect(event:any) {
     console.log(event);
     this.files.push(...event.addedFiles);

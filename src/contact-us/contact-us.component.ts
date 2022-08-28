@@ -47,7 +47,7 @@ export class ContactUsComponent implements OnInit, AfterViewInit {
       mapTypeId: google.maps.MapTypeId.ROADMAP,
     };
     var contentString =
-      '<div id="content" style="margin:10px 10px 10px 5px;line-height: 1;overflow: hidden;white-space: nowrap;height:60px;margin:10px"><h3 style="font-weight:800">Soft Chos</h3><p>425 Pina Street 1000, Manila, Philippines</p></div>';
+      '<div id="content" style="margin:10px 10px 10px 5px;line-height: 1;overflow: hidden;white-space: nowrap;height:60px;margin:10px"><h3 style="font-weight:800">Soft Choas</h3><p>Al Fahidi - Bur Dubai - Office 43</p></div>';
     this.map = new google.maps.Map(
       this.mapElement.nativeElement,
       mapProperties

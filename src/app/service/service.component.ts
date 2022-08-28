@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ApiService } from '../core/service/api.service';
 
 @Component({
@@ -12,10 +13,12 @@ export class ServiceComponent implements OnInit {
 
 constructor(
     private apiService: ApiService,
+    private titleService:Title,
   ) { }
 
   ngOnInit(): void {
     this.loaddata();
+    this.titleService.setTitle("soft chaos-services")
   }
 
   loaddata() {

@@ -32,7 +32,9 @@ export class BookPerTourComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle("soft chaos-book-per-tour")
   }
+  
 
   ngAfterViewChecked() {
     this.cdref.detectChanges();

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { OBJECTIVES_SLIDES } from './dashboard-section.constants';
 import { DeviceService } from '../core/service/device.service';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dashboard',
@@ -207,10 +208,13 @@ export class DashboardComponent {
   constructor(
     private apiService: ApiService,
     public deviceService: DeviceService,
+    private titleService:Title,
     private router: Router,) {
     this.loadDashboardData();
   }
-
+  ngOnInit(): void {
+    this.titleService.setTitle("soft chaos-Home")
+  }
   debouncing(fn: any, d: number) {
     let timer: any;
     const scope = this;

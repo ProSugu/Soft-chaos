@@ -1,7 +1,8 @@
 import { ChangeDetectorRef, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DateRange } from '@angular/material/datepicker';
-import { MatMenuTrigger } from '@angular/material/menu';import { Subscription } from 'rxjs';
+import { MatMenuTrigger } from '@angular/material/menu';import { Title } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 ;
 import { ApiService } from '../core/service/api.service';
 import { BookPerScheduleService } from '../core/service/book-per-schedule.service';
@@ -44,6 +45,7 @@ export class BookPerScheduleComponent implements OnInit, OnDestroy {
     private deviceService: DeviceService,
     public calenderService: CalenderService,
     private cdRef: ChangeDetectorRef,
+    private titleService: Title,
     public bookPerScheduleService: BookPerScheduleService) { }
 
   ngOnInit(): void {
@@ -55,6 +57,8 @@ export class BookPerScheduleComponent implements OnInit, OnDestroy {
     this.totalFilterList = DEVICE_WISE_FILTER[this.deviceService.deviceType];
     this.bookPerScheduleService.activeFilterId = this.appliedFilter.id;
     this.scrollChangeSubscription();
+    this.titleService.setTitle("soft chaos-book-per-schedule")
+
   }
 
   scrollChangeSubscription() {
