@@ -28,7 +28,7 @@
                                             <img *ngIf="!routeObj?.userProfileTab" src="assets/images/dropdown-icon.png"
                                                 class="ml-1" alt=""></a>
                                         <div class="dropdown-menu">
-                                            <a *ngFor="let subRouteObj of routeObj.subPath" class="dropdown-item" [routerLink]="[subRouteObj?.path]" (click)="onPathClick()">
+                                            <a *ngFor="let subRouteObj of routeObj.subPath" class="dropdown-item custom-link" [routerLink]="[subRouteObj?.path]" (click)="onPathClick()">
                                                 {{ subRouteObj?.routeName }}
 
                                             </a>

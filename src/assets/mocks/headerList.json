@@ -8,7 +8,6 @@
             "routeName": "Fly Now",
             "path": "",
             "subPath": [{
-                    "routeName": "Book per Tour",
                     "path": "/book-per-tour"
                 },
                 {
@@ -23,7 +22,7 @@
             "routeName": "Join Us",
             "path": "",
             "subPath": [{
-                    "routeName": "Promote your destination",
+                    "routeName": "Careers",
                     "path": "/destination"
                 },
                 {

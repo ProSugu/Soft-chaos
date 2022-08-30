@@ -26,7 +26,7 @@ export class JoinUsComponent {
     });
   }
   ngOnInit(): void {
-    this.titleService.setTitle("soft chaos-destination")
+    this.titleService.setTitle("Soft Chaos-Careers")
 }
   onSelect(event:any) {
     console.log(event);
