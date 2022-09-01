@@ -13,6 +13,7 @@ export class AboutUsComponent implements OnInit {
     'slidesToShow': 3,
     'slidesToScroll': 1,
     'dots': false,
+    vertical: false,
     'arrows': true,
     'infinite': false,
     responsive: [
@@ -45,8 +46,12 @@ export class AboutUsComponent implements OnInit {
   };
   requestingServerForBannerText!: boolean;
   public data: any;
- constructor(private titleService:Title){
-  } 
+
+ constructor(
+  private titleService:Title,
+  private apiService: ApiService
+  ){}
+
   ngOnInit(): void {
     this.loaddata();
        this.titleService.setTitle("soft chaos-About")
@@ -55,9 +60,8 @@ export class AboutUsComponent implements OnInit {
   loaddata() {
     this.requestingServerForBannerText = true;
     setTimeout(() => {
-      this['apiService'].getAboutUsData().subscribe((response: any) => {
+      this.apiService.getAboutUsData().subscribe((response: any) => {
         this.data = response;
-        console.log(this.data);
         this.requestingServerForBannerText = false;
       })
     }, 3000)

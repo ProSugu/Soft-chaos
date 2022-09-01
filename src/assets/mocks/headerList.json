@@ -3,21 +3,6 @@
             "routeName": "Home",
             "path": ""
         },
-
-        {
-            "routeName": "Fly Now",
-            "path": "",
-            "subPath": [{
-                    "path": "/book-per-tour"
-                },
-                {
-                    "routeName": "Book per Schedule",
-                    "path": "/book-per-schedule"
-                }
-
-            ]
-        },
-
         {
             "routeName": "Join Us",
             "path": "",
