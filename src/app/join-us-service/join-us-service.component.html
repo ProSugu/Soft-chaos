@@ -3,10 +3,11 @@
         <div class="row">
             <div class="col-md-6">
                 <h3>Promote your services</h3>
-                
-                <p>We are continuously looking into adding more locations and supporting more destinations.
+
+                <p>
+                    We are always keen on extending the user's experience to new sites and locations. As part of our values is to support local communities we are keen on enriching our partners' network.
                 </p>
-                <p>Helps us promote new destinations by filling the below details. Our team will assess the request and we will reach out to you shortly.</p>
+                <!-- <p>Helps us promote new destinations by filling the below details. Our team will assess the request and we will reach out to you shortly.</p> -->
                 <!-- <ul>
                     <li><a href="tel:0235 4568 6568"><i class="fa fa-phone" aria-hidden="true"></i>0235 4568 6568</a></li>
                     <li><a href="mailto:softchaos@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>softchaos@gmail.com</a></li>
@@ -27,18 +28,21 @@
                     <div class="row">
                         <div class="col">
                             <label>Name of contact person</label>
-                            <input type="text" [ngClass]="{'input-error': (joinUsForm.controls['name']['invalid'] && joinUsForm.controls['name'].touched )}" formControlName="name" class="form-control" placeholder="Name of contact person">
+                            <input type="text" [ngClass]="{'input-error': (joinUsForm.controls['name']['invalid'] && joinUsForm.controls['name'].touched )}" formControlName="name" class="form-control" placeholder="Name of contact person" appTextOnly>
                             <div *ngIf="joinUsForm.controls['name'].touched && joinUsForm.controls['name'].invalid" class="error2">
                                 <span *ngIf="joinUsForm.controls['name'].hasError('required')">Name is required.</span>
+                                <span *ngIf="joinUsForm.controls['name'].hasError('validationError')">{{joinUsForm.controls['name'].errors?.['validationError']}}</span>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>Title and role</label>
-                            <input type="text" [ngClass]="{'input-error': (joinUsForm.controls['titleAndRole']['invalid'] && joinUsForm.controls['titleAndRole'].touched )}" formControlName="titleAndRole" class="form-control" placeholder="Title and role">
-                            <div *ngIf="joinUsForm.controls['titleAndRole'].touched && joinUsForm.controls['titleAndRole'].invalid" class="error2">
-                                <span *ngIf="joinUsForm.controls['titleAndRole'].hasError('required')">Title and role is required.</span>
+                            <input type="text" [ngClass]="{'input-error': (joinUsForm.controls['title']['invalid'] && joinUsForm.controls['title'].touched )}" formControlName="title" class="form-control" placeholder="Title and role">
+                            <div *ngIf="joinUsForm.controls['title'].touched && joinUsForm.controls['title'].invalid" class="error2">
+                                <span *ngIf="joinUsForm.controls['title'].hasError('required')">Title and role is required.</span>
+                                <span *ngIf="joinUsForm.controls['title'].hasError('validationError')">{{joinUsForm.controls['title'].errors?.['validationError']}}</span>
+
                             </div>
                         </div>
                     </div>
@@ -49,15 +53,18 @@
                             <div *ngIf="joinUsForm.controls['email'].touched && joinUsForm.controls['email'].invalid" class="error2">
                                 <span *ngIf="joinUsForm.controls['email'].hasError('required')">Email is required.</span>
                                 <span *ngIf="joinUsForm.controls['email'].hasError('email')">Invalid Email.</span>
+                                <span *ngIf="joinUsForm.controls['email'].hasError('validationError')">{{joinUsForm.controls['email'].errors?.['validationError']}}</span>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>Mobile number</label>
-                            <input type="number" class="form-control" [ngClass]="{'input-error': (joinUsForm.controls['phone']['invalid'] && joinUsForm.controls['phone'].touched )}" formControlName="phone" placeholder="Mobile number">
-                            <div *ngIf="joinUsForm.controls['phone'].touched && joinUsForm.controls['phone'].invalid" class="error2">
-                                <span *ngIf="joinUsForm.controls['phone'].hasError('required')">phone is required.</span>
+                            <input type="number" class="form-control" [ngClass]="{'input-error': (joinUsForm.controls['mobile_number']['invalid'] && joinUsForm.controls['mobile_number'].touched )}" formControlName="mobile_number" placeholder="Mobile number">
+                            <div *ngIf="joinUsForm.controls['mobile_number'].touched && joinUsForm.controls['mobile_number'].invalid" class="error2">
+                                <span *ngIf="joinUsForm.controls['mobile_number'].hasError('required')">phone is required.</span>
+                                <span *ngIf="joinUsForm.controls['mobile_number'].hasError('validationError')">{{joinUsForm.controls['mobile_number'].errors?.['validationError']}}</span>
+
                             </div>
                         </div>
                     </div>
@@ -65,27 +72,34 @@
                     <div class="row">
                         <div class="col">
                             <label>Organization industry</label>
-                            <input type="text" [ngClass]="{'input-error': (joinUsForm.controls['orgInd']['invalid'] && joinUsForm.controls['orgInd'].touched )}" formControlName="orgInd" class="form-control" placeholder="Organization industry">
-                            <div *ngIf="joinUsForm.controls['orgInd'].touched && joinUsForm.controls['orgInd'].invalid" class="error2">
-                                <span *ngIf="joinUsForm.controls['orgInd'].hasError('required')">Organization industry is required.</span>
+                            <input type="text" [ngClass]="{'input-error': (joinUsForm.controls['organization_industry']['invalid'] && joinUsForm.controls['organization_industry'].touched )}" formControlName="organization_industry" class="form-control" placeholder="Organization industry"
+                                appTextOnly>
+                            <div *ngIf="joinUsForm.controls['organization_industry'].touched && joinUsForm.controls['organization_industry'].invalid" class="error2">
+                                <span *ngIf="joinUsForm.controls['organization_industry'].hasError('required')">Organization industry is required.</span>
+                                <span *ngIf="joinUsForm.controls['organization_industry'].hasError('validationError')">{{joinUsForm.controls['organization_industry'].errors?.['validationError']}}</span>
+
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>Location</label>
-                            <input type="text" class="form-control" placeholder="Location" formControlName="loc">
-                            <div *ngIf="joinUsForm.controls['loc'].touched && joinUsForm.controls['loc'].invalid" class="error2">
-                                <span *ngIf="joinUsForm.controls['loc'].hasError('required')">Location is required.</span>
+                            <input type="text" class="form-control" placeholder="Location" formControlName="location">
+                            <div *ngIf="joinUsForm.controls['location'].touched && joinUsForm.controls['location'].invalid" class="error2">
+                                <span *ngIf="joinUsForm.controls['location'].hasError('required')">Location is required.</span>
+                                <span *ngIf="joinUsForm.controls['location'].hasError('validationError')">{{joinUsForm.controls['location'].errors?.['validationError']}}</span>
+
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>Services provided</label>
-                            <input type="text" class="form-control" placeholder="Services provided" formControlName="servicesProvided">
-                            <div *ngIf="joinUsForm.controls['servicesProvided'].touched && joinUsForm.controls['servicesProvided'].invalid" class="error2">
-                                <span *ngIf="joinUsForm.controls['servicesProvided'].hasError('required')">Services Provided is required.</span>
+                            <input type="text" class="form-control" placeholder="Services provided" formControlName="service_provided">
+                            <div *ngIf="joinUsForm.controls['service_provided'].touched && joinUsForm.controls['service_provided'].invalid" class="error2">
+                                <span *ngIf="joinUsForm.controls['service_provided'].hasError('required')">Services Provided is required.</span>
+                                <span *ngIf="joinUsForm.controls['service_provided'].hasError('validationError')">{{joinUsForm.controls['service_provided'].errors?.['validationError']}}</span>
+
                             </div>
                         </div>
                     </div>
@@ -103,11 +117,16 @@
                                 <img src="assets/images/upload.png">
                                 <p>Drag and Drop your file in the area or <span>Browse Filles</span></p>
                             </div> -->
+                            <div *ngIf="fileSubmitted" class="error2">
+                                <span *ngIf="!files.length && !joinUsForm.controls['document'].hasError('validationError')">File is required.</span>
+                                <span *ngIf="joinUsForm.controls['document'].hasError('validationError')">{{joinUsForm.controls['document'].errors?.['validationError']}}</span>
+
+                            </div>v>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button type="submit">Send</button>
+                            <button type="submit" class="btn btn-submit" [disabled]="this.joinUsForm.invalid">Send</button>
                         </div>
                     </div>
                 </form>

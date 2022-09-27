@@ -10,7 +10,7 @@ export class HttpService {
 
   constructor(
     private http: HttpClient
-  ) { 
+  ) {
   }
 
   /****************** Request ********************/
@@ -21,6 +21,7 @@ export class HttpService {
   }
 
   postData(url: string, params: { [x: string]: any }, path?: { [x: string]: any }, formData?: boolean): Observable<any> {
+    console.log(params,formData,params)
    const newPath = path ? this.createPath(url, path) : '';
    const finalParams = formData ? this.appendFormData(params) : params;
    return this.http.post<HttpClient>(path ? environment.BASE_PATH + newPath : environment.BASE_PATH + url, finalParams);
@@ -42,6 +43,11 @@ export class HttpService {
     const finalPath = (path ? environment.BASE_PATH + newPath : environment.BASE_PATH + url);
     const finalUrl = id ? finalPath + '/' + id : finalPath;
     return this.http.delete<HttpClient>(finalUrl);
+  }
+
+  uploadFile(url: string, params: { [x: string]: any }): Observable<any> {
+   const finalParams =  this.appendFormData(params) ;
+   return this.http.post<HttpClient>( environment.BASE_PATH + url, finalParams);
   }
 
   /************** Params ****************/
@@ -67,7 +73,7 @@ export class HttpService {
   }
 
   /*****************Crete url with dynamic Id's ********/
-  createPath(url, path: { [x: string]: any }) {
+  createPath(url:string, path: { [x: string]: any }) {
     let newPath = url;
     for (const key in path) {
       if (path.hasOwnProperty(key)) {

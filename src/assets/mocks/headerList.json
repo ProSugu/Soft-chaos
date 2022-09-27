@@ -21,10 +21,7 @@
             "routeName": "About Us",
             "path": "/about-us"
         },
-        {
-            "routeName": "Our Services",
-            "path": "/our-services"
-        },
+
         {
             "routeName": "Contact Us",
             "path": "/contact-us"

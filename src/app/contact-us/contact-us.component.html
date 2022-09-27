@@ -27,12 +27,12 @@
                     <div class="row">
                         <div class="col-lg-6 d-flex flex-column form-group">
                             <label for="formGroupName">Your Name</label>
-                            <input [ngClass]="{'input-error': (contactForm.controls['name']['invalid'] && contactForm.controls['name'].touched )}" formControlName="name" class="form-control" id="formGroupName" placeholder="Enter your name" type="text" />
+                            <input [ngClass]="{'input-error': (contactForm.controls['Name']['invalid'] && contactForm.controls['Name'].touched )}" formControlName="Name" class="form-control" id="formGroupName" placeholder="Enter your name" type="text" />
                             <div *ngIf="
-                          contactForm.controls['name'].touched &&
-                          contactForm.controls['name'].invalid
+                          contactForm.controls['Name'].touched &&
+                          contactForm.controls['Name'].invalid
                                     " class="error2">
-                                <span *ngIf="contactForm.controls['name'].hasError('required')">Name is required.</span>
+                                <span *ngIf="contactForm.controls['Name'].hasError('required')">Name is required.</span>
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex flex-column form-group">

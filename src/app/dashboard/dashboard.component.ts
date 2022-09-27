@@ -1,17 +1,21 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../core/service/api.service';
 import { Router } from '@angular/router';
 import { OBJECTIVES_SLIDES } from './dashboard-section.constants';
 import { DeviceService } from '../core/service/device.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Title } from '@angular/platform-browser';
+import { UtilityService } from '../core/service/utility.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ToolboxListComponent } from '../popup-list/toolbox-list/toolbox-list.component';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
+  isBagOpen = false;
   homeSlider = ['assets/images/s1.png', 'assets/images/s2.png', 'assets/images/s3.png', 'assets/images/s1.png', 'assets/images/s2.png'];
   pageSlideAnimationActive = false;
   requestingServerForBannerText = false;
@@ -95,7 +99,7 @@ export class DashboardComponent {
       {
         breakpoint: 767,
         settings: {
-          slidesToShow:1,
+          slidesToShow: 1,
         }
       },
       {
@@ -204,17 +208,43 @@ export class DashboardComponent {
   allLocations: any = [];
   public readonly OBJECTIVE_SLIDES = OBJECTIVES_SLIDES;
   public gridGalleryImageList = [];
+  public tootboxList: any[] = [
+    { label: 'Sepcialized Workshops and trainings', iconImage: 'assets/images/bag-items/item1.png', itemDescription: '', tooltipPosition: 'left' },
+    { label: 'Real time Virtual tours', iconImage: 'assets/images/bag-items/item2.png', itemDescription: '', tooltipPosition: 'left' },
+    { label: 'Advisory services', iconImage: 'assets/images/bag-items/item3.png', itemDescription: '', tooltipPosition: 'left' },
+    { label: 'Smart Applications', iconImage: 'assets/images/bag-items/item4.png', itemDescription: '', tooltipPosition: 'above' },
+    { label: 'e-commerce: Smart gadgets and local products', iconImage: 'assets/images/bag-items/item5.png', itemDescription: '', tooltipPosition: 'right' },
+    { label: 'AR Navigation Experience', iconImage: 'assets/images/bag-items/item7.png', itemDescription: '', tooltipPosition: 'right' },
+    { label: 'Digital Lab(Custom Software Solutions Implementation)', iconImage: 'assets/images/bag-items/item6.png', itemDescription: '', tooltipPosition: 'right' },
+  ];
 
   constructor(
-    private apiService: ApiService,
-    public deviceService: DeviceService,
-    private titleService:Title,
-    private router: Router,) {
+    private readonly apiService: ApiService,
+    public readonly deviceService: DeviceService,
+    private readonly titleService: Title,
+    private readonly router: Router,
+    private readonly utilityService: UtilityService,
+    public dialog: MatDialog) {
     this.loadDashboardData();
   }
   ngOnInit(): void {
-    this.titleService.setTitle("soft chaos-Home")
+    this.titleService.setTitle("soft chaos-Home");
+    if(this.deviceService.isDeskop()) this.onBagClick();
   }
+
+  onBagClick(): void {
+    this.isBagOpen = !this.isBagOpen;
+    if (this.isBagOpen && !this.deviceService.isDeskop()) {
+      this.dialog.open(ToolboxListComponent, {
+        autoFocus: false,
+        width: '95vw',
+        height: '60vh',
+        panelClass: 'toolbox-popup-container',
+        data: this.tootboxList
+      });
+    }
+  }
+
   debouncing(fn: any, d: number) {
     let timer: any;
     const scope = this;
@@ -271,7 +301,7 @@ export class DashboardComponent {
     carouselRef.slickGoTo(slideIndex);
   }
 
-  trackItem(index:number,item:string){
+  trackItem(index: number, item: string) {
     return index;
   }
 
@@ -286,7 +316,7 @@ export class DashboardComponent {
 
   isSectionInViewport(i: any) {
     var myElement: any = document.getElementById(`info${i}`);
-    if(myElement) {
+    if (myElement) {
       var bounding = myElement.getBoundingClientRect();
       if (bounding.top >= 0 && bounding.left >= 0 && bounding.right <= (window.innerWidth || document.documentElement.clientWidth) && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
         return true

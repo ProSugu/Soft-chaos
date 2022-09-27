@@ -12,7 +12,8 @@ export const environment = {
   },
   googleMap:{
     siteKey:'https://maps.googleapis.com/maps/api/js?key=AIzaSyB_MSJW9olNYJTx2aV__gypRbbknDGLoiU&v=weekly'
-  }
+  },
+  BASE_PATH:'http://65.1.142.235:1337/'
 };
 
 /*

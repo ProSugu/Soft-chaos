@@ -1,4 +1,4 @@
-import {  NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +9,7 @@ import { FooterComponent } from './core/component/footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PageNotFoundComponent } from './core/component/page-not-found/page-not-found.component';
 import { TourComponent } from './tour/tour.component';
 import { JoinUsComponent } from './join-us/join-us.component';
@@ -39,6 +39,8 @@ import { FindDatePipe } from './core/pipe/find-date.pipe';
 import { FindDayPipe } from './core/pipe/find-day.pipe';
 import { FindMonthPipe } from './core/pipe/find-month.pipe';
 import { NgVarDirective } from './core/directive/ng-var.directive';
+import { NumberOnlyDirective } from './core/directive/number-only.directive';
+import { TextOnlyDirective } from './core/directive/text-only.directive';
 import { DateRangePickerComponent } from './core/component/date-range-picker/date-range-picker.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -47,6 +49,9 @@ import { BookPerTourComponent } from './book-per-tour/bookpertour.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { ToolboxListComponent } from './popup-list/toolbox-list/toolbox-list.component';
+import { ErrorInterceptor } from './utils/interceptors/error.interceptor';
+import { JwtInterceptor } from './utils/interceptors/jwt.interceptor';
 
 const environmentConfig: any = environment.logger;
 
@@ -80,7 +85,10 @@ const environmentConfig: any = environment.logger;
     BookPerTourComponent,
     TwelveHourFormatPipe,
     PrivacyPolicyComponent,
-    TermsConditionsComponent
+    TermsConditionsComponent,
+    ToolboxListComponent,
+    NumberOnlyDirective,
+    TextOnlyDirective
   ],
   imports: [
     BrowserModule,
@@ -107,9 +115,15 @@ const environmentConfig: any = environment.logger;
     NgxDropzoneModule,
     MatNativeDateModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
   ],
 
   bootstrap: [AppComponent],
+  entryComponents: [ToolboxListComponent]
 })
 export class AppModule { }

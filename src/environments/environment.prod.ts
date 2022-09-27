@@ -8,5 +8,6 @@ export const environment = {
   },
   googleMap:{
     siteKey:'https://maps.googleapis.com/maps/api/js?key=AIzaSyAcuRpC8PS51eIIBqHiIMK4xbaXH3jZXYU&callback=initMap&v=weekly'
-  }
+  },
+  BASE_PATH:'http://65.1.142.235:1337/'
 };

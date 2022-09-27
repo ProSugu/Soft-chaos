@@ -4,10 +4,18 @@ import { LocationCardComponent } from './component/location-card/location-card.c
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { SkeletonLoaderComponent } from './component/skeleton-loader/skeleton-loader.component';
 import { MatRippleModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const MAT_MODULES = [
   MatProgressBarModule,
-  MatRippleModule
+  MatRippleModule,
+  MatDialogModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatTooltipModule
 ];
 
 @NgModule({

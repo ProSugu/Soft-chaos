@@ -1,0 +1,23 @@
+<div class="toolbox-popup-wrapper">
+    <h4 mat-dialog-title>
+        <mat-toolbar role="toolbar" class="task-header">
+            <span> Our Toolbox</span>
+            <span class="fx-spacer"></span>
+            <button mat-icon-button (click)="close()">
+                <mat-icon mat-list-icon>close</mat-icon>
+            </button>
+        </mat-toolbar>
+    </h4>
+    <div mat-dialog-content>
+        <div class="dialog-content-wrapper">
+            <ul>
+                <li class="toolbox-item" *ngFor="let item of toolboxList; let i = index;">
+                    <span class="icon-container">
+                        <img class="item-icon" [src]="item?.iconImage" />
+                    </span>
+                    <span class="item-label">{{ item?.label}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

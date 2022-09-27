@@ -29,7 +29,7 @@ export class ErrorInterceptor implements HttpInterceptor {
 
         default: //400 and above
           /********** Check for other serve-side errors **********/
-          this.message.toast('error', err.error.message);
+          // this.message.toast('error', err.error);
           break;
       }
         return throwError(err);

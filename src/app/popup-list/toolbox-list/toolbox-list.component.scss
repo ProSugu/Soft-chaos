@@ -1,0 +1,57 @@
+::ng-deep {
+    .toolbox-popup-container {
+        .mat-dialog-container {
+            .mat-toolbar {
+                display: flex;
+                justify-content: space-between;
+                background-color: white;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 22px;
+                line-height: 33px;
+                color: #31496D;
+                padding-right: 0px;
+            }
+        }
+    }
+}
+
+.toolbox-popup-wrapper {
+    .dialog-content-wrapper {
+        max-height: calc(60vh - 115px);
+
+        ul {
+            .toolbox-item {
+                height: 120px;
+                border-top: 2px solid #E5E9ED;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                list-style: none;
+                font-family: Inter;
+                font-size: 25px;
+                font-weight: 500;
+                line-height: 30px;
+                letter-spacing: 0em;
+                text-align: left;
+
+                &:last-child {
+                    border-bottom: 2px solid #E5E9ED;
+                }
+
+                .icon-container {
+                    height: 120px;
+                    width: 120px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        max-height: 70px;
+                    }
+                }
+            }
+        }
+    }
+}

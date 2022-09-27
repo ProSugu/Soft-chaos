@@ -10,12 +10,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { } from 'googlemaps';
 import { MapStyle } from './mapstyles';
 import { Title } from '@angular/platform-browser';
+import { HttpService } from '../utils/services/http/http.service';
+import { Api } from '../utils/apis';
+import { MessagingService } from '../utils/services/messaging/messaging.service';
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss'],
 })
-export class ContactUsComponent implements OnInit, AfterViewInit {
+export class ContactUsComponent implements  AfterViewInit {
   @ViewChild('map') mapElement!: ElementRef<HTMLInputElement>;
   map!: google.maps.Map;
   mapLoad: boolean = true;
@@ -23,16 +26,17 @@ export class ContactUsComponent implements OnInit, AfterViewInit {
   contactForm!: FormGroup;
   constructor(
     private titleService:Title,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private httpService: HttpService,
+    private messagingService: MessagingService
   ) {
-    this.contactForm = fb.group({
-      name: ['', [Validators.required]],
+    this.contactForm = this.fb.group({
+      Name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       subject: ['', [Validators.required]],
       message: ['', [Validators.required]],
     });
   }
-  ngOnInit(): void { }
   ngAfterViewInit(): void {
     this.addMapsScript();
     this.titleService.setTitle("soft chaos-Contact")
@@ -40,7 +44,7 @@ export class ContactUsComponent implements OnInit, AfterViewInit {
   loadMap() {
     var marker: any;
     const mapProperties = {
-      center: new google.maps.LatLng(14.603048733789002, 121.01333),
+      center: new google.maps.LatLng(25.172541, 55.244054),
       zoom: 17,
       zoomControl:false,
       mapTypeControl:false,
@@ -80,7 +84,13 @@ export class ContactUsComponent implements OnInit, AfterViewInit {
     // this.recaptchaService.execute({ action: 'submit' }).then((token) => {
     //   console.log(token);
     // });
-    console.log(this.contactForm.value);
+
+    if(this.contactForm.valid) {
+      this.httpService.postData(Api.contact,{data:{...this.contactForm.value}}).subscribe(res => {
+        this.messagingService.toast('success',"Thanks, We will get back to you asap");
+        this.contactForm.reset();
+      })
+    }
   }
   onCaptchaExpired(event: any) {
     console.log(event);
