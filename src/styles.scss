@@ -483,7 +483,9 @@ h1 span {
 
 
 /*---------------------my css---------------*/
-
+.grid-wrapper ul li img{
+    height: auto !important;
+}
 ul.tourGallery {
     display: flex;
     width: 100%;
@@ -1415,7 +1417,7 @@ section.gallary .col-md-12.text-center.main-heading img {
         // border-radius: 15px;
         width: 90%;
         padding: 15px;
-        margin: 0 auto;
+        margin: 0px auto;
     }
 }
 
@@ -2076,8 +2078,16 @@ section.join-us-form form .col button {
     text-align: center;
     color: #FFFFFF;
     margin-top: 40px;
+    cursor: pointer;
 }
-
+section.join-us-form .error2{
+    position: relative;
+    top:-15px;
+}
+section.join-us-form form 
+.col.upload-doc .error2 {
+    top: 7px;
+}
 section.testimonials .slick-next:before {
     display: none;
 }
@@ -4241,10 +4251,54 @@ section.banner.tour .banner-img {
         line-height: 43px;
         text-align: left;
     }
-
+    .hero-section{
+        height: 100vh;
+    }
+    .banner-text {
+        width: 88%;
+        padding: 15px 30px;
+        border-radius: 10px;
+        position: relative;
+        margin-top: 4rem;
+    }
+    .banner-text .explore-btn-section button{width:100%;}
     .banner-text h3 {
-        font-size: 30px;
-        line-height: 38px;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+    }
+    .banner-text img {
+        width: 70%;
+        right: 38px;
+        top: 40px;
+    }
+    .navbar-brand{
+        padding-top: 0 !important;
+    }
+    .navbar-brand img{
+        height: 60px !important;
+    }
+    .grid-wrapper ul{
+        padding-top: 100px !important;
+    }
+    .grid-wrapper ul li {
+        min-height: 110px !important;
+        height: 110px !important;
+        margin-bottom: 20px;
+        margin-top: 0 !important;
+    }
+    .grid-wrapper ul li img {
+        height: 200px !important;
+        width: 100% !important;
+    }
+        .banner-text p {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        color: #757F8F;
+        text-align: center !important;
     }
 
     .main-slider-heading .bg-vector {

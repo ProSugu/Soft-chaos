@@ -104,7 +104,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
+                        <div class="col upload-doc">
                             <label>Upload documents</label>
                             <ngx-dropzone (change)="onSelect($event)">
                                 <ngx-dropzone-label>Drop here!</ngx-dropzone-label>
@@ -121,7 +121,7 @@
                                 <span *ngIf="!files.length && !joinUsForm.controls['document'].hasError('validationError')">File is required.</span>
                                 <span *ngIf="joinUsForm.controls['document'].hasError('validationError')">{{joinUsForm.controls['document'].errors?.['validationError']}}</span>
 
-                            </div>v>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
