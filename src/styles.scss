@@ -36,14 +36,6 @@ img {
     -ms-user-select: none;
 }
 
-.container {
-    //max-width: 1920px;
-    // user-select: none;
-    // -moz-user-select: none;
-    // -webkit-user-drag: none;
-    // -webkit-user-select: none;
-    // -ms-user-select: none;
-}
 
 ::selection {
     color: #fff;
@@ -2829,11 +2821,7 @@ section.tour-card .slick-next {
     margin: 0 0 0 auto;
 }
 
-// section.tour-card button.slick-next.pull-right.slick-arrow img {
-//     top: -580px;
-//     position: absolute;
-//     right: 40px;
-// }
+
 section.tour-card .slick-arrow img {
     transition: right 0.5s ease-in-out;
     width: 30px;
@@ -4245,6 +4233,8 @@ section.banner.tour .banner-img {
     }
 }
 
+
+
 @media (max-width: 767px) {
     .main-slider-heading h1 {
         font-size: 30px;
@@ -4325,7 +4315,8 @@ section.banner.tour .banner-img {
     section.about-gallry img {
         width: 46% !important;
         height: 200px;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         margin-bottom: 20px;
         display: inline-block;
         margin-right: 12px;
@@ -4337,14 +4328,17 @@ section.banner.tour .banner-img {
     }
 
     section.tour-card .card .col-md-6 img {
-        object-fit: contain;
+        -o-object-fit: contain;
+           object-fit: contain;
         height: auto;
     }
 
     section.testimonials.main-testimonials .col-md-4 {
         width: 100%;
         max-width: 100%;
-        flex: 100%;
+        -webkit-box-flex: 100%;
+            -ms-flex: 100%;
+                flex: 100%;
         margin-bottom: 20px;
     }
 
@@ -4404,6 +4398,8 @@ section.banner.tour .banner-img {
     }
 
     .slide-box ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin-bottom: 0;
         position: relative;
@@ -4569,13 +4565,17 @@ section.banner.tour .banner-img {
     }
 
     .booking-flow-baar .progressbar {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 
     .booking-form .col-md-6 {
         width: 50%;
         max-width: 50%;
-        flex: 50%;
+        -webkit-box-flex: 50%;
+            -ms-flex: 50%;
+                flex: 50%;
     }
 
     .time li {
@@ -4660,11 +4660,7 @@ section.banner.tour .banner-img {
         height: 1000px;
     }
 
-    // section.tour-card button.slick-next.pull-right.slick-arrow img {
-    //     top: -847px !important;
-    //     position: absolute;
-    //     right: 40px;
-    // }
+  
     section.testimonials button img {
         top: -292px;
     }
@@ -4773,7 +4769,21 @@ section.banner.tour .banner-img {
         justify-content: center;
         margin: 20px 0 0;
     }
-
+    .dialog-content-wrapper span.item-label {
+        font-size: 16px;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        font-weight: bold;
+        line-height: 20px;
+    }
+    .toolbox-popup-wrapper .dialog-content-wrapper ul .toolbox-item .icon-container{
+        justify-content: flex-start !important;
+    }
+    .toolbox-popup-wrapper .dialog-content-wrapper ul .toolbox-item{
+        justify-content: flex-start !important;
+       
+    }
     .map {
         position: relative;
         left: 0;
@@ -4783,7 +4793,17 @@ section.banner.tour .banner-img {
         width: 100%;
         height: 400px;
     }
-
+    .toolbox-popup-wrapper .dialog-content-wrapper ul .toolbox-item .icon-container{
+        height: auto !important;
+        width: auto !important;
+    }
+    .toolbox-popup-wrapper .dialog-content-wrapper  ul .toolbox-item .icon-container img{
+        max-height: 70px;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-right: 20px;
+    }
     section.contact-detail {
         padding: 20px 0;
     }
@@ -4860,14 +4880,17 @@ section.banner.tour .banner-img {
     }
 
     section.tour-card .card .col-md-6 img {
-        object-fit: contain;
+        -o-object-fit: contain;
+           object-fit: contain;
         height: auto;
     }
 
     section.testimonials.main-testimonials .col-md-4 {
         width: 100%;
         max-width: 100%;
-        flex: 100%;
+        -webkit-box-flex: 100%;
+            -ms-flex: 100%;
+                flex: 100%;
         margin-bottom: 20px;
     }
 
@@ -4920,6 +4943,8 @@ section.banner.tour .banner-img {
     }
 
     .slide-box ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin-bottom: 0;
         position: relative;
