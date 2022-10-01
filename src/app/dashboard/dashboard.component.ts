@@ -292,9 +292,9 @@ export class DashboardComponent implements OnInit{
       this.apiService.getdashboardData().subscribe((response: any) => {
         this.dashboardData = response;
         this.requestingServerForBannerText = false;
-        this.gridGalleryImageList = response.mainBannerImagesList.slice(0, 10);
+        this.gridGalleryImageList = response.mainBannerImagesList.slice(0, 200);
       })
-    }, 3000)
+    }, 5000)
   }
 
   moveToSlide(slideIndex: number, carouselRef: any) {

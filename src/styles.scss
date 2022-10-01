@@ -4236,6 +4236,13 @@ section.banner.tour .banner-img {
 
 
 @media (max-width: 767px) {
+    .home-banner-left__content{
+        width: 100%;
+        height: 100vh !important;
+    }
+    .banner-section{
+        height: 100vh;
+    }
     .main-slider-heading h1 {
         font-size: 30px;
         line-height: 43px;
@@ -4245,11 +4252,13 @@ section.banner.tour .banner-img {
         height: 100vh;
     }
     .banner-text {
-        width: 88%;
+        width: 85%;
         padding: 15px 30px;
         border-radius: 10px;
-        position: relative;
-        margin-top: 4rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -65%);
     }
     .banner-text .explore-btn-section button{width:100%;}
     .banner-text h3 {
@@ -5398,7 +5407,13 @@ section.banner.tour .banner-img {
         margin-top: 0;
         padding-left: 0;
     }
-
+    .home-banner-left__content{
+        width: 100%;
+        height: 100vh !important;
+    }
+    .banner-section{
+        height: 100vh;
+    }
     .slick-list {
         height: 507px;
     }

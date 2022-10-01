@@ -11,13 +11,14 @@
                 <ul>
                     <li *ngFor="let gallery of gridGalleryImageList;let i = index" class="about" [ngClass]="'about--'+(i+1)">
                         <div class="gallery-inner-col">
-                            <marquee behavior="scroll" direction="up">
+                            <!-- <marquee behavior="scroll" direction="up"> -->
                                 <img [src]="gallery">
-                            </marquee>
+                            <!-- </marquee> -->
                         </div>
                     </li>
                 </ul>
             </div>
+            
         </div>
     </div>
     <section class="banner-section">
